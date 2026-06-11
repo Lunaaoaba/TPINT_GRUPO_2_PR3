@@ -8,67 +8,107 @@
     <title></title>
     <style type="text/css">
         .auto-style1 {
-            width: 100%;
-            height: 100%;
+            width: auto;
+            height: auto;
+        }
+
+        .tamanioBoton {
+            width: 200px;
+            height: 25px;
+        }
+
+        #contenedor {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white !important;
+            width: 300px;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-sizing: border-box;
+            margin: 0 auto;
         }
     </style>
 </head>
-<body>
+<body style="background-color:#277343;">
     <form id="form1" runat="server">
-        <div>
-        </div>
+    <div id="contenedor">
+        <table class="auto-style1">
+            <tr>
+                <td>&nbsp;</td>
+                <td align="center">
+                    <asp:Image ID="ICON_medico" ImageUrl="~/Imagenes/ICON_medico.png" runat="server" />
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td align="center">Seleccione una Acción:</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr style="height:1px;">
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;</td>
+                <td align="center">
+                    <asp:Button ID="AgregarMedico" runat="server" Text="Agregar Médico" CssClass="tamanioBoton" />
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td align="center">
+                    <asp:Button ID="ModificarMedico" runat="server" Text="Modificar un Médico" CssClass="tamanioBoton" />
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td align="center">
+                    <asp:Button ID="ListarMedicos" runat="server" Text="Listar Médicos" CssClass="tamanioBoton" />
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td align="center">
+                    <asp:Button ID="ReportesMedicos" runat="server" Text="Reportes de Médicos" CssClass="tamanioBoton" />
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr wei>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td align="center">
+                    <asp:Button ID="EliminarMedico" runat="server" Text="Eliminar un Médico" CssClass="tamanioBoton" />
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </div>
     </form>
-    <table align="center" class="auto-style1">
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-    </table>
-</body>
+    </body>
 </html>
