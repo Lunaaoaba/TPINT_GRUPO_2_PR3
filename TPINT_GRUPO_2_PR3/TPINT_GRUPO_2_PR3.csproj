@@ -68,6 +68,7 @@
   </ItemGroup>
   <!-- EN CASO DE NO TENER CIERTOS ARCHIVOS Y/O CARPETAS, AGREGARLOS ACA -->
   <ItemGroup>
+    <Content Include="Imagenes\IconoClinica.png" />
     <Content Include="Imagenes\ICON_medico.png" />
     <Content Include="Vistas\ABML_Medico.aspx" />
     <Content Include="Vistas\LoginMedicos.aspx" />
