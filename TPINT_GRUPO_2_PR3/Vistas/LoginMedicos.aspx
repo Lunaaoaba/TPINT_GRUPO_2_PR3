@@ -12,7 +12,7 @@
         }
         body {
         font-family: Arial, sans-serif;
-        background-color: #ccc !important;
+        background-color:#277343;
         }
         #contenedor {
     display: flex;

@@ -11,6 +11,9 @@
             width: auto;
             height: auto;
         }
+        body {
+        background-color:#277343;
+        }
 
         .tamanioBoton {
             width: 200px;
@@ -30,7 +33,7 @@
         }
     </style>
 </head>
-<body style="background-color:#277343;">
+<body >
     <form id="form1" runat="server">
     <div id="contenedor">
         <table class="auto-style1">
