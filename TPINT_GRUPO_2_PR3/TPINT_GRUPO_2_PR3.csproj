@@ -69,9 +69,11 @@
   <!-- EN CASO DE NO TENER CIERTOS ARCHIVOS Y/O CARPETAS, AGREGARLOS ACA -->
   <ItemGroup>
     <Content Include="Imagenes\IconoClinica.png" />
+    <Content Include="Imagenes\ICONO_LISTADO.png" />
     <Content Include="Imagenes\ICON_medico.png" />
     <Content Include="Vistas\ABML_Medico.aspx" />
     <Content Include="Vistas\LoginMedicos.aspx" />
+    <Content Include="Vistas\Menu_Listados.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +91,13 @@
     </Compile>
     <Compile Include="Vistas\LoginMedicos.aspx.designer.cs">
       <DependentUpon>LoginMedicos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Menu_Listados.aspx.cs">
+      <DependentUpon>Menu_Listados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Menu_Listados.aspx.designer.cs">
+      <DependentUpon>Menu_Listados.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
