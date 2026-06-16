@@ -74,6 +74,7 @@
     <Content Include="Imagenes\ICON_Turnos.png" />
     <Content Include="Vistas\ABML_Medico.aspx" />
     <Content Include="Vistas\ABML_Turnos.aspx" />
+    <Content Include="Vistas\InicioMedico.aspx" />
     <Content Include="Vistas\LoginMedicos.aspx" />
     <Content Include="Vistas\Menu_Listados.aspx" />
     <Content Include="Web.config" />
@@ -93,6 +94,13 @@
     </Compile>
     <Compile Include="Vistas\ABML_Turnos.aspx.designer.cs">
       <DependentUpon>ABML_Turnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\InicioMedico.aspx.cs">
+      <DependentUpon>InicioMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\InicioMedico.aspx.designer.cs">
+      <DependentUpon>InicioMedico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\LoginMedicos.aspx.cs">
       <DependentUpon>LoginMedicos.aspx</DependentUpon>

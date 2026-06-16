@@ -12,7 +12,7 @@
             height: auto;
         }
         body {
-        background-color:#277343;
+            background-color:#277343;
         }
 
         .tamanioBoton {
