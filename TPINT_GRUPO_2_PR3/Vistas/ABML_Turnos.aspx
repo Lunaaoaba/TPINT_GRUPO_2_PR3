@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ABML_Medico.aspx.cs" Inherits="TPINT_GRUPO_2_PR3.Vistas.ABML_Medico" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ABML_Turnos.aspx.cs" Inherits="TPINT_GRUPO_2_PR3.Vistas.ABML_Turnos" %>
 
 <!DOCTYPE html>
 
@@ -40,7 +40,7 @@
             <tr>
                 <td>&nbsp;</td>
                 <td align="center">
-                    <asp:Image ID="ICON_medico" ImageUrl="~/Imagenes/ICON_medico.png" runat="server" />
+                    <asp:Image ID="ICON_medico" ImageUrl="~/Imagenes/ICON_Turnos.png" runat="server" Height="50px" Width="51px" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
@@ -58,7 +58,7 @@
             <tr>
                 <td>&nbsp;</td>
                 <td align="center">
-                    <asp:Button ID="AgregarMedico" runat="server" Text="Agregar Médico" CssClass="tamanioBoton" />
+                    <asp:Button ID="AgregarModificarTurno" runat="server" Text="Agregar/Modificar Turno" CssClass="tamanioBoton" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
@@ -70,44 +70,13 @@
             <tr>
                 <td>&nbsp;</td>
                 <td align="center">
-                    <asp:Button ID="ModificarMedico" runat="server" Text="Modificar un Médico" CssClass="tamanioBoton" />
+                    <asp:Button ID="ListarEliminarTurno" runat="server" Text="Listar/Eliminar Turno" CssClass="tamanioBoton" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td align="center">
-                    <asp:Button ID="ListarMedicos" runat="server" Text="Listar Médicos" CssClass="tamanioBoton" />
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td align="center">
-                    <asp:Button ID="ReportesMedicos" runat="server" Text="Reportes de Médicos" CssClass="tamanioBoton" />
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td align="center">
-                    <asp:Button ID="EliminarMedico" runat="server" Text="Eliminar un Médico" CssClass="tamanioBoton" />
-                </td>
                 <td>&nbsp;</td>
             </tr>
         </table>
