@@ -13,6 +13,9 @@
         }
         body {
         background-color:#277343;
+        justify-content: center;
+        align-items: center;
+        display: flex;
         }
 
         .tamanioBoton {
@@ -58,10 +61,11 @@
             <tr>
                 <td>&nbsp;</td>
                 <td align="center">
-                    <asp:Button ID="AgregarMedico" runat="server" Text="Agregar Médico" CssClass="tamanioBoton" />
+                    <asp:Button ID="AgregarMedico" runat="server" Text="Agregar/Modificar Médico" CssClass="tamanioBoton" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
+            
             <tr>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -70,19 +74,7 @@
             <tr>
                 <td>&nbsp;</td>
                 <td align="center">
-                    <asp:Button ID="ModificarMedico" runat="server" Text="Modificar un Médico" CssClass="tamanioBoton" />
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td align="center">
-                    <asp:Button ID="ListarMedicos" runat="server" Text="Listar Médicos" CssClass="tamanioBoton" />
+                    <asp:Button ID="ListarMedicos" runat="server" Text="Listar/Eliminar Médicos" CssClass="tamanioBoton" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
@@ -98,18 +90,7 @@
                 </td>
                 <td>&nbsp;</td>
             </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td align="center">
-                    <asp:Button ID="EliminarMedico" runat="server" Text="Eliminar un Médico" CssClass="tamanioBoton" />
-                </td>
-                <td>&nbsp;</td>
-            </tr>
+           
         </table>
     </div>
     </form>
