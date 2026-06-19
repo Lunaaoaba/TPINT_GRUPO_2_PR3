@@ -71,7 +71,13 @@
     <Content Include="Imagenes\IconoClinica.png" />
     <Content Include="Imagenes\ICONO_LISTADO.png" />
     <Content Include="Imagenes\ICON_medico.png" />
+    <Content Include="Imagenes\ICON_Paciente.png" />
+    <Content Include="Imagenes\ICON_Turnos.png" />
     <Content Include="Vistas\ABML_Medico.aspx" />
+    <Content Include="Vistas\ABML_Pacientes.aspx" />
+    <Content Include="Vistas\ABML_Turnos.aspx" />
+    <Content Include="Vistas\InicioAdmin.aspx" />
+    <Content Include="Vistas\InicioMedico.aspx" />
     <Content Include="Vistas\LoginMedicos.aspx" />
     <Content Include="Vistas\Menu_Listados.aspx" />
     <Content Include="Web.config" />
@@ -84,6 +90,34 @@
     </Compile>
     <Compile Include="Vistas\ABML_Medico.aspx.designer.cs">
       <DependentUpon>ABML_Medico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\ABML_Pacientes.aspx.cs">
+      <DependentUpon>ABML_Pacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\ABML_Pacientes.aspx.designer.cs">
+      <DependentUpon>ABML_Pacientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\ABML_Turnos.aspx.cs">
+      <DependentUpon>ABML_Turnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\ABML_Turnos.aspx.designer.cs">
+      <DependentUpon>ABML_Turnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\InicioAdmin.aspx.cs">
+      <DependentUpon>InicioAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\InicioAdmin.aspx.designer.cs">
+      <DependentUpon>InicioAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\InicioMedico.aspx.cs">
+      <DependentUpon>InicioMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\InicioMedico.aspx.designer.cs">
+      <DependentUpon>InicioMedico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\LoginMedicos.aspx.cs">
       <DependentUpon>LoginMedicos.aspx</DependentUpon>

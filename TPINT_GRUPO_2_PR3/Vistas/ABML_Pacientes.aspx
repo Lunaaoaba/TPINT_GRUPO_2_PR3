@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ABML_Medico.aspx.cs" Inherits="TPINT_GRUPO_2_PR3.Vistas.ABML_Medico" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ABML_Pacientes.aspx.cs" Inherits="TPINT_GRUPO_2_PR3.Vistas.ABML_Pacientes" %>
 
 <!DOCTYPE html>
 
@@ -13,9 +13,6 @@
         }
         body {
         background-color:#277343;
-        justify-content: center;
-        align-items: center;
-        display: flex;
         }
 
         .tamanioBoton {
@@ -43,13 +40,13 @@
             <tr>
                 <td>&nbsp;</td>
                 <td align="center">
-                    <asp:Image ID="ICON_medico" ImageUrl="~/Imagenes/ICON_medico.png" runat="server" />
+                    <asp:Image ID="ICON_Paciente" ImageUrl="~/Imagenes/ICON_paciente.png" runat="server" Height="54px" Width="54px" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
-                <td align="center">Seleccione una Acción:</td>
+                <td align="center">seleccione una Acción:</td>
                 <td>&nbsp;</td>
             </tr>
             <tr style="height:1px;">
@@ -61,20 +58,7 @@
             <tr>
                 <td>&nbsp;</td>
                 <td align="center">
-                    <asp:Button ID="AgregarMedico" runat="server" Text="Agregar/Modificar Médico" CssClass="tamanioBoton" />
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td align="center">
-                    <asp:Button ID="ListarMedicos" runat="server" Text="Listar/Eliminar Médicos" CssClass="tamanioBoton" />
+                    <asp:Button ID="AgregarModificarTurno" runat="server" Text="Agregar/Modificar Turno" CssClass="tamanioBoton" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
@@ -86,13 +70,18 @@
             <tr>
                 <td>&nbsp;</td>
                 <td align="center">
-                    <asp:Button ID="ReportesMedicos" runat="server" Text="Reportes de Médicos" CssClass="tamanioBoton" />
+                    <asp:Button ID="ListarEliminarTurno" runat="server" Text="Listar/Eliminar Turno" CssClass="tamanioBoton" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
-           
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
         </table>
     </div>
     </form>
     </body>
 </html>
+

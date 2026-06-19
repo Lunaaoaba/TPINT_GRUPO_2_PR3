@@ -11,7 +11,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas
 {
 
 
-    public partial class ABML_Medico
+    public partial class InicioMedico
     {
 
         /// <summary>
@@ -24,39 +24,30 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control ICON_medico.
+        /// Control ListarTurnos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ICON_medico;
+        protected global::System.Web.UI.WebControls.Button ListarTurnos;
 
         /// <summary>
-        /// Control AgregarMedico.
+        /// Control Opcion1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AgregarMedico;
+        protected global::System.Web.UI.WebControls.Button Opcion1;
 
         /// <summary>
-        /// Control ListarMedicos.
+        /// Control Opcion2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ListarMedicos;
-
-        /// <summary>
-        /// Control ReportesMedicos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ReportesMedicos;
+        protected global::System.Web.UI.WebControls.Button Opcion2;
     }
 }
