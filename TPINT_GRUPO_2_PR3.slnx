@@ -1,3 +1,6 @@
 <Solution>
-  <Project Path="TPINT_GRUPO_2_PR3/TPINT_GRUPO_2_PR3.csproj" Id="c294bb7e-96e7-44f7-b015-96bf76743d9a" />
+  <Project Path="DATOS/DATOS.csproj" Id="0bbf5ab8-9272-4447-b47b-fcb9a553441b" />
+  <Project Path="ENTIDADES/ENTIDADES.csproj" Id="8ece7256-c715-462e-8e55-3d5a41642098" />
+  <Project Path="NEGOCIO/NEGOCIO.csproj" Id="18571591-f3fc-43a8-aa06-adf049991c89" />
+  <Project Path="TPINT_GRUPO_2_PR3/VISTAS.csproj" Id="c294bb7e-96e7-44f7-b015-96bf76743d9a" />
 </Solution>
