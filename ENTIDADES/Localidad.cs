@@ -8,7 +8,7 @@ namespace ENTIDADES
 {
     public class Localidad
     {
-        public int id_localidad { get; set; }
+        public int id_loc { get; set; }
         public string nombre_loc { get; set; }
         public Provincia id_pro { get; set; }
     }
