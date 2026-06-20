@@ -18,7 +18,6 @@ namespace ENTIDADES
         public Localidad Localidad { get; set; } 
         public string Email { get; set; }
         public string Telefono { get; set; }
-        public bool Activo { get; set; }
 
         public string NombreCompleto => $"{Apellido}, {Nombre}";
     }
