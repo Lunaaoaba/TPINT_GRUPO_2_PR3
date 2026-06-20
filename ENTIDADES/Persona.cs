@@ -8,18 +8,16 @@ namespace ENTIDADES
 {
     public abstract class Persona
     {
-        public string Dni { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public char Sexo { get; set; }   
-        public string Nacionalidad { get; set; }
-        public DateTime FechaNacimiento { get; set; }
-        public string Direccion { get; set; }
-        public Localidad Localidad { get; set; } 
-        public string Email { get; set; }
-        public string Telefono { get; set; }
-        public bool Activo { get; set; }
-
-        public string NombreCompleto => $"{Apellido}, {Nombre}";
+        public string dni { get; set; }
+        public string nombre { get; set; }
+        public string apellido { get; set; }
+        public char sexo { get; set; }   
+        public string nacionalidad { get; set; }
+        public DateTime fechaNacimiento { get; set; }
+        public string direccion { get; set; }
+        public Localidad localidad { get; set; } 
+        public string email { get; set; }
+        public string telefono { get; set; }
+        public string nombreCompleto => $"{apellido}, {nombre}";
     }
 }

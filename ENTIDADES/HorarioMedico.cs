@@ -8,12 +8,12 @@ namespace ENTIDADES
 {
     public class HorarioMedico
     {
-        public int HorarioId { get; set; }
-        public int MedicoId { get; set; }
-        public int DiaSemana { get; set; }     // 1=Lunes ... 7=Domingo
-        public TimeSpan HoraInicio { get; set; }
-        public TimeSpan HoraFin { get; set; }
-        public bool Activo { get; set; }
+        public int horarioId { get; set; }
+        public int medicoId { get; set; }
+        public int diaSemana { get; set; }     // 1=Lunes ... 7=Domingo
+        public TimeSpan horaInicio { get; set; }
+        public TimeSpan horaFin { get; set; }
+        public bool activo { get; set; }
 
         public string NombreDia
         {
