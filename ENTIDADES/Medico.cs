@@ -14,13 +14,12 @@ namespace ENTIDADES
             Horarios = new List<HorarioMedico>();
         }
 
-        public int MedicoId { get; set; }
-        public string Legajo { get; set; }
-        public Especialidad Especialidad { get; set; }   
-        public List<HorarioMedico> Horarios { get; set; }   
-        public Usuario Credenciales { get; set; }          
-        public bool Activo { get; set; }
-
+        public int id_medico { get; set; }
+        public string legajo { get; set; }
+        public Especialidad especialidad { get; set; }   
+        public List<HorarioMedico> horarios { get; set; }   
+        public Usuario credenciales { get; set; }          
+        public bool activo { get; set; }
         
     }
 }
