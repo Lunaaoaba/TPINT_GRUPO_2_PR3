@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ENTIDADES
 {
-    internal class Localidad
+    public class Localidad
     {
+        public int IdLocalidad { get; set; }
+        public string Nombre { get; set; }
+        public Provincia Provincia { get; set; }
     }
 }
