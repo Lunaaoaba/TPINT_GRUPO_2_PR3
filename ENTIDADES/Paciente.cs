@@ -12,9 +12,7 @@ namespace ENTIDADES
         private bool Activo_pac;
 
         public Paciente() {}
-
         public Paciente(int idPac) { Id_pac = idPac; }
-
         public Paciente(int idPac, string dni, string nombre, string apellido, char sexo,
                          string nacionalidad, DateTime fechaNacimiento, string direccion,
                          Localidad idLoc, string email, string telefono, bool activoPac)
@@ -37,7 +35,6 @@ namespace ENTIDADES
         {   get { return Id_pac; }
             set { Id_pac = value; }
         }
-
         public bool activo_pac
         {   get { return Activo_pac; }
             set { Activo_pac = value; }
