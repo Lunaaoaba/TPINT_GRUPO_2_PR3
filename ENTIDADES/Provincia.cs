@@ -8,7 +8,7 @@ namespace ENTIDADES
 {
     public class Provincia
     {
-        public int id_provincia { get; set; }
-        public string nombre { get; set; }
+        public int id_pro { get; set; }
+        public string nombre_pro { get; set; }
     }
 }

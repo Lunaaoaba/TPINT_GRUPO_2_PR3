@@ -8,7 +8,7 @@ namespace ENTIDADES
 {
     public class Especialidad
     {
-        public int id_especialidad { get; set; }
-        public string nombre { get; set; }
+        public int id_esp { get; set; }
+        public string nombre_esp { get; set; }
     }
 }

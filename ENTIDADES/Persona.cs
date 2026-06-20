@@ -13,11 +13,11 @@ namespace ENTIDADES
         public string apellido { get; set; }
         public char sexo { get; set; }   
         public string nacionalidad { get; set; }
-        public DateTime fechaNacimiento { get; set; }
+        public DateTime fecha_nacimiento { get; set; }
         public string direccion { get; set; }
         public Localidad localidad { get; set; } 
         public string email { get; set; }
         public string telefono { get; set; }
-        public string nombreCompleto => $"{apellido}, {nombre}";
+        public string nombre_completo => $"{apellido}, {nombre}";
     }
 }
