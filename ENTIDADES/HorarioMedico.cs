@@ -8,20 +8,20 @@ namespace ENTIDADES
 {
     public class HorarioMedico
     {
-        public int horarioId { get; set; }
-        public int medicoId { get; set; }
-        public int diaSemana { get; set; }     // 1=Lunes ... 7=Domingo
-        public TimeSpan horaInicio { get; set; }
-        public TimeSpan horaFin { get; set; }
-        public bool activo { get; set; }
+        public int id_hor { get; set; }
+        public int id_med { get; set; }
+        public int dia_semana_hor { get; set; }     // 1=Lunes ... 7=Domingo
+        public TimeSpan hora_inicio_hor { get; set; }
+        public TimeSpan hora_fin_hor { get; set; }
+        public bool activo_hor { get; set; }
 
-        public string NombreDia
+        public string nombre_dia
         {
             get
             {
                 string[] dias = { "", "Lunes", "Martes", "Miercoles",
-                                   "Jueves", "Viernes", "Sabado", "Domingo" };
-                return (diaSemana >= 1 && diaSemana <= 7) ? dias[diaSemana] : "";
+                                  "Jueves", "Viernes", "Sabado", "Domingo" };
+                return (dia_semana_hor >= 1 && dia_semana_hor <= 7) ? dias[dia_semana_hor] : "";
             }
         }
     }

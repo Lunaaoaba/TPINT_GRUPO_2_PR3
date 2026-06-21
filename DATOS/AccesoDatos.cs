@@ -10,7 +10,11 @@ namespace DATOS
 {
     public class AccesoDatos
     {
-        String ruta = @"Data Source=localhost\sqlexpress; Initial Catalog = BDD_TPI_GRUPO_2_PR3; Integrated Security = True; Trust Server Certificate=True";
+        private string ruta = @"Data Source=localhost\sqlexpress; Initial Catalog = BDD_TPI_GRUPO_2_PR3; Integrated Security = True; Trust Server Certificate=True";
+        public AccesoDatos()
+        {
+            ///CONSTRUCTOR VACIO    
+        }
         public AccesoDatos()
         {
             ///CONSTRUCTOR VACIO    
