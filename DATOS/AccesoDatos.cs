@@ -15,10 +15,6 @@ namespace DATOS
         {
             ///CONSTRUCTOR VACIO    
         }
-        public AccesoDatos()
-        {
-            ///CONSTRUCTOR VACIO    
-        }
 
         private SqlConnection ObtenerConexion()
         {
@@ -40,7 +36,6 @@ namespace DATOS
             }
             catch (Exception) { return null; }
         }
-
 
         public int EjecutarProcedimientoAlmacenado(SqlCommand comando, string procedimiento)
         {
