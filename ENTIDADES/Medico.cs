@@ -18,7 +18,7 @@ namespace ENTIDADES
         public string legajo_med { get; set; }
         public Especialidad id_esp { get; set; }
         public List<HorarioMedico> horarios { get; set; }   
-        //public Usuario credenciales { get; set; }          
+        public Usuario credenciales { get; set; }          
         public bool activo { get; set; }
         
     }

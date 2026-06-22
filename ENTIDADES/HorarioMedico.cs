@@ -20,7 +20,7 @@ namespace ENTIDADES
             get
             {
                 string[] dias = { "", "Lunes", "Martes", "Miercoles",
-                                   "Jueves", "Viernes", "Sabado", "Domingo" };
+                                  "Jueves", "Viernes", "Sabado", "Domingo" };
                 return (dia_semana_hor >= 1 && dia_semana_hor <= 7) ? dias[dia_semana_hor] : "";
             }
         }

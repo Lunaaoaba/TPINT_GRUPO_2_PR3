@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace DATOS
 {
-    internal class AccesoDatos
+    public class AccesoDatos
     {
         private string ruta = @"Data Source=localhost\sqlexpress; Initial Catalog = BDD_TPI_GRUPO_2_PR3; Integrated Security = True; Trust Server Certificate=True";
         public AccesoDatos()
@@ -35,6 +35,43 @@ namespace DATOS
                 return adapter;
             }
             catch (Exception) { return null; }
+        }
+
+        public int EjecutarProcedimientoAlmacenado(SqlCommand comando, string procedimiento)
+        {
+            SqlConnection conexion = ObtenerConexion();
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = procedimiento;
+            int filasCambiadas = comando.ExecuteNonQuery();
+            conexion.Close();
+            return filasCambiadas;
+        }
+        public Boolean existe(string consulta)
+        {
+            SqlConnection conexion = ObtenerConexion();
+            SqlCommand comando = new SqlCommand(consulta, conexion);
+            SqlDataReader leer = comando.ExecuteReader();
+            if (leer.Read())
+            {
+                conexion.Close();
+                return true;
+            }
+            else
+            {
+                conexion.Close();
+                return false;
+            }
+        }
+
+        public DataTable ObtenerTabla(string NombreTabla, string ConsultaSQL)
+        {
+            DataSet dataset = new DataSet();
+            SqlConnection conexion = ObtenerConexion();
+            SqlDataAdapter adaptador = ObtenerAdapter(ConsultaSQL, conexion);
+            adaptador.Fill(dataset, NombreTabla);
+            conexion.Close();
+            return dataset.Tables[NombreTabla];
         }
 
     }
