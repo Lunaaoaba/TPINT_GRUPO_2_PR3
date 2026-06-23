@@ -25,7 +25,7 @@ namespace DATOS
             return dataTable;
         }
 
-        public DataTable ObtenerTablaPaciente(Paciente paciente)
+        public DataTable ObtenerTablaPacientePorId(Paciente paciente)
         {
             DataTable dataTable = accesoDatos.ObtenerTabla("PACIENTE", "SELECT id_pac, dni_pac, nombre_pac, apellido_pac, sexo_pac, nacionalidad_pac, fecha_nacimiento_pac, direccion_pac, id_loc, email_pac, telefono_pac, activo_pac FROM PACIENTE WHERE id_pac = " + paciente.id_pac);
             return dataTable;

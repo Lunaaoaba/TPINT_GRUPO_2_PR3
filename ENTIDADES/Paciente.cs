@@ -12,12 +12,12 @@ namespace ENTIDADES
         private bool Activo_pac;
 
         public Paciente() {}
-        public Paciente(int idPac) { Id_pac = idPac; }
+        public Paciente(int idPac) { id_pac = idPac; }
         public Paciente(int idPac, string dni, string nombre, string apellido, char sexo,
                          string nacionalidad, DateTime fechaNacimiento, string direccion,
                          Localidad idLoc, string email, string telefono, bool activoPac)
         {
-            Id_pac = idPac;
+            id_pac = idPac;
             this.dni = dni;
             this.nombre = nombre;
             this.apellido = apellido;
