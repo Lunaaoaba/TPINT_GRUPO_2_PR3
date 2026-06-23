@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using NEGOCIO;
 
 namespace TPINT_GRUPO_2_PR3.Vistas
 {
@@ -11,7 +14,17 @@ namespace TPINT_GRUPO_2_PR3.Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            NegocioUsuario NEGOCIO = new NegocioUsuario();
+            DataTable dt = NEGOCIO.Login(txtUsuario.Text, txtContraseña.Text);
 
+            if (dt.Rows.Count > 0)
+            {
+                // Login successful
+            }
+            else
+            {
+                // Login failed
+            }
         }
     }
 }

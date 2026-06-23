@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Data.SqlClient;
 using DATOS;
 
 namespace NEGOCIO
@@ -11,11 +12,9 @@ namespace NEGOCIO
     public class NegocioUsuario
     {
         DaoUsuario dao = new DaoUsuario();
-        public DataTable Login(string usuario,
-                               string password)
+        public DataTable Login(string usuario, string password)
         {
-            return dao.ObtenerUsuario(usuario,
-                                      password);
+            return dao.ObtenerUsuario(usuario, password);
         }
     }
 }

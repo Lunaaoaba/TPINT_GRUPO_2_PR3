@@ -69,19 +69,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><H2>Repetir Contraseña</H2></td>
-                    <td>
-                        <asp:TextBox ID="txtRepetirContraseña" runat="server"></asp:TextBox>
-                    </td>
-                    <td>
-                        <asp:CompareValidator ID="CompareValidator3" runat="server" ControlToValidate="txtRepetirContraseña" ErrorMessage="CompareValidator" Visible="False"></asp:CompareValidator>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtRepetirContraseña" ErrorMessage="RequiredFieldValidator" Visible="False"></asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
                     <td>&nbsp;</td>
                     <td>
-                        <asp:Button ID="BtnSession" runat="server" Text="Iniciar Sesión" OnClick="Page_Load" />
+                        <asp:Button ID="BtnSession" runat="server" Text="Iniciar Sesión" OnClick="BtnSession_Click" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>
