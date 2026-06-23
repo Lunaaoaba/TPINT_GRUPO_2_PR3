@@ -67,6 +67,7 @@
                     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="id_pac" DataSourceID="sds_paciente" CellPadding="4" ForeColor="#333333" GridLines="Horizontal">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
+                            <asp:CommandField ShowSelectButton="True" />
                             <asp:BoundField DataField="id_pac" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="id_pac" />
                             <asp:BoundField DataField="dni_pac" HeaderText="DNI" SortExpression="dni_pac" />
                             <asp:BoundField DataField="nombre_pac" HeaderText="Nombre" SortExpression="nombre_pac" />
