@@ -8,16 +8,68 @@ namespace ENTIDADES
 {
     public abstract class Persona
     {
-        public string dni { get; set; }
-        public string nombre { get; set; }
-        public string apellido { get; set; }
-        public char sexo { get; set; }   
-        public string nacionalidad { get; set; }
-        public DateTime fecha_nacimiento { get; set; }
-        public string direccion { get; set; }
-        public Localidad id_loc { get; set; } 
-        public string email { get; set; }
-        public string telefono { get; set; }
-        public string nombre_completo => $"{apellido}, {nombre}";
+        private string Dni;
+        private string Nombre;
+        private string Apellido;
+        private char Sexo;
+        private string Nacionalidad;
+        private DateTime Fecha_nacimiento;
+        private string Direccion;
+        private Localidad Id_loc;
+        private string Email;
+        private string Telefono;
+
+        public string dni
+        {
+            get { return Dni; }
+            set { Dni = value; }
+        }
+        public string nombre
+        {
+            get { return Nombre; }
+            set { Nombre = value; }
+        }
+        public string apellido
+        {
+            get { return Apellido; }
+            set { Apellido = value; }
+        }
+        public char sexo
+        {
+            get { return Sexo; }
+            set { Sexo = value; }
+        }
+        public string nacionalidad
+        {
+            get { return Nacionalidad; }
+            set { Nacionalidad = value; }
+        }
+        public DateTime fecha_nacimiento
+        {
+            get { return Fecha_nacimiento; }
+            set { Fecha_nacimiento = value; }
+        }
+        public string direccion
+        {
+            get { return Direccion; }
+            set { Direccion = value; }
+        }
+        public Localidad id_loc
+        {
+            get { return Id_loc; }
+            set { Id_loc = value; }
+        }
+        public string email
+        {
+            get { return Email; }
+            set { Email = value; }
+        }
+        public string telefono
+        {
+            get { return Telefono; }
+            set { Telefono = value; }
+        }
+
+        public string nombre_completo { get {return $"{Apellido}, {Nombre}"; } }
     }
 }
