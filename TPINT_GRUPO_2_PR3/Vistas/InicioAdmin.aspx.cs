@@ -11,7 +11,29 @@ namespace TPINT_GRUPO_2_PR3.Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblNombreUsuario.Text = Session["usuario"].ToString();
 
+        }
+
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("Login.aspx");
+        }
+
+        protected void btnMedicos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ABML_Medico.aspx");
+        }
+
+        protected void btnPacientes_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ABML_Paciente.aspx");
+        }
+
+        protected void btnTurnos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ABML_Turno.aspx");
         }
     }
 }
