@@ -45,7 +45,9 @@
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
-                    <td>&nbsp</td>
+                    <td>
+                        <asp:Label ID="lblErrorEstaMal" runat="server" ForeColor="Red" Text="Esta Mal En Algo..." Visible="False"></asp:Label>
+                    </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>

@@ -33,6 +33,15 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         protected global::System.Web.UI.WebControls.Image Image1;
 
         /// <summary>
+        /// Control lblErrorEstaMal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrorEstaMal;
+
+        /// <summary>
         /// Control txtUsuario.
         /// </summary>
         /// <remarks>

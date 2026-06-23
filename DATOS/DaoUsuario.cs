@@ -14,12 +14,12 @@ namespace DATOS
         AccesoDatos accesoDatos = new AccesoDatos();
         public bool ExisteUsuario(string usuario, string password)
         {
-            string consulta = "SELECT * FROM USUARIO" + "'WHERE username_usu='" + usuario + "' AND password_usu='" + password + "' AND activo_usu=1'";
+            string consulta = "SELECT * FROM USUARIO" + "WHERE username_usu='" + usuario + "'" + " AND password_usu='" + password + "'" + " AND activo_usu=1";
             return accesoDatos.existe(consulta);
         }
         public DataTable ObtenerUsuario(string usuario, string password)
         {
-            string consulta = "SELECT * FROM USUARIO" + "'WHERE username_usu='" + usuario + "' AND password_usu='" + password + "'";
+            string consulta = "SELECT * FROM USUARIO" + " WHERE username_usu='" + usuario + "'" + " AND password_usu='" + password + "'" + " AND activo_usu=1";
             return accesoDatos.ObtenerTabla("USUARIO", consulta);
         }
     }
