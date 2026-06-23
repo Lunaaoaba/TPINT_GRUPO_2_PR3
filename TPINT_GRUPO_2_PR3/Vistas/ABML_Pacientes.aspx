@@ -25,7 +25,7 @@
             justify-content: center;
             align-items: center;
             background-color: white !important;
-            width: 300px;
+            width: 1000px;
             padding: 20px 30px;
             border-radius: 8px;
             box-sizing: border-box;
@@ -49,16 +49,10 @@
                 <td align="center">seleccione una Acción:</td>
                 <td>&nbsp;</td>
             </tr>
-            <tr style="height:1px;">
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-
             <tr>
                 <td>&nbsp;</td>
                 <td align="center">
-                    <asp:Button ID="AgregarModificarTurno" runat="server" Text="Agregar/Modificar Turno" CssClass="tamanioBoton" />
+                    <asp:Button ID="AgregarPaciente" runat="server" Text="Agregar un nuevo paciente" CssClass="tamanioBoton" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
@@ -70,17 +64,43 @@
             <tr>
                 <td>&nbsp;</td>
                 <td align="center">
-                    <asp:Button ID="ListarEliminarTurno" runat="server" Text="Listar/Eliminar Turno" CssClass="tamanioBoton" />
+                    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="id_pac" DataSourceID="sds_paciente" CellPadding="4" ForeColor="#333333" GridLines="Horizontal">
+                        <AlternatingRowStyle BackColor="White" />
+                        <Columns>
+                            <asp:BoundField DataField="id_pac" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="id_pac" />
+                            <asp:BoundField DataField="dni_pac" HeaderText="DNI" SortExpression="dni_pac" />
+                            <asp:BoundField DataField="nombre_pac" HeaderText="Nombre" SortExpression="nombre_pac" />
+                            <asp:BoundField DataField="apellido_pac" HeaderText="Apellido" SortExpression="apellido_pac" />
+                            <asp:BoundField DataField="nacionalidad_pac" HeaderText="Nacionalidad" SortExpression="nacionalidad_pac" />
+                            <asp:BoundField DataField="sexo_pac" HeaderText="Sexo" SortExpression="sexo_pac" />
+                            <asp:BoundField DataField="fecha_nacimiento_pac" HeaderText="Fecha de Nacimiento" SortExpression="fecha_nacimiento_pac" />
+                            <asp:BoundField DataField="direccion_pac" HeaderText="Dirección" SortExpression="direccion_pac" />
+                            <asp:BoundField DataField="id_loc" HeaderText="Localidad" SortExpression="id_loc" />
+                            <asp:BoundField DataField="email_pac" HeaderText="Email" SortExpression="email_pac" />
+                            <asp:BoundField DataField="telefono_pac" HeaderText="Teléfono" SortExpression="telefono_pac" />
+                        </Columns>
+                        <EditRowStyle BackColor="#7C6F57" />
+                        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#E3EAEB" />
+                        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+                        <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                        <SortedAscendingHeaderStyle BackColor="#246B61" />
+                        <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                        <SortedDescendingHeaderStyle BackColor="#15524A" />
+                    </asp:GridView>
                 </td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td></td>
                 <td>&nbsp;</td>
             </tr>
         </table>
     </div>
+    <asp:SqlDataSource ID="sds_paciente" runat="server" ConnectionString="<%$ ConnectionStrings:ClinicaBDConnectionString %>" ProviderName="<%$ ConnectionStrings:ClinicaBDConnectionString.ProviderName %>" SelectCommand="SELECT [id_pac], [dni_pac], [nombre_pac], [apellido_pac], [nacionalidad_pac], [sexo_pac], [fecha_nacimiento_pac], [direccion_pac], [id_loc], [email_pac], [telefono_pac] FROM [PACIENTE]"></asp:SqlDataSource>
     </form>
     </body>
 </html>
