@@ -52,7 +52,8 @@ namespace NEGOCIO
             medico.activo = activo;
 
             int filasAfectadas = dao.AgregarMedico(medico);
-            return filasAfectadas == 1;
+            if (filasAfectadas == 1) return true;
+            else return false;
         }
 
         public bool EliminarMedico(int id)
