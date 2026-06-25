@@ -52,7 +52,7 @@
             <tr>
                 <td>&nbsp;</td>
                 <td align="center">
-                    <asp:Button ID="AgregarPaciente" runat="server" Text="Agregar un nuevo paciente" CssClass="tamanioBoton" />
+                    <asp:Button ID="AgregarPaciente" runat="server" Text="Agregar un nuevo paciente" OnClick="AgregarPaciente_Click" CssClass="tamanioBoton" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
@@ -66,7 +66,10 @@
             <tr>
                 <td>&nbsp;</td>
                 <td align="center">
-                    <asp:GridView ID="gvPaciente" runat="server" AllowPaging="True" AutoGenerateColumns="False" 
+                    
+                        <asp:Label ID="lblTitulo" runat="server" Text="Listado de Pacientes" Font-Bold="True" Font-Size="Large"></asp:Label>
+                    <div style="overflow-x: auto; width: 100%; align-items: center; align-content: center;"> 
+                    <asp:GridView ID="gvPaciente" runat="server" Width="95%" HorizontalAlign="Center" AllowPaging="True" AutoGenerateColumns="False" 
                         DataKeyNames="id_pac" PageSize="10" 
                         OnRowCommand="gvPaciente_RowCommand"
                         OnRowEditing="gvPaciente_RowEditing"
@@ -114,10 +117,17 @@
                                 <ItemTemplate><asp:Label runat="server" Text='<%# Eval("direccion_pac") %>'></asp:Label></ItemTemplate>
                                 <EditItemTemplate><asp:TextBox ID="txt_eit_direccion" runat="server" Text='<%# Bind("direccion_pac") %>'></asp:TextBox></EditItemTemplate>
                             </asp:TemplateField>
+
+
+                            <%--REVISAR PQ DA ERROR--%>
+
                             <asp:TemplateField HeaderText="Localidad">
-                                <%-- REVISAR PQ DA ERROR<ItemTemplate><asp:Label runat="server" Text='<%# Eval("NombreLocalidad") %>'></asp:Label></ItemTemplate>--%>
+                                 <ItemTemplate><asp:Label runat="server" Text='<%# Eval("nombre_loc") %>'></asp:Label></ItemTemplate>
                                 <EditItemTemplate><asp:DropDownList ID="ddl_eit_localidad" runat="server"></asp:DropDownList></EditItemTemplate>
                             </asp:TemplateField>
+
+                            <%--REVISAR PQ DA ERROR--%>
+
                             <asp:TemplateField HeaderText="Email">
                                 <ItemTemplate><asp:Label runat="server" Text='<%# Eval("email_pac") %>'></asp:Label></ItemTemplate>
                                 <EditItemTemplate><asp:TextBox ID="txt_eit_email" runat="server" Text='<%# Bind("email_pac") %>'></asp:TextBox></EditItemTemplate>
@@ -142,6 +152,8 @@
                         <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
                         <RowStyle BackColor="#E3EAEB" />
                     </asp:GridView>
+                        </div>
+
                 </td>
                 <td>&nbsp;</td>
             </tr>

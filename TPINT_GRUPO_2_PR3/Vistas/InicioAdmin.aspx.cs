@@ -18,7 +18,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             Session.Abandon();
-            Response.Redirect("LoginMedico.aspx");
+            Response.Redirect("LoginMedicoS.aspx");
         }
 
         protected void btnMedicos_Click(object sender, EventArgs e)

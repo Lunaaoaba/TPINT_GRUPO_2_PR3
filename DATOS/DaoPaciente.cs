@@ -21,7 +21,7 @@ namespace DATOS
 
         public DataTable ObtenerTablaPaciente()
         {
-            DataTable dataTable = accesoDatos.ObtenerTabla("PACIENTE", "SELECT id_pac, dni_pac, nombre_pac, apellido_pac, sexo_pac, nacionalidad_pac, fecha_nacimiento_pac, direccion_pac, id_loc, email_pac, telefono_pac, activo_pac FROM PACIENTE");
+            DataTable dataTable = accesoDatos.ObtenerTabla("PACIENTE", "SELECT P.id_pac, P.dni_pac, P.nombre_pac, P.apellido_pac, " + "P.sexo_pac, P.nacionalidad_pac, P.fecha_nacimiento_pac, " + "P.direccion_pac, P.id_loc, L.nombre_loc, " + "P.email_pac, P.telefono_pac, P.activo_pac " + "FROM PACIENTE P " + "INNER JOIN LOCALIDAD L ON P.id_loc = L.id_loc");
             return dataTable;
         }
 

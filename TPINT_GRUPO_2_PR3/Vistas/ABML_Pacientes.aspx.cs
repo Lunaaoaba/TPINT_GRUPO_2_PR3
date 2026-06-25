@@ -119,5 +119,10 @@ namespace TPINT_GRUPO_2_PR3.Vistas
             }
             else return;
         }
+
+        protected void AgregarPaciente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
