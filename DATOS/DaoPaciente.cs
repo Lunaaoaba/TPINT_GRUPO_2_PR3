@@ -31,6 +31,8 @@ namespace DATOS
             return dataTable;
         }
 
+        // agregado de abml uwu//
+        // agregar
         public void ParametrosAgregarPaciente(ref SqlCommand comando, Paciente paciente)
         {
             SqlParameter parametro = new SqlParameter();
@@ -49,7 +51,7 @@ namespace DATOS
             parametro = comando.Parameters.Add("@DireccionPaciente", SqlDbType.VarChar);
             parametro.Value = paciente.direccion;
             parametro = comando.Parameters.Add("@IdLocalidad", SqlDbType.Int);
-            parametro.Value = paciente.id_loc;
+            parametro.Value = paciente.id_loc != null ? paciente.id_loc.id_loc : (object)DBNull.Value;
             parametro = comando.Parameters.Add("@EmailPaciente", SqlDbType.VarChar);
             parametro.Value = paciente.email;
             parametro = comando.Parameters.Add("@TelefonoPaciente", SqlDbType.VarChar);
@@ -62,7 +64,8 @@ namespace DATOS
             ParametrosAgregarPaciente(ref comando, paciente);
             return accesoDatos.EjecutarProcedimientoAlmacenado(comando, "spAgregarPaciente");
         }
- 
+
+        // eliminar
         private void ParametrosEliminarPaciente(ref SqlCommand comando, Paciente paciente)
         {
             SqlParameter parametro = new SqlParameter();
@@ -75,6 +78,29 @@ namespace DATOS
             SqlCommand sqlCommand = new SqlCommand();
             ParametrosEliminarPaciente(ref sqlCommand, paciente);
             return accesoDatos.EjecutarProcedimientoAlmacenado(sqlCommand, "spEliminarPaciente");
+        }
+
+        // modificar
+        private void ParametrosModificarPaciente(ref SqlCommand comando, Paciente paciente)
+        {
+            comando.Parameters.Add("@id_pac", SqlDbType.Int).Value = paciente.id_pac;
+            comando.Parameters.Add("@DniPaciente", SqlDbType.VarChar).Value = paciente.dni;
+            comando.Parameters.Add("@NombrePaciente", SqlDbType.VarChar).Value = paciente.nombre;
+            comando.Parameters.Add("@ApellidoPaciente", SqlDbType.VarChar).Value = paciente.apellido;
+            comando.Parameters.Add("@SexoPaciente", SqlDbType.VarChar).Value = paciente.sexo;
+            comando.Parameters.Add("@NacionalidadPaciente", SqlDbType.VarChar).Value = paciente.nacionalidad;
+            comando.Parameters.Add("@FechaNacimientoPaciente", SqlDbType.Date).Value = paciente.fecha_nacimiento;
+            comando.Parameters.Add("@DireccionPaciente", SqlDbType.VarChar).Value = paciente.direccion;
+            comando.Parameters.Add("@IdLocalidad", SqlDbType.Int).Value = paciente.id_loc.id_loc;
+            comando.Parameters.Add("@EmailPaciente", SqlDbType.VarChar).Value = paciente.email;
+            comando.Parameters.Add("@TelefonoPaciente", SqlDbType.VarChar).Value = paciente.telefono;
+        }
+
+        public int ModificarPaciente(Paciente paciente)
+        {
+            SqlCommand comando = new SqlCommand();
+            ParametrosModificarPaciente(ref comando, paciente);
+            return accesoDatos.EjecutarProcedimientoAlmacenado(comando, "spModificarPaciente");
         }
     }
 }
