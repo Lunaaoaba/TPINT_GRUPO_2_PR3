@@ -85,20 +85,20 @@
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="DNI">
                                 <ItemTemplate><asp:Label runat="server" Text='<%# Eval("dni_pac") %>'></asp:Label></ItemTemplate>
-                                <EditItemTemplate><asp:TextBox ID="txt_eit_dni" runat="server" Text='<%# Bind("dni_pac") %>'></asp:TextBox></EditItemTemplate>
+                                <EditItemTemplate><asp:TextBox ID="txt_dni" runat="server" Text='<%# Bind("dni_pac") %>'></asp:TextBox></EditItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Nombre">
                                 <ItemTemplate><asp:Label runat="server" Text='<%# Eval("nombre_pac") %>'></asp:Label></ItemTemplate>
-                                <EditItemTemplate><asp:TextBox ID="txt_eit_nombre" runat="server" Text='<%# Bind("nombre_pac") %>'></asp:TextBox></EditItemTemplate>
+                                <EditItemTemplate><asp:TextBox ID="txt_nombre" runat="server" Text='<%# Bind("nombre_pac") %>'></asp:TextBox></EditItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Apellido">
                                 <ItemTemplate><asp:Label runat="server" Text='<%# Eval("apellido_pac") %>'></asp:Label></ItemTemplate>
-                                <EditItemTemplate><asp:TextBox ID="txt_eit_apellido" runat="server" Text='<%# Bind("apellido_pac") %>'></asp:TextBox></EditItemTemplate>
+                                <EditItemTemplate><asp:TextBox ID="txt_apellido" runat="server" Text='<%# Bind("apellido_pac") %>'></asp:TextBox></EditItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Sexo">
                                 <ItemTemplate><asp:Label runat="server" Text='<%# Eval("sexo_pac") %>'></asp:Label></ItemTemplate>
                                 <EditItemTemplate>
-                                    <asp:DropDownList ID="ddl_eit_sexo" runat="server">
+                                    <asp:DropDownList ID="ddl_sexo" runat="server">
                                         <asp:ListItem Value="M">M</asp:ListItem>
                                         <asp:ListItem Value="F">F</asp:ListItem>
                                         <asp:ListItem Value="X">X</asp:ListItem>
@@ -107,15 +107,15 @@
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Nacionalidad">
                                 <ItemTemplate><asp:Label runat="server" Text='<%# Eval("nacionalidad_pac") %>'></asp:Label></ItemTemplate>
-                                <EditItemTemplate><asp:TextBox ID="txt_eit_nacionalidad" runat="server" Text='<%# Bind("nacionalidad_pac") %>'></asp:TextBox></EditItemTemplate>
+                                <EditItemTemplate><asp:TextBox ID="txt_nacionalidad" runat="server" Text='<%# Bind("nacionalidad_pac") %>'></asp:TextBox></EditItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Fecha Nacimiento">
                                 <ItemTemplate><asp:Label runat="server" Text='<%# Eval("fecha_nacimiento_pac", "{0:dd/MM/yyyy}") %>'></asp:Label></ItemTemplate>
-                                <EditItemTemplate><asp:TextBox ID="txt_eit_fechaNac" runat="server" Text='<%# Bind("fecha_nacimiento_pac", "{0:yyyy-MM-dd}") %>'></asp:TextBox></EditItemTemplate>
+                                <EditItemTemplate><asp:TextBox ID="txt_fechaNac" runat="server" Text='<%# Bind("fecha_nacimiento_pac", "{0:yyyy-MM-dd}") %>'></asp:TextBox></EditItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Dirección">
                                 <ItemTemplate><asp:Label runat="server" Text='<%# Eval("direccion_pac") %>'></asp:Label></ItemTemplate>
-                                <EditItemTemplate><asp:TextBox ID="txt_eit_direccion" runat="server" Text='<%# Bind("direccion_pac") %>'></asp:TextBox></EditItemTemplate>
+                                <EditItemTemplate><asp:TextBox ID="txt_direccion" runat="server" Text='<%# Bind("direccion_pac") %>'></asp:TextBox></EditItemTemplate>
                             </asp:TemplateField>
 
 
@@ -123,18 +123,18 @@
 
                             <asp:TemplateField HeaderText="Localidad">
                                  <ItemTemplate><asp:Label runat="server" Text='<%# Eval("nombre_loc") %>'></asp:Label></ItemTemplate>
-                                <EditItemTemplate><asp:DropDownList ID="ddl_eit_localidad" runat="server"></asp:DropDownList></EditItemTemplate>
+                                <EditItemTemplate><asp:DropDownList ID="ddl_localidad" runat="server"></asp:DropDownList></EditItemTemplate>
                             </asp:TemplateField>
 
                             <%--REVISAR PQ DA ERROR--%>
 
                             <asp:TemplateField HeaderText="Email">
                                 <ItemTemplate><asp:Label runat="server" Text='<%# Eval("email_pac") %>'></asp:Label></ItemTemplate>
-                                <EditItemTemplate><asp:TextBox ID="txt_eit_email" runat="server" Text='<%# Bind("email_pac") %>'></asp:TextBox></EditItemTemplate>
+                                <EditItemTemplate><asp:TextBox ID="txt_email" runat="server" Text='<%# Bind("email_pac") %>'></asp:TextBox></EditItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Teléfono">
                                 <ItemTemplate><asp:Label runat="server" Text='<%# Eval("telefono_pac") %>'></asp:Label></ItemTemplate>
-                                <EditItemTemplate><asp:TextBox ID="txt_eit_telefono" runat="server" Text='<%# Bind("telefono_pac") %>'></asp:TextBox></EditItemTemplate>
+                                <EditItemTemplate><asp:TextBox ID="txt_telefono" runat="server" Text='<%# Bind("telefono_pac") %>'></asp:TextBox></EditItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Acciones">
                                 <ItemTemplate>

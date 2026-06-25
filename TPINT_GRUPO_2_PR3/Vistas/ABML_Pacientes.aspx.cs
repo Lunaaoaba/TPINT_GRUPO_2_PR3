@@ -31,8 +31,9 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         }
         protected void gvPaciente_RowEditing(object sender, GridViewEditEventArgs e)
         {
-            gvPaciente.EditIndex = e.NewEditIndex;
-            CargarGridView();
+            // revisar tmb por lo mencionado en el comentario de RowUpdating
+            //gvPaciente.EditIndex = e.NewEditIndex;
+            //CargarGridView();
         }
 
         protected void gvPaciente_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
@@ -62,62 +63,15 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         {
             GridViewRow fila = gvPaciente.Rows[e.RowIndex];
             int idPac = Convert.ToInt32(gvPaciente.DataKeys[e.RowIndex].Value);
-
-            string dni = ((TextBox)fila.FindControl("txt_eit_dni")).Text;
-            string nombre = ((TextBox)fila.FindControl("txt_eit_nombre")).Text;
-            string apellido = ((TextBox)fila.FindControl("txt_eit_apellido")).Text;
-            char sexo = Convert.ToChar(((DropDownList)fila.FindControl("ddl_eit_sexo")).SelectedValue);
-            string nacionalidad = ((TextBox)fila.FindControl("txt_eit_nacionalidad")).Text;
-            // DATETIME NECESITA ALGUN TIPO DE VALIDACION
-            DateTime fechaNac = Convert.ToDateTime(((TextBox)fila.FindControl("txt_eit_fechaNac")).Text);
-            string direccion = ((TextBox)fila.FindControl("txt_eit_direccion")).Text;
-            int idLoc = Convert.ToInt32(((DropDownList)fila.FindControl("ddl_eit_localidad")).SelectedValue);
-            string email = ((TextBox)fila.FindControl("txt_eit_email")).Text;
-            string telefono = ((TextBox)fila.FindControl("txt_eit_telefono")).Text;
-
-            if (!negocioPaciente.ModificarPaciente(idPac, dni, nombre, apellido, sexo, nacionalidad, fechaNac, direccion, idLoc, email, telefono))
-            {
-                lblMensaje.ForeColor = System.Drawing.Color.Red;
-                lblMensaje.Visible = true;
-                lblMensaje.Text = "Error al actualizar el paciente.";
-            }
-            else
-            {
-                lblMensaje.ForeColor = System.Drawing.Color.Green;
-                lblMensaje.Visible = true;
-                lblMensaje.Text = "Paciente actualizado correctamente.";
-                gvPaciente.EditIndex = -1;
-                CargarGridView();
-
-            }
+            // agregar una redireccion a otro webform para facilidad de edicion
+            // ya que no se puede editar el gridview por la cantidad de campos que tiene el paciente
+            // muy util para replicar con medico y etc
         }
 
         // no anda, no sirve, rehacer esto
         protected void gvPaciente_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName == "EliminarCustom")
-            {
-                int idPac = Convert.ToInt32(e.CommandArgument);
-
-                if (Session["ConfirmandoBorrado"] != null && (int)Session["ConfirmandoBorrado"] != idPac) Session["ConfirmandoBorrado"] = null;
-                if (Session["ConfirmandoBorrado"] == null)
-                {
-                    Session["ConfirmandoBorrado"] = idPac;
-                    lblMensaje.Text = "¿Estás seguro? Presiona Eliminar nuevamente para confirmar.";
-                    lblMensaje.ForeColor = System.Drawing.Color.Orange;
-                    lblMensaje.Visible = true;
-                }
-                else
-                {
-                    negocioPaciente.EliminarPaciente((int)Session["ConfirmandoBorrado"]);
-                    Session["ConfirmandoBorrado"] = null;
-                    lblMensaje.Text = "Paciente eliminado correctamente.";
-                    lblMensaje.ForeColor = System.Drawing.Color.Green;
-                    lblMensaje.Visible = true;
-                    CargarGridView();
-                }
-            }
-            else return;
+                //agregar esto donde vaya -> OnClientClick = "return confirm('¿Eliminar paciente?');"
         }
 
         protected void AgregarPaciente_Click(object sender, EventArgs e)
