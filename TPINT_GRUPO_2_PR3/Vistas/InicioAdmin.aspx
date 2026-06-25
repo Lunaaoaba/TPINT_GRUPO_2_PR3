@@ -67,8 +67,8 @@
             <td class="auto-style2">| Icono Clínica |</td>
             <td class="auto-style5">| Inicio |</td>
             <td class="auto-style4">| Nombre de Clínica |</td>
-            <td class="auto-style6">| Nombre Usuario |</td>
-            <td>| Cerrar Sesión |</td>
+            <td class="auto-style6"> <asp:Label ID="lblNombreUsuario" runat="server"></asp:Label> </td>
+            <td><asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión" CssClass="tamanioBoton"  BorderColor="White" OnClick="btnCerrarSesion_Click" /> </td>
         </tr>
     </table>
 </div>
@@ -93,21 +93,21 @@
         <tr>
             <td class="auto-style8">&nbsp;</td>
             <td align="center" class="auto-style7">
-                <asp:Button ID="btnMedicos" runat="server" Text="Medicos" CssClass="tamanioBoton" />
+                <asp:Button ID="btnMedicos" runat="server" Text="Medicos" CssClass="tamanioBoton" OnClick="btnMedicos_Click" />
             </td>
             <td class="auto-style8">&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style8">&nbsp;</td>
             <td align="center" class="auto-style7">
-                <asp:Button ID="btnPacientes" runat="server" Text="Pacientes" CssClass="tamanioBoton" />
+                <asp:Button ID="btnPacientes" runat="server" Text="Pacientes" CssClass="tamanioBoton" OnClick="btnPacientes_Click" />
             </td>
             <td class="auto-style8">&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style8">&nbsp;</td>
             <td align="center" class="auto-style7">
-                <asp:Button ID="btnTurnos" runat="server" Text="Turnos" CssClass="tamanioBoton" />
+                <asp:Button ID="btnTurnos" runat="server" Text="Turnos" CssClass="tamanioBoton" OnClick="btnTurnos_Click"/>
             </td>
             <td class="auto-style8">&nbsp;</td>
         </tr>

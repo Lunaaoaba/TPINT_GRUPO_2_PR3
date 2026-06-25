@@ -25,7 +25,7 @@
             justify-content: center;
             align-items: center;
             background-color: white !important;
-            width: 300px;
+            width: 1000px;
             padding: 20px 30px;
             border-radius: 8px;
             box-sizing: border-box;
@@ -49,34 +49,117 @@
                 <td align="center">seleccione una Acción:</td>
                 <td>&nbsp;</td>
             </tr>
-            <tr style="height:1px;">
+            <tr>
                 <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td align="center">
+                    <asp:Button ID="AgregarPaciente" runat="server" Text="Agregar un nuevo paciente" OnClick="AgregarPaciente_Click" CssClass="tamanioBoton" />
+                </td>
                 <td>&nbsp;</td>
             </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <asp:Label ID="lblMensaje" runat="server" Text="" Visible="False" align="center"></asp:Label>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td align="center">
+                    
+                        <asp:Label ID="lblTitulo" runat="server" Text="Listado de Pacientes" Font-Bold="True" Font-Size="Large"></asp:Label>
+                    <div style="overflow-x: auto; width: 100%; align-items: center; align-content: center;"> 
+                    <asp:GridView ID="gvPaciente" runat="server" Width="95%" HorizontalAlign="Center" AllowPaging="True" AutoGenerateColumns="False" 
+                        DataKeyNames="id_pac" PageSize="10" 
+                        OnRowCommand="gvPaciente_RowCommand"
+                        OnRowEditing="gvPaciente_RowEditing"
+                        OnRowCancelingEdit="gvPaciente_RowCancelingEdit"
+                        OnRowUpdating="gvPaciente_RowUpdating"
+                        OnRowDataBound="gvPaciente_RowDataBound"
+                        CellPadding="4" ForeColor="#333333" GridLines="Horizontal">
+    
+                        <AlternatingRowStyle BackColor="White" />
+                        <Columns>
+                            <asp:TemplateField HeaderText="ID">
+                                <ItemTemplate><asp:Label runat="server" Text='<%# Eval("id_pac") %>'></asp:Label></ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="DNI">
+                                <ItemTemplate><asp:Label runat="server" Text='<%# Eval("dni_pac") %>'></asp:Label></ItemTemplate>
+                                <EditItemTemplate><asp:TextBox ID="txt_eit_dni" runat="server" Text='<%# Bind("dni_pac") %>'></asp:TextBox></EditItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Nombre">
+                                <ItemTemplate><asp:Label runat="server" Text='<%# Eval("nombre_pac") %>'></asp:Label></ItemTemplate>
+                                <EditItemTemplate><asp:TextBox ID="txt_eit_nombre" runat="server" Text='<%# Bind("nombre_pac") %>'></asp:TextBox></EditItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Apellido">
+                                <ItemTemplate><asp:Label runat="server" Text='<%# Eval("apellido_pac") %>'></asp:Label></ItemTemplate>
+                                <EditItemTemplate><asp:TextBox ID="txt_eit_apellido" runat="server" Text='<%# Bind("apellido_pac") %>'></asp:TextBox></EditItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Sexo">
+                                <ItemTemplate><asp:Label runat="server" Text='<%# Eval("sexo_pac") %>'></asp:Label></ItemTemplate>
+                                <EditItemTemplate>
+                                    <asp:DropDownList ID="ddl_eit_sexo" runat="server">
+                                        <asp:ListItem Value="M">M</asp:ListItem>
+                                        <asp:ListItem Value="F">F</asp:ListItem>
+                                        <asp:ListItem Value="X">X</asp:ListItem>
+                                    </asp:DropDownList>
+                                </EditItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Nacionalidad">
+                                <ItemTemplate><asp:Label runat="server" Text='<%# Eval("nacionalidad_pac") %>'></asp:Label></ItemTemplate>
+                                <EditItemTemplate><asp:TextBox ID="txt_eit_nacionalidad" runat="server" Text='<%# Bind("nacionalidad_pac") %>'></asp:TextBox></EditItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Fecha Nacimiento">
+                                <ItemTemplate><asp:Label runat="server" Text='<%# Eval("fecha_nacimiento_pac", "{0:dd/MM/yyyy}") %>'></asp:Label></ItemTemplate>
+                                <EditItemTemplate><asp:TextBox ID="txt_eit_fechaNac" runat="server" Text='<%# Bind("fecha_nacimiento_pac", "{0:yyyy-MM-dd}") %>'></asp:TextBox></EditItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Dirección">
+                                <ItemTemplate><asp:Label runat="server" Text='<%# Eval("direccion_pac") %>'></asp:Label></ItemTemplate>
+                                <EditItemTemplate><asp:TextBox ID="txt_eit_direccion" runat="server" Text='<%# Bind("direccion_pac") %>'></asp:TextBox></EditItemTemplate>
+                            </asp:TemplateField>
 
-            <tr>
-                <td>&nbsp;</td>
-                <td align="center">
-                    <asp:Button ID="AgregarModificarTurno" runat="server" Text="Agregar/Modificar Turno" CssClass="tamanioBoton" />
+
+                            <%--REVISAR PQ DA ERROR--%>
+
+                            <asp:TemplateField HeaderText="Localidad">
+                                 <ItemTemplate><asp:Label runat="server" Text='<%# Eval("nombre_loc") %>'></asp:Label></ItemTemplate>
+                                <EditItemTemplate><asp:DropDownList ID="ddl_eit_localidad" runat="server"></asp:DropDownList></EditItemTemplate>
+                            </asp:TemplateField>
+
+                            <%--REVISAR PQ DA ERROR--%>
+
+                            <asp:TemplateField HeaderText="Email">
+                                <ItemTemplate><asp:Label runat="server" Text='<%# Eval("email_pac") %>'></asp:Label></ItemTemplate>
+                                <EditItemTemplate><asp:TextBox ID="txt_eit_email" runat="server" Text='<%# Bind("email_pac") %>'></asp:TextBox></EditItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Teléfono">
+                                <ItemTemplate><asp:Label runat="server" Text='<%# Eval("telefono_pac") %>'></asp:Label></ItemTemplate>
+                                <EditItemTemplate><asp:TextBox ID="txt_eit_telefono" runat="server" Text='<%# Bind("telefono_pac") %>'></asp:TextBox></EditItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Acciones">
+                                <ItemTemplate>
+                                    <asp:Button ID="btnEditar" runat="server" Text="Editar" CommandName="Edit" />
+                                    <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CommandName="EliminarCustom" CommandArgument='<%# Eval("id_pac") %>' />
+                                </ItemTemplate>
+                                <EditItemTemplate>
+                                    <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" CommandName="Update" />
+                                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CommandName="Cancel" />
+                                </EditItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                        <EditRowStyle BackColor="#7C6F57" />
+                        <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#E3EAEB" />
+                    </asp:GridView>
+                        </div>
+
                 </td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td align="center">
-                    <asp:Button ID="ListarEliminarTurno" runat="server" Text="Listar/Eliminar Turno" CssClass="tamanioBoton" />
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td></td>
                 <td>&nbsp;</td>
             </tr>
         </table>
