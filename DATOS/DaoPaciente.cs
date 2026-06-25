@@ -36,25 +36,25 @@ namespace DATOS
         public void ParametrosAgregarPaciente(ref SqlCommand comando, Paciente paciente)
         {
             SqlParameter parametro = new SqlParameter();
-            parametro = comando.Parameters.Add("@DniPaciente", SqlDbType.VarChar);
+            parametro = comando.Parameters.Add("@dni_pac", SqlDbType.VarChar);
             parametro.Value = paciente.dni;
-            parametro = comando.Parameters.Add("@NombrePaciente", SqlDbType.VarChar);
+            parametro = comando.Parameters.Add("@nombre_pac", SqlDbType.VarChar);
             parametro.Value = paciente.nombre;
-            parametro = comando.Parameters.Add("@ApellidoPaciente", SqlDbType.VarChar);
+            parametro = comando.Parameters.Add("@apellido_pac", SqlDbType.VarChar);
             parametro.Value = paciente.apellido;
-            parametro = comando.Parameters.Add("@SexoPaciente", SqlDbType.VarChar);
+            parametro = comando.Parameters.Add("@sexo_pac", SqlDbType.VarChar);
             parametro.Value = paciente.sexo;
-            parametro = comando.Parameters.Add("@NacionalidadPaciente", SqlDbType.VarChar);
+            parametro = comando.Parameters.Add("@nacionalidad_pac", SqlDbType.VarChar);
             parametro.Value = paciente.nacionalidad;
-            parametro = comando.Parameters.Add("@FechaNacimientoPaciente", SqlDbType.Date);
+            parametro = comando.Parameters.Add("@fecha_nacimiento_pac", SqlDbType.Date);
             parametro.Value = paciente.fecha_nacimiento;
-            parametro = comando.Parameters.Add("@DireccionPaciente", SqlDbType.VarChar);
+            parametro = comando.Parameters.Add("@direccion_pac", SqlDbType.VarChar);
             parametro.Value = paciente.direccion;
-            parametro = comando.Parameters.Add("@IdLocalidad", SqlDbType.Int);
+            parametro = comando.Parameters.Add("@id_loc", SqlDbType.Int);
             parametro.Value = paciente.id_loc != null ? paciente.id_loc.id_loc : (object)DBNull.Value;
-            parametro = comando.Parameters.Add("@EmailPaciente", SqlDbType.VarChar);
+            parametro = comando.Parameters.Add("@email_pac", SqlDbType.VarChar);
             parametro.Value = paciente.email;
-            parametro = comando.Parameters.Add("@TelefonoPaciente", SqlDbType.VarChar);
+            parametro = comando.Parameters.Add("@telefono_pac", SqlDbType.VarChar);
             parametro.Value = paciente.telefono;
         }
 
