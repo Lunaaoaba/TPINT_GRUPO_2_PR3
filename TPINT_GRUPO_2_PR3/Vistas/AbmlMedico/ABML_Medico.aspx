@@ -61,7 +61,7 @@
             <tr>
                 <td>&nbsp;</td>
                 <td align="center">
-                    <asp:Button ID="AgregarMedico" runat="server" Text="Agregar/Modificar Médico" CssClass="tamanioBoton" />
+                    <asp:Button ID="AgregarMedico" runat="server" Text="Agregar Medico" CssClass="tamanioBoton" OnClick="AgregarMedico_Click" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
@@ -74,7 +74,7 @@
             <tr>
                 <td>&nbsp;</td>
                 <td align="center">
-                    <asp:Button ID="ListarMedicos" runat="server" Text="Listar/Eliminar Médicos" CssClass="tamanioBoton" />
+                    <asp:Button ID="ListarMedicos" runat="server" Text="Listar Médicos" CssClass="tamanioBoton" OnClick="ListarMedicos_Click" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
@@ -86,7 +86,7 @@
             <tr>
                 <td>&nbsp;</td>
                 <td align="center">
-                    <asp:Button ID="ReportesMedicos" runat="server" Text="Reportes de Médicos" CssClass="tamanioBoton" />
+                    <asp:Button ID="ReportesMedicos" runat="server" Text="Eliminar Médicos" CssClass="tamanioBoton" OnClick="ReportesMedicos_Click" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
