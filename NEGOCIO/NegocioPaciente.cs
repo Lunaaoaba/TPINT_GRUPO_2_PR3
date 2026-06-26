@@ -24,9 +24,16 @@ namespace NEGOCIO
             return dao.ObtenerTablaPacientePorId(paciente);
         }
 
-        public bool AgregarPaciente(string dni, string nombre, string apellido, char sexo, string nacionalidad, DateTime fecha_nacimiento, string direccion, int id_loc, string email, string telefono)
+        public bool AgregarPaciente(string dni, string nombre, string apellido, char sexo, string nacionalidad, DateTime fecha_nacimiento, string direccion, int id_loc, string email, string telefono, out string mensaje)
         {
+            if (dao.ExistePacientePorDni(dni, 0))
+            {
+                mensaje = "Ya existe un paciente con ese DNI.";
+                return false;
+            }
+
             Localidad localidad = new Localidad();
+            localidad.id_loc = id_loc;
 
             paciente.dni = dni;
             paciente.nombre = nombre;
@@ -40,8 +47,13 @@ namespace NEGOCIO
             paciente.telefono = telefono;
 
             int filasAfectadas = dao.AgregarPaciente(paciente);
-            if (filasAfectadas == 1) return true;
-            else return false;
+            if (filasAfectadas == 1)
+            { 
+                mensaje = "Paciente agregado correctamente.";
+                return true;
+            }
+            mensaje = "No se pudo agregar el paciente.";
+            return false;
         }
 
         public bool EliminarPaciente(int id)
@@ -52,8 +64,14 @@ namespace NEGOCIO
             else return false;
         }
 
-        public bool ModificarPaciente(int id, string dni, string nombre, string apellido, char sexo, string nacionalidad, DateTime fecha_nacimiento, string direccion, int id_loc, string email, string telefono)
+        public bool ModificarPaciente(int id, string dni, string nombre, string apellido, char sexo, string nacionalidad, DateTime fecha_nacimiento, string direccion, int id_loc, string email, string telefono, out string mensaje)
         {
+            if (dao.ExistePacientePorDni(dni, id))
+            {
+                mensaje = "Ya existe otro paciente con ese DNI.";
+                return false;
+            }
+
             Paciente paciente = new Paciente();
             Localidad localidad = new Localidad();
             localidad.id_loc = id_loc;
@@ -71,8 +89,13 @@ namespace NEGOCIO
             paciente.telefono = telefono;
 
             int filasAfectadas = dao.ModificarPaciente(paciente);
-            if (filasAfectadas == 1) return true;
-            else return false;
+            if (filasAfectadas == 1)
+            {
+                mensaje = "Paciente modificado correctamente.";
+                return true;
+            }
+            mensaje = "No se pudo modificar el paciente.";
+            return false;
         }
     }
 }   

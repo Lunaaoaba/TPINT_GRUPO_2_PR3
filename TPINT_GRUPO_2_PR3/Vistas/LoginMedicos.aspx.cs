@@ -29,11 +29,11 @@ namespace TPINT_GRUPO_2_PR3.Vistas
 
                 if (dt.Rows[0]["tipo_usu"].ToString() == "Admin")
                 {
-                    Response.Redirect("InicioAdmin.aspx");
+                    Response.Redirect("Admin/InicioAdmin.aspx");
                 }
                 else
                 {
-                    Response.Redirect("InicioMedico.aspx");
+                    Response.Redirect("Medico/InicioMedico.aspx");
                 }
             }
             else
