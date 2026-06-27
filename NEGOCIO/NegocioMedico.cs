@@ -24,7 +24,21 @@ namespace NEGOCIO
             return dao.ObtenerTablaMedicoPorId(medico);
         }
 
-        public bool AgregarMedico(string dni, string nombre, string apellido, char sexo, string nacionalidad, DateTime fecha_nacimiento, string direccion, int id_loc, string email, string telefono, string legajo, int id_esp, int id_usuario, bool activo)
+        public bool AgregarMedico(
+            string dni,
+            string nombre,
+            string apellido,
+            char sexo,
+            string nacionalidad,
+            DateTime fecha_nacimiento,
+            string direccion,
+            int id_loc,
+            string email,
+            string telefono,
+            string legajo,
+            int id_esp,
+            int id_usuario,
+            bool activo)
         {
             Localidad localidad = new Localidad();
             Especialidad especialidad = new Especialidad();
@@ -37,8 +51,10 @@ namespace NEGOCIO
             medico.nacionalidad = nacionalidad;
             medico.fecha_nacimiento = fecha_nacimiento;
             medico.direccion = direccion;
+
             localidad.id_loc = id_loc;
             medico.id_loc = localidad;
+
             medico.email = email;
             medico.telefono = telefono;
             medico.legajo_med = legajo;
@@ -52,8 +68,8 @@ namespace NEGOCIO
             medico.activo = activo;
 
             int filasAfectadas = dao.AgregarMedico(medico);
-            if (filasAfectadas == 1) return true;
-            else return false;
+
+            return filasAfectadas == 1;
         }
 
         public bool EliminarMedico(int id)
@@ -63,4 +79,5 @@ namespace NEGOCIO
             return filasAfectadas == 1;
         }
     }
+
 }

@@ -56,12 +56,11 @@ display: flex;
             <br />
             <div>
                
-                <table style="width: 482px">
+                <table>
                     <tr>
                         <td></td>
                         <td>&nbsp;</td>
                         <td> <h2>Agregar Medico</h2></td>
-                        <td> &nbsp;</td>
                     </tr>
                     <tr>
                         <td>
@@ -74,9 +73,6 @@ display: flex;
                             <asp:TextBox ID="txtNombreMedico" runat="server" ></asp:TextBox>
 
                         </td>
-                        <td>
-
-                            &nbsp;</td>
                     </tr>
                      <tr>
                 <td>
@@ -90,10 +86,6 @@ display: flex;
 
               </td>
 
-                    <td>
-
-                        &nbsp;</td>
-
             </tr>
                      <tr>
                 <td>
@@ -105,10 +97,6 @@ display: flex;
 
                         <asp:TextBox ID="txtDNI" runat="server"></asp:TextBox>
                          </td>
-
-                    <td>
-
-                        &nbsp;</td>
 
             </tr>
                      <tr>
@@ -122,10 +110,6 @@ display: flex;
                         <asp:TextBox ID="txtFechaNacimiento" runat="server" TextMode="Date"></asp:TextBox>
                          </td>
 
-                    <td>
-
-                        &nbsp;</td>
-
             </tr>
                      <tr>
                 <td>
@@ -138,24 +122,17 @@ display: flex;
                         <asp:TextBox ID="txtLegajo" runat="server"></asp:TextBox>
                          </td>
 
-                    <td>
-
-                        &nbsp;</td>
-
             </tr>
                     <tr>
-                        <td class="auto-style1">
+                        <td>
                             <asp:Label ID="lblDesc" runat="server" Text="Especialidad :"></asp:Label>
                         </td>
-                        <td class="auto-style1">
-                            </td>
-                        <td class="auto-style1">
+                        <td>
+                            &nbsp;</td>
+                        <td>
 
                             <asp:DropDownList ID="ddlEspecialidad" runat="server" >
                             </asp:DropDownList>
-
-                        </td>
-                        <td class="auto-style1">
 
                         </td>
                     </tr>
@@ -170,9 +147,6 @@ display: flex;
                             <asp:DropDownList ID="ddlLocalidad" runat="server">
                             </asp:DropDownList>
                         </td>
-                        <td>
-
-                            &nbsp;</td>
                         <tr>
     <td>
         <asp:Label ID="Nacionalidad" runat="server" Text="Nacionalidad :"></asp:Label>
@@ -184,9 +158,6 @@ display: flex;
         <asp:DropDownList ID="ddlNacionalidad" runat="server">
         </asp:DropDownList>
                             </td>
-    <td>
-
-        &nbsp;</td>
                             <tr>
     <td class="auto-style1">
         <asp:Label ID="Sexo" runat="server" Text="Sexo :"></asp:Label>
@@ -198,9 +169,6 @@ display: flex;
         <asp:DropDownList ID="ddlSexo" runat="server">
         </asp:DropDownList>
                                 </td>
-    <td class="auto-style1">
-
-        &nbsp;</td>
                     </tr>
                     <tr>
                         <td class="auto-style2">
@@ -212,9 +180,6 @@ display: flex;
                             <asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox>
                             </td>
 
-                        <td class="auto-style2"> 
-                            &nbsp;</td>
-
                         <tr>
     <td class="auto-style2">
         <asp:Label ID="lblEmail" runat="server" Text="Email :"></asp:Label>
@@ -224,8 +189,6 @@ display: flex;
                             <td>
                                 <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
                             </td>
-                            <td>
-                                &nbsp;</td>
                             <tr>
     <td class="auto-style2">
         <asp:Label ID="lblTelefono" runat="server" Text="Telefono :"></asp:Label>
@@ -236,10 +199,9 @@ display: flex;
 
                             <asp:TextBox ID="txtTelefono" runat="server"></asp:TextBox>
                         </td>
-                        <td class="auto-style2">
 
-                            &nbsp;</td>
                     </tr>
+
                             <tr>
     <td class="auto-style2">
         &nbsp;</td>
@@ -247,15 +209,14 @@ display: flex;
         &nbsp;</td>
                         <td class="auto-style2">
 
-                            <asp:Label ID="LabelTitulo" runat="server" Text="Generar Usuario"></asp:Label>
+                            <asp:Label ID="Label2" runat="server" Text="Generar Usuario"></asp:Label>
                         </td>
-                        <td class="auto-style2">
 
-                            &nbsp;</td>
                     </tr>
+
                             <tr>
     <td class="auto-style2">
-        <asp:Label ID="lblNombreUsuarioMed" runat="server" Text="Nombre de Usuario :"></asp:Label>
+        <asp:Label ID="NombreUsuarioMed" runat="server" Text="Nombre de Usuario :"></asp:Label>
     </td>
     <td class="auto-style2">
         &nbsp;</td>
@@ -263,10 +224,9 @@ display: flex;
 
                             <asp:TextBox ID="txtNombreUsuarioMed" runat="server"></asp:TextBox>
                         </td>
-                        <td class="auto-style2">
 
-                            &nbsp;</td>
                     </tr>
+
                             <tr>
     <td class="auto-style2">
         <asp:Label ID="lblContraseñaMed" runat="server" Text="Contraseña :"></asp:Label>
@@ -277,10 +237,9 @@ display: flex;
 
                             <asp:TextBox ID="txtContraseñaMed" runat="server"></asp:TextBox>
                         </td>
-                        <td class="auto-style2">
 
-                            &nbsp;</td>
                     </tr>
+
                             <tr>
     <td class="auto-style2">
         <asp:Label ID="lblRepetirContraseñaMed" runat="server" Text="Repetir Contraseña :"></asp:Label>
@@ -290,14 +249,15 @@ display: flex;
                         <td class="auto-style2">
 
                             <asp:TextBox ID="txtRepetirContraseñaMed" runat="server"></asp:TextBox>
+                            <asp:Label ID="mensajeContraseñas" runat="server" Text="Label"></asp:Label>
                         </td>
-                        <td class="auto-style2">
 
-                            <asp:Label ID="mensajeContraseñas" runat="server" Text="Label" Visible="False"></asp:Label>
-                        </td>
                     </tr>
+
                     <tr>
                         <td>
+                            
+                            <asp:Label ID="lblExito" runat="server" Visible="False"></asp:Label>
                             
                         </td>
                         <td>
@@ -305,12 +265,7 @@ display: flex;
                             &nbsp;</td>
                         <td>
                             
-                            <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" Width="78px" OnClick="btnAceptar_Click"  />
-                            
-                        </td>
-                        <td>
-                            
-                            <asp:Label ID="lblExito" runat="server" Visible="False"></asp:Label>
+                            <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" Width="78px" OnClick="btnAceptar_Click1"  />
                             
                         </td>
                     </tr>

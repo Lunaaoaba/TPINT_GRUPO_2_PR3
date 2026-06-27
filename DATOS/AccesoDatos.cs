@@ -48,6 +48,7 @@ namespace DATOS
             conexion.Close();
             return filasCambiadas;
         }
+
         public int EjecutarProcedimientoEscalar(SqlCommand comando, string procedimiento)
         {
             SqlConnection conexion = ObtenerConexion();

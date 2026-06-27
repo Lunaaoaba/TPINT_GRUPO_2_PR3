@@ -1,11 +1,11 @@
-﻿using System;
+﻿using ENTIDADES;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ENTIDADES;
 
 
 namespace DATOS
@@ -22,6 +22,7 @@ namespace DATOS
         {
             string consulta = "SELECT * FROM USUARIO" + " WHERE username_usu='" + usuario + "'" + " AND password_usu='" + password + "'" + " AND activo_usu=1";
             return accesoDatos.ObtenerTabla("USUARIO", consulta);
+
         }
         public int AgregarUsuario(Usuario usuario)
         {

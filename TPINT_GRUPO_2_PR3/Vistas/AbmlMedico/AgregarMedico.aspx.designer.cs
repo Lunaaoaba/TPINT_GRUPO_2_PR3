@@ -249,22 +249,22 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         protected global::System.Web.UI.WebControls.TextBox txtTelefono;
 
         /// <summary>
-        /// Control LabelTitulo.
+        /// Control Label2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelTitulo;
+        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control lblNombreUsuarioMed.
+        /// Control NombreUsuarioMed.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreUsuarioMed;
+        protected global::System.Web.UI.WebControls.Label NombreUsuarioMed;
 
         /// <summary>
         /// Control txtNombreUsuarioMed.
@@ -321,15 +321,6 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         protected global::System.Web.UI.WebControls.Label mensajeContraseñas;
 
         /// <summary>
-        /// Control btnAceptar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAceptar;
-
-        /// <summary>
         /// Control lblExito.
         /// </summary>
         /// <remarks>
@@ -337,6 +328,15 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblExito;
+
+        /// <summary>
+        /// Control btnAceptar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAceptar;
 
         /// <summary>
         /// Control lblMensaje.

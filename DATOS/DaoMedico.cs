@@ -6,7 +6,6 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace DATOS
 {
     public class DaoMedico
@@ -15,19 +14,19 @@ namespace DATOS
 
         public Boolean existeMedico(Medico medico)
         {
-            String consulta = "SELECT id_med, dni_med, nombre_med, apellido_med, sexo_med, nacionalidad_med, fecha_nacimiento_med, direccion_med, id_loc, email_med, telefono_med, legajo_med, id_esp, id_usuario, activo_med FROM MEDICO";
+            String consulta = "SELECT id_med, dni_med, nombre_med, apellido_med, sexo_med, nacionalidad_med, fecha_nacimiento_med, direccion_med, id_loc, email_med, telefono_med, legajo_med, id_esp, id_usu, activo_med FROM MEDICO";
             return accesoDatos.existe(consulta);
         }
 
         public DataTable ObtenerTablaMedico()
         {
-            DataTable dataTable = accesoDatos.ObtenerTabla("MEDICO", "SELECT id_med, dni_med, nombre_med, apellido_med, sexo_med, nacionalidad_med, fecha_nacimiento_med, direccion_med, id_loc, email_med, telefono_med, legajo_med, id_esp, id_usuario, activo_med FROM MEDICO");
+            DataTable dataTable = accesoDatos.ObtenerTabla("MEDICO", "SELECT id_med, dni_med, nombre_med, apellido_med, sexo_med, nacionalidad_med, fecha_nacimiento_med, direccion_med, id_loc, email_med, telefono_med, legajo_med, id_esp, id_usu, activo_med FROM MEDICO");
             return dataTable;
         }
 
         public DataTable ObtenerTablaMedicoPorId(Medico medico)
         {
-            DataTable dataTable = accesoDatos.ObtenerTabla("MEDICO", "SELECT id_med, dni_med, nombre_med, apellido_med, sexo_med, nacionalidad_med, fecha_nacimiento_med, direccion_med, id_loc, email_med, telefono_med, legajo_med, id_esp, id_usuario, activo_med FROM MEDICO WHERE id_med = " + medico.id_med);
+            DataTable dataTable = accesoDatos.ObtenerTabla("MEDICO", "SELECT id_med, dni_med, nombre_med, apellido_med, sexo_med, nacionalidad_med, fecha_nacimiento_med, direccion_med, id_loc, email_med, telefono_med, legajo_med, id_esp, id_usu, activo_med FROM MEDICO WHERE id_med = " + medico.id_med);
             return dataTable;
         }
 
@@ -85,4 +84,5 @@ namespace DATOS
             return accesoDatos.EjecutarProcedimientoAlmacenado(sqlCommand, "spEliminarMedico");
         }
     }
+
 }

@@ -6,15 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace NEGOCIO
 {
     public class NegocioEspecialidad
     {
-        DaoEspecialidad daoEspecialidad = new DaoEspecialidad();
+        DaoEspecialidad dao = new DaoEspecialidad();
 
-            public DataTable ObtenerEspecialidades()
+        public DataTable ObtenerEspecialidades()
         {
-            return daoEspecialidad.ObtenerEspecialidades();
+            return dao.ObtenerEspecialidades();
         }
     }
 }

@@ -11,7 +11,6 @@ namespace ENTIDADES
         private int Id_med;
         private string Legajo_med;
         private Especialidad Id_esp;
-        private string _nombreEspecialidad; 
         private List<HorarioMedico> Horarios;
         private Usuario Credenciales;
         private bool Activo;
@@ -36,10 +35,8 @@ namespace ENTIDADES
             this.id_loc = idLoc;
             this.email = email;
             this.telefono = telefono;
-           
             Legajo_med = legajoMed;
             Id_esp = idEsp;
-            
             Credenciales = credenciales;
             Activo = activo;
             Horarios = new List<HorarioMedico>();
@@ -57,7 +54,6 @@ namespace ENTIDADES
         {   get { return Id_esp; }
             set { Id_esp = value; }
         }
-      
         public List<HorarioMedico> horarios
         {   get { return Horarios; }
             set { Horarios = value; }
