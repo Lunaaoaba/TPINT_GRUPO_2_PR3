@@ -30,6 +30,9 @@ display: flex;
     box-sizing: border-box;
     margin: 0 auto;
 }
+        .auto-style1 {
+            height: 29px;
+        }
     </style>
 </head>
 <body>
@@ -53,46 +56,244 @@ display: flex;
             <br />
             <div>
                
-                <table>
+                <table style="width: 482px">
                     <tr>
                         <td></td>
+                        <td>&nbsp;</td>
                         <td> <h2>Agregar Medico</h2></td>
+                        <td> &nbsp;</td>
                     </tr>
                     <tr>
                         <td>
                             <asp:Label ID="lblNombreMedico" runat="server" Text="Nombre Medico :"></asp:Label>  
                         </td>
                         <td>
+                            &nbsp;</td>
+                        <td>
 
                             <asp:TextBox ID="txtNombreMedico" runat="server" ></asp:TextBox>
 
                         </td>
+                        <td>
+
+                            &nbsp;</td>
+                    </tr>
+                     <tr>
+                <td>
+                            <asp:Label ID="Label1" runat="server" Text="Apellido Medico :"></asp:Label>  
+                    </td>
+                <td>
+                            &nbsp;</td>
+                    <td>
+
+                     <asp:TextBox ID="txtApellidoMedico" runat="server" ></asp:TextBox>
+
+              </td>
+
+                    <td>
+
+                        &nbsp;</td>
+
+            </tr>
+                     <tr>
+                <td>
+                            <asp:Label ID="lblDNI" runat="server" Text="DNI :"></asp:Label>
+                    </td>
+                <td>
+                            &nbsp;</td>
+                    <td>
+
+                        <asp:TextBox ID="txtDNI" runat="server"></asp:TextBox>
+                         </td>
+
+                    <td>
+
+                        &nbsp;</td>
+
+            </tr>
+                     <tr>
+                <td>
+                            <asp:Label ID="lblFechaNacimiento" runat="server" Text="Fecha de Nacimiento :"></asp:Label>
+                    </td>
+                <td>
+                            &nbsp;</td>
+                    <td>
+
+                        <asp:TextBox ID="txtFechaNacimiento" runat="server" TextMode="Date"></asp:TextBox>
+                         </td>
+
+                    <td>
+
+                        &nbsp;</td>
+
+            </tr>
+                     <tr>
+                <td>
+                            <asp:Label ID="lblLegajo" runat="server" Text="Legajo :"></asp:Label>
+                    </td>
+                <td>
+                            &nbsp;</td>
+                    <td>
+
+                        <asp:TextBox ID="txtLegajo" runat="server"></asp:TextBox>
+                         </td>
+
+                    <td>
+
+                        &nbsp;</td>
+
+            </tr>
+                    <tr>
+                        <td class="auto-style1">
+                            <asp:Label ID="lblDesc" runat="server" Text="Especialidad :"></asp:Label>
+                        </td>
+                        <td class="auto-style1">
+                            </td>
+                        <td class="auto-style1">
+
+                            <asp:DropDownList ID="ddlEspecialidad" runat="server" >
+                            </asp:DropDownList>
+
+                        </td>
+                        <td class="auto-style1">
+
+                        </td>
                     </tr>
                     <tr>
                         <td>
-                            <asp:Label ID="lblDesc" runat="server" Text="Descripcion :"></asp:Label>
+                            <asp:Label ID="lblLocalidad" runat="server" Text="Localidad :"></asp:Label>
                         </td>
                         <td>
-
-                            <asp:TextBox ID="txtDescripcion" runat="server"></asp:TextBox>
-
-                        </td>
-                    </tr>
-                    <tr>
+                            &nbsp;</td>
                         <td>
-                            <asp:Label ID="lblProvincia" runat="server" Text="Provincia :"></asp:Label>
+
+                            <asp:DropDownList ID="ddlLocalidad" runat="server">
+                            </asp:DropDownList>
                         </td>
                         <td>
 
                             &nbsp;</td>
+                        <tr>
+    <td>
+        <asp:Label ID="Nacionalidad" runat="server" Text="Nacionalidad :"></asp:Label>
+    </td>
+    <td>
+        &nbsp;</td>
+    <td>
+
+        <asp:DropDownList ID="ddlNacionalidad" runat="server">
+        </asp:DropDownList>
+                            </td>
+    <td>
+
+        &nbsp;</td>
+                            <tr>
+    <td class="auto-style1">
+        <asp:Label ID="Sexo" runat="server" Text="Sexo :"></asp:Label>
+    </td>
+    <td class="auto-style1">
+        &nbsp;</td>
+    <td class="auto-style1">
+
+        <asp:DropDownList ID="ddlSexo" runat="server">
+        </asp:DropDownList>
+                                </td>
+    <td class="auto-style1">
+
+        &nbsp;</td>
                     </tr>
                     <tr>
                         <td class="auto-style2">
                             <asp:Label ID="lblDireccion" runat="server" Text="Direccion :"></asp:Label>
                         </td>
                         <td class="auto-style2">
-
+                            &nbsp;</td>
+                        <td class="auto-style2"> 
                             <asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox>
+                            </td>
+
+                        <td class="auto-style2"> 
+                            &nbsp;</td>
+
+                        <tr>
+    <td class="auto-style2">
+        <asp:Label ID="lblEmail" runat="server" Text="Email :"></asp:Label>
+    </td>
+    <td class="auto-style2">
+        &nbsp;</td>
+                            <td>
+                                <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+                            </td>
+                            <td>
+                                &nbsp;</td>
+                            <tr>
+    <td class="auto-style2">
+        <asp:Label ID="lblTelefono" runat="server" Text="Telefono :"></asp:Label>
+    </td>
+    <td class="auto-style2">
+        &nbsp;</td>
+                        <td class="auto-style2">
+
+                            <asp:TextBox ID="txtTelefono" runat="server"></asp:TextBox>
+                        </td>
+                        <td class="auto-style2">
+
+                            &nbsp;</td>
+                    </tr>
+                            <tr>
+    <td class="auto-style2">
+        &nbsp;</td>
+    <td class="auto-style2">
+        &nbsp;</td>
+                        <td class="auto-style2">
+
+                            <asp:Label ID="LabelTitulo" runat="server" Text="Generar Usuario"></asp:Label>
+                        </td>
+                        <td class="auto-style2">
+
+                            &nbsp;</td>
+                    </tr>
+                            <tr>
+    <td class="auto-style2">
+        <asp:Label ID="lblNombreUsuarioMed" runat="server" Text="Nombre de Usuario :"></asp:Label>
+    </td>
+    <td class="auto-style2">
+        &nbsp;</td>
+                        <td class="auto-style2">
+
+                            <asp:TextBox ID="txtNombreUsuarioMed" runat="server"></asp:TextBox>
+                        </td>
+                        <td class="auto-style2">
+
+                            &nbsp;</td>
+                    </tr>
+                            <tr>
+    <td class="auto-style2">
+        <asp:Label ID="lblContraseñaMed" runat="server" Text="Contraseña :"></asp:Label>
+    </td>
+    <td class="auto-style2">
+        &nbsp;</td>
+                        <td class="auto-style2">
+
+                            <asp:TextBox ID="txtContraseñaMed" runat="server"></asp:TextBox>
+                        </td>
+                        <td class="auto-style2">
+
+                            &nbsp;</td>
+                    </tr>
+                            <tr>
+    <td class="auto-style2">
+        <asp:Label ID="lblRepetirContraseñaMed" runat="server" Text="Repetir Contraseña :"></asp:Label>
+    </td>
+    <td class="auto-style2">
+        &nbsp;</td>
+                        <td class="auto-style2">
+
+                            <asp:TextBox ID="txtRepetirContraseñaMed" runat="server"></asp:TextBox>
+                        </td>
+                        <td class="auto-style2">
+
+                            <asp:Label ID="mensajeContraseñas" runat="server" Text="Label" Visible="False"></asp:Label>
                         </td>
                     </tr>
                     <tr>
@@ -101,7 +302,15 @@ display: flex;
                         </td>
                         <td>
                             
-                            <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" Width="78px"  />
+                            &nbsp;</td>
+                        <td>
+                            
+                            <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" Width="78px" OnClick="btnAceptar_Click"  />
+                            
+                        </td>
+                        <td>
+                            
+                            <asp:Label ID="lblExito" runat="server" Visible="False"></asp:Label>
                             
                         </td>
                     </tr>
