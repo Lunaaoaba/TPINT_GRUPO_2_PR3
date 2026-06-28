@@ -74,10 +74,10 @@
     <Content Include="Imagenes\ICON_Paciente.png" />
     <Content Include="Imagenes\ICON_Turnos.png" />
     <Content Include="Vistas\AbmlMedico\ABML_Medico.aspx" />
+    <Content Include="Vistas\AbmlMedico\ModificarMedico.aspx" />
     <Content Include="Vistas\ABML_Pacientes.aspx" />
     <Content Include="Vistas\ABML_Turnos.aspx" />
     <Content Include="Vistas\AbmlMedico\AgregarMedico.aspx" />
-    <Content Include="Vistas\AbmlMedico\EliminarMedico.aspx" />
     <Content Include="Vistas\InicioAdmin.aspx" />
     <Content Include="Vistas\InicioMedico.aspx" />
     <Content Include="Vistas\LoginMedicos.aspx" />
@@ -93,6 +93,13 @@
     </Compile>
     <Compile Include="Vistas\AbmlMedico\ABML_Medico.aspx.designer.cs">
       <DependentUpon>ABML_Medico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AbmlMedico\ModificarMedico.aspx.cs">
+      <DependentUpon>ModificarMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\AbmlMedico\ModificarMedico.aspx.designer.cs">
+      <DependentUpon>ModificarMedico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\ABML_Pacientes.aspx.cs">
       <DependentUpon>ABML_Pacientes.aspx</DependentUpon>
@@ -114,13 +121,6 @@
     </Compile>
     <Compile Include="Vistas\AbmlMedico\AgregarMedico.aspx.designer.cs">
       <DependentUpon>AgregarMedico.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\AbmlMedico\EliminarMedico.aspx.cs">
-      <DependentUpon>EliminarMedico.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas\AbmlMedico\EliminarMedico.aspx.designer.cs">
-      <DependentUpon>EliminarMedico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\InicioAdmin.aspx.cs">
       <DependentUpon>InicioAdmin.aspx</DependentUpon>

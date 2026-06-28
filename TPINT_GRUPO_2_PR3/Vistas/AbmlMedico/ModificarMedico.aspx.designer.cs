@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace TPINT_GRUPO_2_PR3.Vistas
+namespace TPINT_GRUPO_2_PR3.Vistas.AbmlMedico
 {
 
 
-    public partial class MostrarMedico
+    public partial class ModificarMedico
     {
 
         /// <summary>
@@ -24,30 +24,39 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control lblNombreUsuario.
+        /// Control lblNombreUsuarioModificar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreUsuario;
+        protected global::System.Web.UI.WebControls.Label lblNombreUsuarioModificar;
 
         /// <summary>
-        /// Control lblMensaje.
+        /// Control lblMensajeModificar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensaje;
+        protected global::System.Web.UI.WebControls.Label lblMensajeModificar;
 
         /// <summary>
-        /// Control gvMedicos.
+        /// Control gvMedicosModificar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvMedicos;
+        protected global::System.Web.UI.WebControls.GridView gvMedicosModificar;
+
+        /// <summary>
+        /// Control btnVolverModificar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVolverModificar;
     }
 }

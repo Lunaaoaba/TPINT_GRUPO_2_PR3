@@ -76,7 +76,14 @@ namespace NEGOCIO
         {
             medico.id_med = id;
             int filasAfectadas = dao.EliminarMedico(medico);
-            return filasAfectadas == 1;
+            return filasAfectadas > 0;
+        }
+
+        public bool ActualizarMedico(Medico medico)
+        {
+            DaoMedico dao = new DaoMedico();
+            int filasAfectadas = dao.ActualizarMedico(medico);
+            return filasAfectadas > 0;
         }
     }
 

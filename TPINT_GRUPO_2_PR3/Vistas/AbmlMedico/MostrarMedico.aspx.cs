@@ -14,14 +14,43 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         {
             if (!IsPostBack)
             {
-                CargargarGridview();
+                CargarGridview();
             }
         }
-        private void CargargarGridview()
+        private void CargarGridview()
         {
             NegocioMedico negocio = new NegocioMedico();
             gvMedicos.DataSource = negocio.obtenerTablaMedico();
             gvMedicos.DataBind();
+        }
+
+        protected void gvMedicos_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            Response.Write("RowIndex = " + e.RowIndex);
+            int id = Convert.ToInt32(gvMedicos.DataKeys[e.RowIndex].Value);
+
+            NegocioMedico negocio = new NegocioMedico();
+
+            if (negocio.EliminarMedico(id))
+            {
+                CargarGridview();
+                lblMensaje.Text = "Mecido dado de baja correctamente";
+            }
+            else
+            {
+                lblMensaje.Text = "No se pudo dar de baja el medico...";
+            }
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ABML_Medico.aspx");
+        }
+
+        protected void gvMedicos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvMedicos.PageIndex = e.NewPageIndex;
+            CargarGridview();
         }
     }
 }

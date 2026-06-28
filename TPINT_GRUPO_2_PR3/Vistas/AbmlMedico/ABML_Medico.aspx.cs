@@ -26,7 +26,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas
 
         protected void ReportesMedicos_Click(object sender, EventArgs e)
         {
-            Response.Redirect("EliminarMedico.aspx");
+            Response.Redirect("ModificarMedico.aspx");
         }
     }
 }
