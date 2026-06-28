@@ -75,7 +75,8 @@
     <Content Include="Imagenes\ICON_Turnos.png" />
     <Content Include="Vistas\AbmlMedico\ABML_Medico.aspx" />
     <Content Include="Vistas\AbmlMedico\ModificarMedico.aspx" />
-    <Content Include="Vistas\ABML_Pacientes.aspx" />
+    <Content Include="Vistas\AbmlPaciente\ABML_Pacientes.aspx" />
+    <Content Include="Vistas\AbmlPaciente\AgrMod_Paciente.aspx" />
     <Content Include="Vistas\ABML_Turnos.aspx" />
     <Content Include="Vistas\AbmlMedico\AgregarMedico.aspx" />
     <Content Include="Vistas\InicioAdmin.aspx" />
@@ -101,12 +102,19 @@
     <Compile Include="Vistas\AbmlMedico\ModificarMedico.aspx.designer.cs">
       <DependentUpon>ModificarMedico.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\ABML_Pacientes.aspx.cs">
+    <Compile Include="Vistas\AbmlPaciente\ABML_Pacientes.aspx.cs">
       <DependentUpon>ABML_Pacientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vistas\ABML_Pacientes.aspx.designer.cs">
+    <Compile Include="Vistas\AbmlPaciente\ABML_Pacientes.aspx.designer.cs">
       <DependentUpon>ABML_Pacientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AbmlPaciente\AgrMod_Paciente.aspx.cs">
+      <DependentUpon>AgrMod_Paciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\AbmlPaciente\AgrMod_Paciente.aspx.designer.cs">
+      <DependentUpon>AgrMod_Paciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\ABML_Turnos.aspx.cs">
       <DependentUpon>ABML_Turnos.aspx</DependentUpon>

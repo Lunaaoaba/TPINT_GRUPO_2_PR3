@@ -31,8 +31,12 @@ namespace DATOS
             return dataTable;
         }
 
-        // agregado de abml uwu//
-        // agregar
+        public DataTable ObtenerTablaPacientePorNombre(Paciente paciente)
+        {
+            DataTable dataTable = accesoDatos.ObtenerTabla("PACIENTE", "SELECT id_pac, dni_pac, nombre_pac, apellido_pac, sexo_pac, nacionalidad_pac, fecha_nacimiento_pac, direccion_pac, id_loc, email_pac, telefono_pac, activo_pac FROM PACIENTE WHERE nombre_pac = " + paciente.nombre);
+            return dataTable;
+        }
+
         public void ParametrosAgregarPaciente(ref SqlCommand comando, Paciente paciente)
         {
             SqlParameter parametro = new SqlParameter();
@@ -64,15 +68,13 @@ namespace DATOS
             ParametrosAgregarPaciente(ref comando, paciente);
             return accesoDatos.EjecutarProcedimientoAlmacenado(comando, "spAgregarPaciente");
         }
-
-        // eliminar
         private void ParametrosEliminarPaciente(ref SqlCommand comando, Paciente paciente)
         {
             SqlParameter parametro = new SqlParameter();
             parametro = comando.Parameters.Add("@id_pac", SqlDbType.Int);
             parametro.Value = paciente.id_pac;
         }
- 
+
         public int EliminarPaciente(Paciente paciente)
         {
             SqlCommand sqlCommand = new SqlCommand();
@@ -80,7 +82,6 @@ namespace DATOS
             return accesoDatos.EjecutarProcedimientoAlmacenado(sqlCommand, "spEliminarPaciente");
         }
 
-        // modificar
         private void ParametrosModificarPaciente(ref SqlCommand comando, Paciente paciente)
         {
             comando.Parameters.Add("@id_pac", SqlDbType.Int).Value = paciente.id_pac;

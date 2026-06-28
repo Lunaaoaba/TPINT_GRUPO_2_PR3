@@ -159,3 +159,36 @@ BEGIN
     SELECT SCOPE_IDENTITY() AS id_usu;
 END
 GO
+
+CREATE PROCEDURE [spModificarMedico]
+    @id_med INT,
+    @dni_med VARCHAR(15),
+    @nombre_med VARCHAR(50),
+    @apellido_med VARCHAR(50),
+    @sexo_med CHAR(1),
+    @nacionalidad_med VARCHAR(50),
+    @fecha_nacimiento_med DATE,
+    @direccion_med VARCHAR(100),
+    @id_loc INT,
+    @email_med VARCHAR(100),
+    @telefono_med VARCHAR(30),
+    @legajo_med VARCHAR(20),
+    @id_esp INT
+AS
+BEGIN
+    UPDATE MEDICO
+    SET dni_med = @dni_med,
+        nombre_med = @nombre_med,
+        apellido_med = @apellido_med,
+        sexo_med = @sexo_med,
+        nacionalidad_med = @nacionalidad_med,
+        fecha_nacimiento_med = @fecha_nacimiento_med,
+        direccion_med = @direccion_med,
+        id_loc = @id_loc,
+        email_med = @email_med,
+        telefono_med = @telefono_med,
+        legajo_med = @legajo_med,
+        id_esp = @id_esp
+    WHERE id_med = @id_med
+END
+GO
