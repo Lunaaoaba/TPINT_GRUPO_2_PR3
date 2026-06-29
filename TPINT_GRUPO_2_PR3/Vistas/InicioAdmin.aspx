@@ -107,7 +107,7 @@
         <tr>
             <td class="auto-style8">&nbsp;</td>
             <td align="center" class="auto-style7">
-                <asp:Button ID="btnTurnos" runat="server" Text="Turnos" CssClass="tamanioBoton" />
+                <asp:Button ID="btnTurnos" runat="server" Text="Turnos" CssClass="tamanioBoton" OnClick="btnTurnos_Click"/>
             </td>
             <td class="auto-style8">&nbsp;</td>
         </tr>

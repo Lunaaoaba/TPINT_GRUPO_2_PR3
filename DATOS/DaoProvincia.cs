@@ -13,7 +13,7 @@ namespace DATOS
 
         public DataTable ObtenerProvincias()
         {
-            return accesoDatos.ObtenerTabla("PROVINCIA", "SELECT id_prov, nombre_prov FROM PROVINCIA");
+            return accesoDatos.ObtenerTabla("PROVINCIA", "SELECT id_pro, nombre_pro FROM PROVINCIA");
         }
     }
 }

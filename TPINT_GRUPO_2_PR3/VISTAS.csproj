@@ -73,30 +73,64 @@
     <Content Include="Imagenes\ICON_medico.png" />
     <Content Include="Imagenes\ICON_Paciente.png" />
     <Content Include="Imagenes\ICON_Turnos.png" />
-    <Content Include="Vistas\ABML_Medico.aspx" />
-    <Content Include="Vistas\ABML_Pacientes.aspx" />
+    <Content Include="Vistas\AbmlMedico\ABML_Medico.aspx" />
+    <Content Include="Vistas\AbmlMedico\ModificarMedico.aspx" />
+    <Content Include="Vistas\AbmlPaciente\ABML_Pacientes.aspx" />
+    <Content Include="Vistas\AbmlPaciente\Agregar_Paciente.aspx" />
+    <Content Include="Vistas\AbmlPaciente\EliminarPaciente.aspx" />
     <Content Include="Vistas\ABML_Turnos.aspx" />
+    <Content Include="Vistas\AbmlMedico\AgregarMedico.aspx" />
     <Content Include="Vistas\InicioAdmin.aspx" />
     <Content Include="Vistas\InicioMedico.aspx" />
     <Content Include="Vistas\LoginMedicos.aspx" />
     <Content Include="Vistas\Menu_Listados.aspx" />
+    <Content Include="Vistas\AbmlMedico\MostrarMedico.aspx" />
+    <Content Include = "Vistas\AbmlMedico\EliminarMedico.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vistas\ABML_Medico.aspx.cs">
+    <Compile Include="Vistas\AbmlMedico\ABML_Medico.aspx.cs">
       <DependentUpon>ABML_Medico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vistas\ABML_Medico.aspx.designer.cs">
+    <Compile Include="Vistas\AbmlMedico\ABML_Medico.aspx.designer.cs">
       <DependentUpon>ABML_Medico.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\ABML_Pacientes.aspx.cs">
+    <Compile Include="Vistas\AbmlMedico\ModificarMedico.aspx.cs">
+      <DependentUpon>ModificarMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\AbmlMedico\EliminarMedico.aspx.cs">
+      <DependentUpon>EliminarMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\AbmlMedico\ModificarMedico.aspx.designer.cs">
+      <DependentUpon>ModificarMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AbmlMedico\EliminarMedico.aspx.designer.cs">
+      <DependentUpon>EliminarMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AbmlPaciente\ABML_Pacientes.aspx.cs">
       <DependentUpon>ABML_Pacientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vistas\ABML_Pacientes.aspx.designer.cs">
+    <Compile Include="Vistas\AbmlPaciente\ABML_Pacientes.aspx.designer.cs">
       <DependentUpon>ABML_Pacientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AbmlPaciente\Agregar_Paciente.aspx.cs">
+      <DependentUpon>Agregar_Paciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\AbmlPaciente\Agregar_Paciente.aspx.designer.cs">
+      <DependentUpon>Agregar_Paciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AbmlPaciente\EliminarPaciente.aspx.cs">
+      <DependentUpon>EliminarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\AbmlPaciente\EliminarPaciente.aspx.designer.cs">
+      <DependentUpon>EliminarPaciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\ABML_Turnos.aspx.cs">
       <DependentUpon>ABML_Turnos.aspx</DependentUpon>
@@ -104,6 +138,13 @@
     </Compile>
     <Compile Include="Vistas\ABML_Turnos.aspx.designer.cs">
       <DependentUpon>ABML_Turnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AbmlMedico\AgregarMedico.aspx.cs">
+      <DependentUpon>AgregarMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\AbmlMedico\AgregarMedico.aspx.designer.cs">
+      <DependentUpon>AgregarMedico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\InicioAdmin.aspx.cs">
       <DependentUpon>InicioAdmin.aspx</DependentUpon>
@@ -132,6 +173,13 @@
     </Compile>
     <Compile Include="Vistas\Menu_Listados.aspx.designer.cs">
       <DependentUpon>Menu_Listados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AbmlMedico\MostrarMedico.aspx.cs">
+      <DependentUpon>MostrarMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\AbmlMedico\MostrarMedico.aspx.designer.cs">
+      <DependentUpon>MostrarMedico.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

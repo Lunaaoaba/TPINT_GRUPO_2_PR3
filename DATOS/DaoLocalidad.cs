@@ -13,12 +13,12 @@ namespace DATOS
 
         public DataTable ObtenerLocalidades()
         {
-            return accesoDatos.ObtenerTabla("LOCALIDAD", "SELECT id_loc, nombre_loc, id_prov FROM LOCALIDAD");
+            return accesoDatos.ObtenerTabla("LOCALIDAD", "SELECT id_loc, nombre_loc, id_pro FROM LOCALIDAD");
         }
 
         public DataTable ObtenerLocalidadesPorProvincia(int idProvincia)
         {
-            return accesoDatos.ObtenerTabla("LOCALIDAD", "SELECT id_loc, nombre_loc, id_prov FROM LOCALIDAD WHERE id_prov = " + idProvincia);
+            return accesoDatos.ObtenerTabla("LOCALIDAD", "SELECT id_loc, nombre_loc, id_pro FROM LOCALIDAD WHERE id_pro = " + idProvincia);
         }
     }
 }

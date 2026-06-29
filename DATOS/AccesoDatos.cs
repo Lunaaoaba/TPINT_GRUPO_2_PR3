@@ -48,6 +48,21 @@ namespace DATOS
             conexion.Close();
             return filasCambiadas;
         }
+
+        public int EjecutarProcedimientoEscalar(SqlCommand comando, string procedimiento)
+        {
+            SqlConnection conexion = ObtenerConexion();
+
+            comando.Connection = conexion;
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = procedimiento;
+
+            int idGenerado = Convert.ToInt32(comando.ExecuteScalar());
+
+            conexion.Close();
+
+            return idGenerado;
+        }
         public Boolean existe(string consulta)
         {
             SqlConnection conexion = ObtenerConexion();
