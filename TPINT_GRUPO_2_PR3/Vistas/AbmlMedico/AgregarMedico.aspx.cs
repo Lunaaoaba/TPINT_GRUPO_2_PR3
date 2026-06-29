@@ -17,7 +17,6 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         {
             if (!IsPostBack)
             {
-                // Cargar los datos iniciales 
                 CargarEspecialidades();
                 CargarLocalidades();
                 CargarSexo();
@@ -38,7 +37,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         private void CargarLocalidades()
         {
             NegocioLocalidades negocio = new NegocioLocalidades();
-            ddlLocalidad.DataSource = negocio.ObtenerLocalidades();
+            ddlLocalidad.DataSource = negocio.obtenerLocalidades();
             ddlLocalidad.DataTextField = "nombre_loc";
             ddlLocalidad.DataValueField = "id_loc";
             ddlLocalidad.DataBind();

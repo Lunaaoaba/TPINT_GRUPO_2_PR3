@@ -33,6 +33,15 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         protected global::System.Web.UI.WebControls.Image ICON_Paciente;
 
         /// <summary>
+        /// Control lblTitulo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTitulo;
+
+        /// <summary>
         /// Control AgregarPaciente.
         /// </summary>
         /// <remarks>
@@ -76,15 +85,6 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btBuscar;
-
-        /// <summary>
-        /// Control lblTitulo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitulo;
 
         /// <summary>
         /// Control gvPaciente.

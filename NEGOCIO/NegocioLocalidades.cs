@@ -13,9 +13,13 @@ namespace NEGOCIO
     {
         DaoLocalidad dao = new DaoLocalidad();
 
-        public DataTable ObtenerLocalidades()
+        public DataTable obtenerLocalidades()
         {
             return dao.ObtenerLocalidades();
+        }
+        public DataTable obtenerLocalidadesPorProvincia(int idProvincia)
+        {
+            return dao.ObtenerLocalidadesPorProvincia(idProvincia);
         }
     }
 }

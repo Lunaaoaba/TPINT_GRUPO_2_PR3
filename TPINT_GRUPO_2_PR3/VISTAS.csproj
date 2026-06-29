@@ -76,7 +76,8 @@
     <Content Include="Vistas\AbmlMedico\ABML_Medico.aspx" />
     <Content Include="Vistas\AbmlMedico\ModificarMedico.aspx" />
     <Content Include="Vistas\AbmlPaciente\ABML_Pacientes.aspx" />
-    <Content Include="Vistas\AbmlPaciente\AgrMod_Paciente.aspx" />
+    <Content Include="Vistas\AbmlPaciente\Agregar_Paciente.aspx" />
+    <Content Include="Vistas\AbmlPaciente\EliminarPaciente.aspx" />
     <Content Include="Vistas\ABML_Turnos.aspx" />
     <Content Include="Vistas\AbmlMedico\AgregarMedico.aspx" />
     <Content Include="Vistas\InicioAdmin.aspx" />
@@ -84,6 +85,7 @@
     <Content Include="Vistas\LoginMedicos.aspx" />
     <Content Include="Vistas\Menu_Listados.aspx" />
     <Content Include="Vistas\AbmlMedico\MostrarMedico.aspx" />
+    <Content Include = "Vistas\AbmlMedico\EliminarMedico.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -99,8 +101,15 @@
       <DependentUpon>ModificarMedico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Vistas\AbmlMedico\EliminarMedico.aspx.cs">
+      <DependentUpon>EliminarMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Vistas\AbmlMedico\ModificarMedico.aspx.designer.cs">
       <DependentUpon>ModificarMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AbmlMedico\EliminarMedico.aspx.designer.cs">
+      <DependentUpon>EliminarMedico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\AbmlPaciente\ABML_Pacientes.aspx.cs">
       <DependentUpon>ABML_Pacientes.aspx</DependentUpon>
@@ -109,12 +118,19 @@
     <Compile Include="Vistas\AbmlPaciente\ABML_Pacientes.aspx.designer.cs">
       <DependentUpon>ABML_Pacientes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\AbmlPaciente\AgrMod_Paciente.aspx.cs">
-      <DependentUpon>AgrMod_Paciente.aspx</DependentUpon>
+    <Compile Include="Vistas\AbmlPaciente\Agregar_Paciente.aspx.cs">
+      <DependentUpon>Agregar_Paciente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vistas\AbmlPaciente\AgrMod_Paciente.aspx.designer.cs">
-      <DependentUpon>AgrMod_Paciente.aspx</DependentUpon>
+    <Compile Include="Vistas\AbmlPaciente\Agregar_Paciente.aspx.designer.cs">
+      <DependentUpon>Agregar_Paciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AbmlPaciente\EliminarPaciente.aspx.cs">
+      <DependentUpon>EliminarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\AbmlPaciente\EliminarPaciente.aspx.designer.cs">
+      <DependentUpon>EliminarPaciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\ABML_Turnos.aspx.cs">
       <DependentUpon>ABML_Turnos.aspx</DependentUpon>

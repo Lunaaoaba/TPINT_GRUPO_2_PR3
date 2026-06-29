@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AgrMod_Paciente.aspx.cs" Inherits="TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente.AgrMod_Paciente" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EliminarPaciente.aspx.cs" Inherits="TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente.EliminarPaciente" %>
 
 <!DOCTYPE html>
 

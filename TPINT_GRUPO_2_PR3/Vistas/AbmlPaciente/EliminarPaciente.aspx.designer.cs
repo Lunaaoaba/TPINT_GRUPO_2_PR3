@@ -11,7 +11,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente
 {
 
 
-    public partial class AgrMod_Paciente
+    public partial class EliminarPaciente
     {
 
         /// <summary>

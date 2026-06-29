@@ -21,7 +21,7 @@ namespace DATOS
 
         public DataTable ObtenerTablaPaciente()
         {
-            DataTable dataTable = accesoDatos.ObtenerTabla("PACIENTE", "SELECT P.id_pac, P.dni_pac, P.nombre_pac, P.apellido_pac, " + "P.sexo_pac, P.nacionalidad_pac, P.fecha_nacimiento_pac, " + "P.direccion_pac, P.id_loc, L.nombre_loc, " + "P.email_pac, P.telefono_pac, P.activo_pac " + "FROM PACIENTE P " + "INNER JOIN LOCALIDAD L ON P.id_loc = L.id_loc");
+            DataTable dataTable = accesoDatos.ObtenerTabla("PACIENTE", "SELECT P.id_pac, P.dni_pac, P.nombre_pac, P.apellido_pac, " + "P.sexo_pac, P.nacionalidad_pac, P.fecha_nacimiento_pac, " + "P.direccion_pac, P.id_loc, L.nombre_loc, " + "P.email_pac, P.telefono_pac, P.activo_pac " + "FROM PACIENTE P " + "INNER JOIN LOCALIDAD L ON P.id_loc = L.id_loc " + "WHERE P.activo_pac = 1");
             return dataTable;
         }
 
@@ -85,16 +85,16 @@ namespace DATOS
         private void ParametrosModificarPaciente(ref SqlCommand comando, Paciente paciente)
         {
             comando.Parameters.Add("@id_pac", SqlDbType.Int).Value = paciente.id_pac;
-            comando.Parameters.Add("@DniPaciente", SqlDbType.VarChar).Value = paciente.dni;
-            comando.Parameters.Add("@NombrePaciente", SqlDbType.VarChar).Value = paciente.nombre;
-            comando.Parameters.Add("@ApellidoPaciente", SqlDbType.VarChar).Value = paciente.apellido;
-            comando.Parameters.Add("@SexoPaciente", SqlDbType.VarChar).Value = paciente.sexo;
-            comando.Parameters.Add("@NacionalidadPaciente", SqlDbType.VarChar).Value = paciente.nacionalidad;
-            comando.Parameters.Add("@FechaNacimientoPaciente", SqlDbType.Date).Value = paciente.fecha_nacimiento;
-            comando.Parameters.Add("@DireccionPaciente", SqlDbType.VarChar).Value = paciente.direccion;
-            comando.Parameters.Add("@IdLocalidad", SqlDbType.Int).Value = paciente.id_loc.id_loc;
-            comando.Parameters.Add("@EmailPaciente", SqlDbType.VarChar).Value = paciente.email;
-            comando.Parameters.Add("@TelefonoPaciente", SqlDbType.VarChar).Value = paciente.telefono;
+            comando.Parameters.Add("@dni_pac", SqlDbType.VarChar).Value = paciente.dni;
+            comando.Parameters.Add("@nombre_pac", SqlDbType.VarChar).Value = paciente.nombre;
+            comando.Parameters.Add("@apellido_pac", SqlDbType.VarChar).Value = paciente.apellido;
+            comando.Parameters.Add("@sexo_pac", SqlDbType.VarChar).Value = paciente.sexo;
+            comando.Parameters.Add("@nacionalidad_pac", SqlDbType.VarChar).Value = paciente.nacionalidad;
+            comando.Parameters.Add("@fecha_nacimiento_pac", SqlDbType.Date).Value = paciente.fecha_nacimiento;
+            comando.Parameters.Add("@direccion_pac", SqlDbType.VarChar).Value = paciente.direccion;
+            comando.Parameters.Add("@id_loc", SqlDbType.Int).Value = paciente.id_loc.id_loc;
+            comando.Parameters.Add("@email_pac", SqlDbType.VarChar).Value = paciente.email;
+            comando.Parameters.Add("@telefono_pac", SqlDbType.VarChar).Value = paciente.telefono;
         }
 
         public int ModificarPaciente(Paciente paciente)
