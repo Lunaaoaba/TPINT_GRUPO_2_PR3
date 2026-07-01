@@ -25,7 +25,7 @@
         justify-content: center;
         align-items: center;
         background-color: white !important;
-        width: 560px;
+        width: 460px;
         padding: 20px 30px;
         border-radius: 8px;
         box-sizing: border-box;
@@ -94,31 +94,19 @@
             <table>
 
                 <tr>
-                    <td></td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td>
-                        <h2>Agregar Paciente</h2>
+                    <td colspan="3">
+                        <h1 align="center">Agregar Paciente</h1>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        &nbsp;</td>
-
-                    <td class="auto-style2">&nbsp;</td>
-
-                    <td>
-                        &nbsp;</td>
-                </tr>
-
-                <tr>
-                    <td class="auto-style6">
                         <asp:Label ID="lblDNI" runat="server" Text="DNI :"></asp:Label>
                     </td>
 
-                    <td class="auto-style7"></td>
+                    <td class="auto-style2">&nbsp;</td>
 
-                    <td class="auto-style6">
+                    <td>
                         <asp:TextBox ID="txtDNI" runat="server"></asp:TextBox>
                     </td>
                 </tr>
@@ -226,24 +214,18 @@
                     <td>
                         <asp:Label ID="lblTelefono" runat="server" Text="Telefono :"></asp:Label>
                     </td>
-
                     <td class="auto-style2">&nbsp;</td>
-
                     <td>
                         <asp:TextBox ID="txtTelefono" runat="server"></asp:TextBox>
                     </td>
                 </tr>
-
                 <tr>
                     <td>
                         &nbsp;</td>
-
                     <td class="auto-style2">&nbsp;</td>
-
                     <td>
                         &nbsp;</td>
                 </tr>
-
                 <tr>
                     <td class="auto-style8">
                         <asp:Label ID="lblExito" runat="server" Visible="False"></asp:Label>
@@ -259,21 +241,13 @@
                             OnClick="btnAceptar_Click" />
                     </td>
                 </tr>
-
                 <tr>
                     <td class="auto-style6" colspan="3">
                         &nbsp;</td>
-
                 </tr>
-
                 </table>
-
         </div>
-
     </div>
-
-    <asp:Label ID="lblMensaje" runat="server"></asp:Label>
-
 </form>
 
 </body>

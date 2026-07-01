@@ -10,6 +10,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente
 {
     public partial class AgrMod_Paciente : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -38,7 +39,6 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente
             ddlNacionalidad.Items.Add(new ListItem("Paraguay", "Paraguay"));
             ddlNacionalidad.Items.Add(new ListItem("Bolivia", "Bolivia"));
             ddlNacionalidad.Items.Insert(0, new ListItem("-- Seleccione una nacionalidad --", "0"));
-
         }
         private void CargarLocalidades()
         {
@@ -88,7 +88,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente
             }
             else
             {
-                lblExito.Text = "Error al agregar el médico.";
+                lblExito.Text = "Error al agregar al paciente.";
                 lblExito.Visible = true;
             }
         }

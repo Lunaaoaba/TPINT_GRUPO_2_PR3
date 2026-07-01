@@ -79,13 +79,6 @@ namespace TPINT_GRUPO_2_PR3.Vistas
             CargarGridView();
         }
 
-        protected void gvPaciente_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            int idPac = Convert.ToInt32(gvPaciente.DataKeys[e.RowIndex].Value);
-            negocioPaciente.EliminarPaciente(idPac);
-            CargarGridView();
-        }
-
         protected void AgregarPaciente_Click(object sender, EventArgs e)
         {
             Response.Redirect("Agregar_Paciente.aspx");

@@ -66,6 +66,24 @@ BEGIN
 END
 GO
 
+CREATE PROCEDURE [spRestaurarPacientes]
+AS
+BEGIN
+    UPDATE PACIENTE
+    SET activo_pac = 1
+    WHERE activo_pac = 0
+END
+GO
+
+CREATE PROCEDURE [spRestaurarPacientePorId]
+    @id_pac INT
+AS
+BEGIN
+    UPDATE PACIENTE
+    SET activo_pac = 1
+    WHERE id_pac = @id_pac
+END
+GO
 
 -- CONSULTAS MEDICO --
 

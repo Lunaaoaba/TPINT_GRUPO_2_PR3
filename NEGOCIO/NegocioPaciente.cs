@@ -74,5 +74,20 @@ namespace NEGOCIO
             if (filasAfectadas == 1) return true;
             else return false;
         }
+
+        public bool RestaurarPacientePorId(int id)
+        {
+            paciente.id_pac = id;
+            int filasAfectadas = dao.RestaurarPacientePorId(paciente);
+            if (filasAfectadas == 1) return true;
+            else return false;
+        }
+
+        public bool RestaurarPacientes()
+        {
+            int filasAfectadas = dao.RestaurarPacientes(paciente);
+            if (filasAfectadas == 1) return true;
+            else return false;
+        }
     }
 }   

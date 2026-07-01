@@ -68,7 +68,7 @@ namespace DATOS
             ParametrosAgregarPaciente(ref comando, paciente);
             return accesoDatos.EjecutarProcedimientoAlmacenado(comando, "spAgregarPaciente");
         }
-        private void ParametrosEliminarPaciente(ref SqlCommand comando, Paciente paciente)
+        private void ParametrosEliminarRestaurarPaciente(ref SqlCommand comando, Paciente paciente)
         {
             SqlParameter parametro = new SqlParameter();
             parametro = comando.Parameters.Add("@id_pac", SqlDbType.Int);
@@ -78,7 +78,7 @@ namespace DATOS
         public int EliminarPaciente(Paciente paciente)
         {
             SqlCommand sqlCommand = new SqlCommand();
-            ParametrosEliminarPaciente(ref sqlCommand, paciente);
+            ParametrosEliminarRestaurarPaciente(ref sqlCommand, paciente);
             return accesoDatos.EjecutarProcedimientoAlmacenado(sqlCommand, "spEliminarPaciente");
         }
 
@@ -102,6 +102,20 @@ namespace DATOS
             SqlCommand comando = new SqlCommand();
             ParametrosModificarPaciente(ref comando, paciente);
             return accesoDatos.EjecutarProcedimientoAlmacenado(comando, "spModificarPaciente");
+        }
+
+        public int RestaurarPacientes(Paciente paciente)
+        {
+            SqlCommand comando = new SqlCommand();
+            ParametrosEliminarRestaurarPaciente(ref comando, paciente);
+            return accesoDatos.EjecutarProcedimientoAlmacenado(comando, "spRestaurarPacientes");
+        }
+
+        public int RestaurarPacientePorId(Paciente paciente)
+        {
+            SqlCommand sqlCommand = new SqlCommand();
+            ParametrosEliminarRestaurarPaciente(ref sqlCommand, paciente);
+            return accesoDatos.EjecutarProcedimientoAlmacenado(sqlCommand, "spRestaurarPacientePorId");
         }
     }
 }
