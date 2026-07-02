@@ -18,8 +18,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             Session.Abandon();
-            Response.Redirect("LoginMedicoS.aspx");
-
+            Response.Redirect("LoginMedicos.aspx");
         }
 
         protected void btnMedicos_Click(object sender, EventArgs e)
@@ -29,7 +28,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas
 
         protected void btnPacientes_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ABML_Pacientes.aspx");
+            Response.Redirect("~/Vistas/AbmlPaciente/ABML_Pacientes.aspx");
         }
 
         protected void btnTurnos_Click(object sender, EventArgs e)

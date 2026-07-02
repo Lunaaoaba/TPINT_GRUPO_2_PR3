@@ -62,6 +62,25 @@ text-align:center;
 margin-bottom:15px;
 }
 
+.btn-volver {
+    background-color: #f4f4f4;
+    color: #555555;
+    border: 1px solid #cccccc;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-volver:hover {
+    background-color: #e2e2e2;
+    color: #333333;
+}
+
     </style>
 </head>
 <body>
@@ -186,12 +205,12 @@ margin-bottom:15px;
             </Columns>
                 </asp:GridView>
             </div>
-            </div>
             <br />
             <div style="text-align:center;">
-                <asp:Button ID="btnVolverModificar" runat="server" Text="Volver" OnClick="btnVolverModificar_Click" />
+            <asp:Button ID="btnVolverModificar" runat="server" Text="Volver" CssClass="btn-volver" OnClick="btnVolverModificar_Click" />
             </div>
-        </div>
+            </div>
+            <br />
     </form>
 </body>
 </html>
