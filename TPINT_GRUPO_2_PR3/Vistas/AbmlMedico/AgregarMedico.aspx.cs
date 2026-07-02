@@ -15,6 +15,8 @@ namespace TPINT_GRUPO_2_PR3.Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+
             if (!IsPostBack)
             {
                 CargarEspecialidades();
@@ -83,10 +85,16 @@ namespace TPINT_GRUPO_2_PR3.Vistas
             txtRepetirContraseñaMed.Text = "";
         }
 
-      
-
         protected void btnAceptar_Click1(object sender, EventArgs e)
         {
+            if (txtContraseñaMed.Text != txtRepetirContraseñaMed.Text)
+            {
+                mensajeContraseñas.Text = "Las contraseñas no coinciden.";
+                mensajeContraseñas.Visible = true;
+                return;
+            }
+
+            DateTime fecha = DateTime.Parse(txtFechaNacimiento.Text);
 
             string nombre = txtNombreMedico.Text;
             string apellido = txtApellidoMedico.Text;
@@ -101,16 +109,9 @@ namespace TPINT_GRUPO_2_PR3.Vistas
             string email = txtEmail.Text;
             string telefono = txtTelefono.Text;
 
-            if (txtContraseñaMed.Text != txtRepetirContraseñaMed.Text)
-            {
-                mensajeContraseñas.Text = "Las contraseñas no coinciden.";
-                mensajeContraseñas.Visible = true;
-                return;
-            }
             NegocioMedico negocio = new NegocioMedico();
             NegocioUsuario negocioUsuario = new NegocioUsuario();
             int idUsuario = negocioUsuario.AgregarUsuario(txtNombreUsuarioMed.Text, txtContraseñaMed.Text);
-
 
             bool exito = negocio.AgregarMedico(dni, nombre, apellido, sexo, nacionalidad, fechaNacimiento, direccion, idLocalidad, email, telefono, legajo, especialidad, idUsuario, true);
             if (exito)
@@ -126,6 +127,11 @@ namespace TPINT_GRUPO_2_PR3.Vistas
 
             }
 
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ABML_Medico.aspx");
         }
     }
 }
