@@ -111,10 +111,12 @@
                         <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" Width="78px" OnClick="btnAceptar_Click" Height="23px" />
                     </td>
                 </tr>
-
+                <tr><td>
+                    <asp:LinkButton ID="gv_vistaPrevia" runat="server" OnClick="gv_vistaPrevia_Click">Previsualizar</asp:LinkButton>
+                    </td></tr>
                 <tr>
                     <td colspan="3">
-                        <asp:Label ID="lblExito" runat="server" Visible="False"></asp:Label>
+                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                     </td>
 
                 </tr>
@@ -133,8 +135,7 @@
                 </tr>
 
                 <tr>
-                    <td class="auto-style4" colspan="3">
-                        &nbsp;</td>
+                    <td>&nbsp;</td>
 
                 </tr>
 
@@ -143,9 +144,6 @@
         </div>
 
     </div>
-
-    <asp:Label ID="lblMensaje" runat="server"></asp:Label>
-
     <p>
         &nbsp;</p>
     <p>

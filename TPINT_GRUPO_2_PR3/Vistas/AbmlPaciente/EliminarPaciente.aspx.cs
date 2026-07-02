@@ -16,7 +16,16 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente
         Paciente paciente = new Paciente();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                lblMensaje.Visible = false;
+            }
+        }
 
+        private void mensaje(string mensaje)
+        {
+            lblMensaje.Visible = true;
+            lblMensaje.Text = mensaje;
         }
 
         private void CargarGridView()
@@ -31,6 +40,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente
             {
                 gvEliminarPaciente.DataSource = null;
                 gvEliminarPaciente.DataBind();
+                mensaje("No se pudo cargar el paciente");
             }
         }
 
@@ -38,13 +48,10 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente
         {
             if (int.TryParse(txtID.Text, out int id_pac))
             {
-                negocioPaciente.EliminarPaciente(id_pac);
-                CargarGridView();
+                if (negocioPaciente.EliminarPaciente(id_pac)) mensaje("Paciente eliminado con éxito");
+                else mensaje("No se pudo eliminar el paciente");
             }
-            else 
-            {
-                //algo
-            }
+            else mensaje("ID inválido");
         }
 
 
@@ -58,6 +65,11 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente
             }
             // restaura todo pe
 
+        }
+
+        protected void gv_vistaPrevia_Click(object sender, EventArgs e)
+        {
+            CargarGridView();
         }
     }
 }
