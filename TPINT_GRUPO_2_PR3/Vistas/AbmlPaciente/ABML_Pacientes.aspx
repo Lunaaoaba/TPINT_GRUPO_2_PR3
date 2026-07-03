@@ -66,6 +66,8 @@ body{
             <asp:Label ID="lblTitulo" runat="server" Text="Listado de Pacientes" CssClass="titulo"></asp:Label>
             <div style="text-align:center; margin-bottom:15px;">
                 <asp:Button ID="AgregarPaciente" runat="server" Text="Agregar un nuevo paciente" OnClick="AgregarPaciente_Click" CssClass="tamanioBoton" />
+                &nbsp;&nbsp;&nbsp;
+                <asp:Button ID="EliminarPaciente" runat="server" Text="Eliminar un paciente" OnClick="EliminarPaciente_Click" CssClass="tamanioBoton" />
             </div>
             <div style="text-align:center; margin-bottom:15px;">
                 <asp:Label ID="lblBuscar" runat="server" Text="Buscar por:"></asp:Label>

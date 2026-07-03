@@ -27,6 +27,7 @@ namespace NEGOCIO
         public bool AgregarPaciente(string dni, string nombre, string apellido, char sexo, string nacionalidad, DateTime fecha_nacimiento, string direccion, int id_loc, string email, string telefono)
         {
             Localidad localidad = new Localidad();
+            localidad.id_loc = id_loc;
 
             paciente.dni = dni;
             paciente.nombre = nombre;
@@ -85,9 +86,8 @@ namespace NEGOCIO
 
         public bool RestaurarPacientes()
         {
-            int filasAfectadas = dao.RestaurarPacientes(paciente);
-            if (filasAfectadas == 1) return true;
-            else return false;
+            int filasAfectadas = dao.RestaurarPacientes();
+            return filasAfectadas >= 0;
         }
     }
 }   

@@ -59,11 +59,20 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente
         // para restaurar el paciente eliminado por id(si hay algo en el textbox) o general (si está vacío)
         protected void bt_restaurar_Click(object sender, EventArgs e)
         {
-            if (!(txtID.Text == ""))
+            if (txtID.Text != "")
             {
-                // restaura por id pe
+                if (int.TryParse(txtID.Text, out int id))
+                {
+                    if (negocioPaciente.RestaurarPacientePorId(id)) mensaje("Paciente restaurado");
+                    else mensaje("No se pudo restaurar");
+                }
+                else mensaje("ID inválido");
             }
-            // restaura todo pe
+            else
+            {
+                if (negocioPaciente.RestaurarPacientes()) mensaje("Pacientes restaurados");
+                else mensaje("No se pudo restaurar");
+            }
 
         }
 

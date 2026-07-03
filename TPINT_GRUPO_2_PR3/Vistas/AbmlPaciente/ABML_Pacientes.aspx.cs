@@ -13,7 +13,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) CargarGridView();
+            CargarGridView();
         }
 
         private void CargarGridView()
@@ -82,6 +82,11 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         protected void AgregarPaciente_Click(object sender, EventArgs e)
         {
             Response.Redirect("Agregar_Paciente.aspx");
+        }
+
+        protected void EliminarPaciente_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Eliminar_Paciente.aspx");
         }
     }
 }
