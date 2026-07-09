@@ -88,5 +88,22 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         {
             Response.Redirect("Eliminar_Paciente.aspx");
         }
+
+        protected void btBuscar_Click(object sender, EventArgs e)
+        {
+            string filtro = ddlTipo.SelectedValue;
+            cvBusquedaID.Enabled = (filtro == "id_pac");
+            cvBusquedaDNI.Enabled = (filtro == "dni_pac");
+            Page.Validate("grupoBuscar");
+            if (!Page.IsValid) return;
+
+            if (string.IsNullOrWhiteSpace(tbBusqueda.Text)) CargarGridView();
+            else
+            {
+                gvPaciente.DataSource = negocioPaciente.FiltrarPacientes(tbBusqueda.Text.Trim(), ddlTipo.SelectedValue);
+                gvPaciente.DataBind();
+            }
+            tbBusqueda.Text = "";
+        }
     }
 }

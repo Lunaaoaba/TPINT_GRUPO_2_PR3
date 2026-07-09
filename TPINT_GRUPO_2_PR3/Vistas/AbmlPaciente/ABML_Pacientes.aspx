@@ -71,12 +71,18 @@ body{
             </div>
             <div style="text-align:center; margin-bottom:15px;">
                 <asp:Label ID="lblBuscar" runat="server" Text="Buscar por:"></asp:Label>
-                <asp:DropDownList ID="ddlTipo" runat="server">
-                    <asp:ListItem Selected="True" Value="id_pac">ID</asp:ListItem>
-                    <asp:ListItem Value="nombre_pac">Nombre</asp:ListItem>
-                </asp:DropDownList>
-                <asp:TextBox ID="tbBusqueda" runat="server"></asp:TextBox>
-                <asp:Button ID="btBuscar" runat="server" Text="Buscar" />
+                    <asp:DropDownList ID="ddlTipo" runat="server">
+                        <asp:ListItem Selected="True" Value="id_pac">ID</asp:ListItem>
+                        <asp:ListItem Value="dni_pac">DNI</asp:ListItem>
+                        <asp:ListItem Value="nombre_pac">Nombre</asp:ListItem>
+                        <asp:ListItem Value="apellido_pac">Apellido</asp:ListItem>
+                    </asp:DropDownList>
+                <asp:TextBox ID="tbBusqueda" runat="server" ValidationGroup="grupoBuscar"></asp:TextBox>
+                <asp:Button ID="btBuscar" runat="server" Text="Buscar" OnClick="btBuscar_Click"/>
+
+                <asp:CompareValidator ID="cvBusquedaID" runat="server" ControlToValidate="tbBusqueda" Operator="DataTypeCheck" Type="Integer" ErrorMessage="El ID de paciente debe ser un número entero válido." Text="*" ForeColor="Red" Display="Dynamic" ValidationGroup="grupoBuscar" />
+                <asp:CompareValidator ID="cvBusquedaDNI" runat="server" ControlToValidate="tbBusqueda" Operator="DataTypeCheck" Type="Integer" ErrorMessage="El DNI debe contener solo números sin puntos ni espacios." Text="*" ForeColor="Red" Display="Dynamic" ValidationGroup="grupoBuscar" />
+                <asp:ValidationSummary ID="vsErroresBuscar" runat="server" ShowMessageBox="True" ShowSummary="False" ValidationGroup="grupoBuscar" />
             </div>
             <div style="overflow-x:auto;">
                 <asp:GridView ID="gvPaciente" runat="server" CssClass="grid" AutoGenerateColumns="False" DataKeyNames="id_pac" AllowPaging="True" AutoGenerateEditButton="True"

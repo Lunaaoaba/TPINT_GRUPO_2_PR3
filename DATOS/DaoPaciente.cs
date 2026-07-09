@@ -37,13 +37,16 @@ namespace DATOS
             return dataTable;
         }
 
-        public DataTable FiltrarPacientes(string idOrNombre, string tipoFiltro)
+        public DataTable FiltrarPacientes(string ingreso, string tipoFiltro)
         {
             string query = "SELECT P.id_pac, P.dni_pac, P.nombre_pac, P.apellido_pac, " + "P.sexo_pac, P.nacionalidad_pac, P.fecha_nacimiento_pac, " + "P.direccion_pac, P.id_loc, L.nombre_loc, " + "P.email_pac, P.telefono_pac, P.activo_pac " + "FROM PACIENTE P INNER JOIN LOCALIDAD L ON P.id_loc = L.id_loc " + "WHERE P.activo_pac = 1 ";
-            if (!string.IsNullOrWhiteSpace(idOrNombre))
+            if (!string.IsNullOrWhiteSpace(ingreso))
             {
-                if (tipoFiltro == "id_pac") query += " AND P.id_pac = " + idOrNombre;
-                else query += " AND P.nombre_pac LIKE '%" + idOrNombre + "%'";
+                if (tipoFiltro == "id_pac") query += " AND P.id_pac = " + ingreso;
+                else if (tipoFiltro == "dni_pac") query += " AND P.dni_pac = " + ingreso;
+                else if (tipoFiltro == "nombre_pac") query += " AND P.nombre_pac LIKE '%" + ingreso + "%'";
+                else if (tipoFiltro == "apellido_pac") query += " AND P.apellido_pac LIKE '%" + ingreso + "%'";
+
             }
             return accesoDatos.ObtenerTabla("PACIENTE", query);
         }

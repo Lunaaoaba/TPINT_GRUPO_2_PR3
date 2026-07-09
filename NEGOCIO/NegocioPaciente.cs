@@ -23,6 +23,10 @@ namespace NEGOCIO
         {
             return dao.ObtenerTablaPacientePorId(paciente);
         }
+        public DataTable FiltrarPacientes(string idOrNombre, string tipoFiltro)
+        {
+            return dao.FiltrarPacientes(idOrNombre, tipoFiltro);
+        }
 
         public int AgregarPaciente(string dni, string nombre, string apellido, char sexo, string nacionalidad, DateTime fecha_nacimiento, string direccion, int id_loc, string email, string telefono)
         {
@@ -39,7 +43,7 @@ namespace NEGOCIO
             paciente.email = email;
             paciente.telefono = telefono;
 
-            return dao.AgregarPaciente(paciente); // -1 = DNI duplicado, 1 = OK, 0 = error
+            return dao.AgregarPaciente(paciente);
         }
 
         public bool EliminarPaciente(int id)
