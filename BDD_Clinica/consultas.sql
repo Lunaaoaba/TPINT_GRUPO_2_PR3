@@ -27,12 +27,14 @@ CREATE PROCEDURE [spAgregarPaciente]
     @telefono_pac VARCHAR(30)
 AS
 BEGIN
-    INSERT INTO PACIENTE
-        (dni_pac, nombre_pac, apellido_pac, sexo_pac, nacionalidad_pac,
-         fecha_nacimiento_pac, direccion_pac, id_loc, email_pac, telefono_pac)
-    VALUES
-        (@dni_pac, @nombre_pac, @apellido_pac, @sexo_pac, @nacionalidad_pac,
-         @fecha_nacimiento_pac, @direccion_pac, @id_loc, @email_pac, @telefono_pac)
+    IF EXISTS (SELECT 1 FROM PACIENTE WHERE dni_pac = @dni_pac)
+    BEGIN
+        RAISERROR('DNI_DUPLICADO', 16, 1)
+        RETURN
+    END
+
+    INSERT INTO PACIENTE (dni_pac, nombre_pac, apellido_pac, sexo_pac, nacionalidad_pac, fecha_nacimiento_pac, direccion_pac, id_loc, email_pac, telefono_pac)
+    VALUES (@dni_pac, @nombre_pac, @apellido_pac, @sexo_pac, @nacionalidad_pac, @fecha_nacimiento_pac, @direccion_pac, @id_loc, @email_pac, @telefono_pac)
 END
 GO
 
@@ -104,40 +106,19 @@ CREATE PROCEDURE [spAgregarMedico]
     @ActivoMedico BIT
 AS
 BEGIN
-    INSERT INTO MEDICO
-    (
-        id_usu,
-        legajo_med,
-        dni_med,
-        nombre_med,
-        apellido_med,
-        sexo_med,
-        nacionalidad_med,
-        fecha_nacimiento_med,
-        direccion_med,
-        id_loc,
-        email_med,
-        telefono_med,
-        id_esp,
-        activo_med
-    )
-    VALUES
-    (
-        @IdUsuario,
-        @LegajoMedico,
-        @DniMedico,
-        @NombreMedico,
-        @ApellidoMedico,
-        @SexoMedico,
-        @NacionalidadMedico,
-        @FechaNacimientoMedico,
-        @DireccionMedico,
-        @IdLocalidad,
-        @EmailMedico,
-        @TelefonoMedico,
-        @IdEspecialidad,
-        @ActivoMedico
-    )
+    IF EXISTS (SELECT 1 FROM MEDICO WHERE dni_med = @DniMedico)
+    BEGIN
+        RAISERROR('DNI_DUPLICADO', 16, 1)
+        RETURN
+    END
+    IF EXISTS (SELECT 1 FROM MEDICO WHERE legajo_med = @LegajoMedico)
+    BEGIN
+        RAISERROR('LEGAJO_DUPLICADO', 16, 1)
+        RETURN
+    END
+
+    INSERT INTO MEDICO (id_usu, legajo_med, dni_med, nombre_med, apellido_med, sexo_med, nacionalidad_med, fecha_nacimiento_med, direccion_med, id_loc, email_med, telefono_med, id_esp, activo_med)
+    VALUES (@IdUsuario, @LegajoMedico, @DniMedico, @NombreMedico, @ApellidoMedico, @SexoMedico, @NacionalidadMedico, @FechaNacimientoMedico, @DireccionMedico, @IdLocalidad, @EmailMedico, @TelefonoMedico, @IdEspecialidad, @ActivoMedico)
 END
 GO
 

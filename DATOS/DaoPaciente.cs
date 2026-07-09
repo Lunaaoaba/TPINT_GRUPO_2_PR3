@@ -37,6 +37,17 @@ namespace DATOS
             return dataTable;
         }
 
+        public DataTable FiltrarPacientes(string idOrNombre, string tipoFiltro)
+        {
+            string query = "SELECT P.id_pac, P.dni_pac, P.nombre_pac, P.apellido_pac, " + "P.sexo_pac, P.nacionalidad_pac, P.fecha_nacimiento_pac, " + "P.direccion_pac, P.id_loc, L.nombre_loc, " + "P.email_pac, P.telefono_pac, P.activo_pac " + "FROM PACIENTE P INNER JOIN LOCALIDAD L ON P.id_loc = L.id_loc " + "WHERE P.activo_pac = 1 ";
+            if (!string.IsNullOrWhiteSpace(idOrNombre))
+            {
+                if (tipoFiltro == "id_pac") query += " AND P.id_pac = " + idOrNombre;
+                else query += " AND P.nombre_pac LIKE '%" + idOrNombre + "%'";
+            }
+            return accesoDatos.ObtenerTabla("PACIENTE", query);
+        }
+
         public void ParametrosAgregarPaciente(ref SqlCommand comando, Paciente paciente)
         {
             SqlParameter parametro = new SqlParameter();
@@ -66,8 +77,16 @@ namespace DATOS
         {
             SqlCommand comando = new SqlCommand();
             ParametrosAgregarPaciente(ref comando, paciente);
-            return accesoDatos.EjecutarProcedimientoAlmacenado(comando, "spAgregarPaciente");
+            try
+            {
+                return accesoDatos.EjecutarProcedimientoAlmacenado(comando, "spAgregarPaciente");
+            }
+            catch (SqlException ex) when (ex.Message.Contains("DNI_DUPLICADO"))
+            {
+                return -1;
+            }
         }
+
         private void ParametrosEliminarPaciente(ref SqlCommand comando, Paciente paciente)
         {
             SqlParameter parametro = new SqlParameter();

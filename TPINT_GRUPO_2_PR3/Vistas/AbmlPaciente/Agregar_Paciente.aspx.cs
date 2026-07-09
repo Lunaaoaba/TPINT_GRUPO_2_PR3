@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente
 {
-    public partial class AgrMod_Paciente : System.Web.UI.Page
+    public partial class Agregar_Paciente : System.Web.UI.Page
     {
         
         protected void Page_Load(object sender, EventArgs e)
@@ -26,7 +26,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente
             ddlSexo.Items.Clear();
             ddlSexo.Items.Add(new ListItem("Masculino", "M"));
             ddlSexo.Items.Add(new ListItem("Femenino", "F"));
-            ddlSexo.Items.Insert(0, new ListItem("-- Seleccione un sexo --", "0"));
+            ddlSexo.Items.Insert(0, new ListItem("- Elegir -", "0"));
 
         }
         private void CargarNacionallidad()
@@ -38,7 +38,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente
             ddlNacionalidad.Items.Add(new ListItem("Uruguay", "Uruguay"));
             ddlNacionalidad.Items.Add(new ListItem("Paraguay", "Paraguay"));
             ddlNacionalidad.Items.Add(new ListItem("Bolivia", "Bolivia"));
-            ddlNacionalidad.Items.Insert(0, new ListItem("-- Seleccione una nacionalidad --", "0"));
+            ddlNacionalidad.Items.Insert(0, new ListItem("- Elegir -", "0"));
         }
         private void CargarLocalidades()
         {
@@ -47,7 +47,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente
             ddlLocalidad.DataTextField = "nombre_loc";
             ddlLocalidad.DataValueField = "id_loc";
             ddlLocalidad.DataBind();
-            ddlLocalidad.Items.Insert(0, new ListItem("-- Seleccione una localidad --", "0"));
+            ddlLocalidad.Items.Insert(0, new ListItem("- Elegir -", "0"));
         }
 
         private void LimpiarCampos()
@@ -79,16 +79,25 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente
             string email = txtEmail.Text;
             string telefono = txtTelefono.Text;
 
-            bool exito = negocio.AgregarPaciente(dni, nombre, apellido, sexo, nacionalidad, fechaNacimiento, direccion, idLocalidad, email, telefono);
-            if (exito)
+            int resultado = negocio.AgregarPaciente(dni, nombre, apellido, sexo, nacionalidad, fechaNacimiento, direccion, idLocalidad, email, telefono);
+
+            if (resultado == 1)
             {
                 lblExito.Text = "Paciente agregado correctamente.";
+                lblExito.ForeColor = System.Drawing.Color.Green;
                 lblExito.Visible = true;
                 LimpiarCampos();
+            }
+            else if (resultado == -1)
+            {
+                lblExito.Text = "Ya existe un paciente con ese DNI.";
+                lblExito.ForeColor = System.Drawing.Color.Red;
+                lblExito.Visible = true;
             }
             else
             {
                 lblExito.Text = "Error al agregar al paciente.";
+                lblExito.ForeColor = System.Drawing.Color.Red;
                 lblExito.Visible = true;
             }
         }

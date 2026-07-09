@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Agregar_Paciente.aspx.cs" Inherits="TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente.AgrMod_Paciente" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Agregar_Paciente.aspx.cs" Inherits="TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente.Agregar_Paciente" %>
 
 <!DOCTYPE html>
 
@@ -63,160 +63,112 @@
         height: 30px;
     }
 </style>
-
 </head>
-
 <body>
-
 <form id="form1" runat="server">
-
     <div id="contenedor">
-
         <div>
             <table class="tablaHL">
                 <tr>
-                    <%--jaja ola k asia--%>
                     <td class="tdHL">
                         <asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
                     </td>
-
                     <td class="tdHL">
                     </td>
                 </tr>
             </table>
         </div>
-
         <br />
         <br />
-
         <div>
-
             <table>
-
                 <tr>
                     <td colspan="3">
                         <h1 align="center">Agregar Paciente</h1>
                     </td>
                 </tr>
-
                 <tr>
-                    <td>
-                        <asp:Label ID="lblDNI" runat="server" Text="DNI :"></asp:Label>
-                    </td>
-
+                    <td><asp:Label ID="lblDNI" runat="server" Text="DNI :"></asp:Label></td>
                     <td class="auto-style2">&nbsp;</td>
-
                     <td>
-                        <asp:TextBox ID="txtDNI" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtDNI" runat="server" ValidationGroup="grupo1" Width="95px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvDNI" runat="server" ControlToValidate="txtDNI"
+                            ErrorMessage="Ingrese DNI" Text="*" ForeColor="Red" Display="Dynamic" ValidationGroup="grupo1"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revDNI" runat="server" ControlToValidate="txtDNI" ErrorMessage="DNI inválido (7-8 dígitos)" Text="*" ForeColor="Red" Display="Dynamic" ValidationExpression="^\d{7,8}$" ValidationGroup="grupo1"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
-
                 <tr>
-                    <td>
-                        <asp:Label ID="lblNombrePaciente" runat="server" Text="Nombre:"></asp:Label>
-                    </td>
-
+                    <td><asp:Label ID="lblNombrePaciente" runat="server" Text="Nombre:"></asp:Label></td>
                     <td class="auto-style2">&nbsp;</td>
-
                     <td>
-                        <asp:TextBox ID="txtNombrePaciente" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtNombrePaciente" runat="server" ValidationGroup="grupo1"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombrePaciente" ErrorMessage="Ingrese nombre" Text="*" ForeColor="Red" Display="Dynamic" ValidationGroup="grupo1"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
-
                 <tr>
-                    <td>
-                        <asp:Label ID="lblApellidoPaciente" runat="server" Text="Apellido :"></asp:Label>
-                    </td>
-
+                    <td><asp:Label ID="lblApellidoPaciente" runat="server" Text="Apellido :"></asp:Label></td>
                     <td class="auto-style2">&nbsp;</td>
-
                     <td>
-                        <asp:TextBox ID="txtApellidoPaciente" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtApellidoPaciente" runat="server" ValidationGroup="grupo1"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ControlToValidate="txtApellidoPaciente" ErrorMessage="Ingrese apellido" Text="*" ForeColor="Red" Display="Dynamic" ValidationGroup="grupo1"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
-
                 <tr>
-                    <td class="auto-style4">
-                        <asp:Label ID="Sexo" runat="server" Text="Sexo :"></asp:Label>
-                    </td>
-
+                    <td class="auto-style4"><asp:Label ID="Sexo" runat="server" Text="Sexo :"></asp:Label></td>
                     <td class="auto-style5"></td>
-
                     <td class="auto-style4">
-                        <asp:DropDownList ID="ddlSexo" runat="server">
-                        </asp:DropDownList>
+                        <asp:DropDownList ID="ddlSexo" runat="server" ValidationGroup="grupo1"></asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="rfvSexo" runat="server" ControlToValidate="ddlSexo" ErrorMessage="Seleccione sexo" Text="*" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
-
                 <tr>
-                    <td>
-                        <asp:Label ID="Nacionalidad" runat="server" Text="Nacionalidad :"></asp:Label>
-                    </td>
-
+                    <td><asp:Label ID="Nacionalidad" runat="server" Text="Nacionalidad :"></asp:Label></td>
                     <td class="auto-style2">&nbsp;</td>
-
                     <td>
-                        <asp:DropDownList ID="ddlNacionalidad" runat="server">
-                        </asp:DropDownList>
+                        <asp:DropDownList ID="ddlNacionalidad" runat="server" ValidationGroup="grupo1"></asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="rfvNacionalidad" runat="server" ControlToValidate="ddlNacionalidad" ErrorMessage="Seleccione nacionalidad" Text="*" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
-
                 <tr>
-                    <td>
-                        <asp:Label ID="lblFechaNacimiento" runat="server" Text="Fecha de Nacimiento :"></asp:Label>
-                    </td>
-
+                    <td><asp:Label ID="lblFechaNacimiento" runat="server" Text="Fecha de Nacimiento :"></asp:Label></td>
                     <td class="auto-style2">&nbsp;</td>
-
                     <td>
-                        <asp:TextBox ID="txtFechaNacimiento" runat="server" TextMode="Date"></asp:TextBox>
+                        <asp:TextBox ID="txtFechaNacimiento" runat="server" TextMode="Date" ValidationGroup="grupo1" Width="100px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvFechaNacimiento" runat="server" ControlToValidate="txtFechaNacimiento" ErrorMessage="Ingrese fecha" Text="*" ForeColor="Red" Display="Dynamic" ValidationGroup="grupo1"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
-
                 <tr>
-                    <td>
-                        <asp:Label ID="lblDireccion" runat="server" Text="Direccion :"></asp:Label>
-                    </td>
-
+                    <td><asp:Label ID="lblDireccion" runat="server" Text="Direccion :"></asp:Label></td>
                     <td class="auto-style2">&nbsp;</td>
-
                     <td>
-                        <asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtDireccion" runat="server" ValidationGroup="grupo1"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Ingrese dirección" Text="*" ForeColor="Red" Display="Dynamic" ValidationGroup="grupo1"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
-
                 <tr>
-                    <td class="auto-style1">
-                        <asp:Label ID="lblLocalidad" runat="server" Text="Localidad :"></asp:Label>
-                    </td>
-
+                    <td class="auto-style1"><asp:Label ID="lblLocalidad" runat="server" Text="Localidad :"></asp:Label></td>
                     <td class="auto-style3">&nbsp;</td>
-
                     <td class="auto-style1">
-                        <asp:DropDownList ID="ddlLocalidad" runat="server">
-                        </asp:DropDownList>
+                        <asp:DropDownList ID="ddlLocalidad" runat="server" ValidationGroup="grupo1"></asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="rfvLocalidad" runat="server" ControlToValidate="ddlLocalidad" ErrorMessage="Seleccione localidad" Text="*" ForeColor="Red" InitialValue="0" ValidationGroup="grupo1"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
-
                 <tr>
-                    <td>
-                        <asp:Label ID="lblEmail" runat="server" Text="Email :"></asp:Label>
-                    </td>
-
+                    <td><asp:Label ID="lblEmail" runat="server" Text="Email :"></asp:Label></td>
                     <td class="auto-style2">&nbsp;</td>
-
                     <td>
-                        <asp:TextBox ID="txtEmail" runat="server" TextMode="Email"></asp:TextBox>
+                        <asp:TextBox ID="txtEmail" runat="server" TextMode="Email" ValidationGroup="grupo1"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Ingrese email" Text="*" ForeColor="Red" Display="Dynamic" ValidationGroup="grupo1"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Email inválido" Text="*" ForeColor="Red" Display="Dynamic" ValidationExpression="^[^@\s]+@[^@\s]+\.[^@\s]+$" ValidationGroup="grupo1"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
-
                 <tr>
-                    <td>
-                        <asp:Label ID="lblTelefono" runat="server" Text="Telefono :"></asp:Label>
-                    </td>
+                    <td><asp:Label ID="lblTelefono" runat="server" Text="Telefono :"></asp:Label></td>
                     <td class="auto-style2">&nbsp;</td>
                     <td>
-                        <asp:TextBox ID="txtTelefono" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtTelefono" runat="server" ValidationGroup="grupo1"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ControlToValidate="txtTelefono" ErrorMessage="Ingrese teléfono" Text="*" ForeColor="Red" Display="Dynamic" ValidationGroup="grupo1"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono" ErrorMessage="Solo números" Text="*" ForeColor="Red" Display="Dynamic" ValidationExpression="^\d{8,15}$" ValidationGroup="grupo1"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
@@ -233,12 +185,8 @@
                     <td class="auto-style9"></td>
 
                     <td class="auto-style8">
-                        <asp:Button
-                            ID="btnAceptar"
-                            runat="server"
-                            Text="Aceptar"
-                            Width="78px"
-                            OnClick="btnAceptar_Click" />
+                        <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" Width="78px" OnClick="btnAceptar_Click" ValidationGroup="grupo1" />
+                        <asp:ValidationSummary ID="vsErrores" runat="server" ShowMessageBox="True" ShowSummary="False" ValidationGroup="grupo1" />
                     </td>
                 </tr>
                 <tr>
