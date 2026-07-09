@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginMedicos.aspx.cs" Inherits="TPINT_GRUPO_2_PR3.Vistas.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="TPINT_GRUPO_2_PR3.Vistas.Login" %>
 
 <!DOCTYPE html>
 
@@ -51,23 +51,23 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td><h2>Usuario: </h2></td>
+                    <td><h3>Usuario: </h3></td>
                     <td>
                         <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
                     </td>
                     <td>
-                        <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="CompareValidator" ControlToValidate="txtUsuario" Visible="False"></asp:CompareValidator>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtUsuario" Visible="False"></asp:RequiredFieldValidator>
+                        <asp:CompareValidator ID="cvUsuario" runat="server" ErrorMessage="*" ControlToValidate="txtUsuario" Visible="False"></asp:CompareValidator>
+                        <asp:RequiredFieldValidator ID="rfvUsuario" runat="server" ErrorMessage="*" ControlToValidate="txtUsuario" Visible="False"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
-                    <td><h2>Contraseña: </h2></td>
+                    <td><h3>Contraseña: </h3></td>
                     <td>
                         <asp:TextBox ID="txtContraseña" runat="server"></asp:TextBox>
                     </td>
                     <td>
-                        <asp:CompareValidator ID="CompareValidator2" runat="server" ErrorMessage="CompareValidator" ControlToValidate="txtContraseña" Visible="False"></asp:CompareValidator>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="txtContraseña" Visible="False"></asp:RequiredFieldValidator>
+                        <asp:CompareValidator ID="cvContrasena" runat="server" ErrorMessage="*" ControlToValidate="txtContraseña" Visible="False"></asp:CompareValidator>
+                        <asp:RequiredFieldValidator ID="rfvContrasena" runat="server" ErrorMessage="*" ControlToValidate="txtContraseña" Visible="False"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>

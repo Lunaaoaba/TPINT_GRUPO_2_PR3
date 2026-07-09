@@ -38,6 +38,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente
             ddlNacionalidad.Items.Add(new ListItem("Uruguay", "Uruguay"));
             ddlNacionalidad.Items.Add(new ListItem("Paraguay", "Paraguay"));
             ddlNacionalidad.Items.Add(new ListItem("Bolivia", "Bolivia"));
+            ddlNacionalidad.Items.Add(new ListItem("Otro", "Otro"));
             ddlNacionalidad.Items.Insert(0, new ListItem("- Elegir -", "0"));
         }
         private void CargarLocalidades()
@@ -68,16 +69,16 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente
         {
             NegocioPaciente negocio = new NegocioPaciente();
 
-            string dni = txtDNI.Text;
-            string nombre = txtNombrePaciente.Text;
-            string apellido = txtApellidoPaciente.Text;
+            string dni = txtDNI.Text.Trim();
+            string nombre = txtNombrePaciente.Text.Trim();
+            string apellido = txtApellidoPaciente.Text.Trim();
             char sexo = Convert.ToChar(ddlSexo.SelectedValue);
             string nacionalidad = ddlNacionalidad.SelectedValue;
-            DateTime fechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
-            string direccion = txtDireccion.Text;
+            DateTime fechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text.Trim());
+            string direccion = txtDireccion.Text.Trim();
             int idLocalidad = Convert.ToInt32(ddlLocalidad.SelectedValue);
-            string email = txtEmail.Text;
-            string telefono = txtTelefono.Text;
+            string email = txtEmail.Text.Trim();
+            string telefono = txtTelefono.Text.Trim();
 
             int resultado = negocio.AgregarPaciente(dni, nombre, apellido, sexo, nacionalidad, fechaNacimiento, direccion, idLocalidad, email, telefono);
 

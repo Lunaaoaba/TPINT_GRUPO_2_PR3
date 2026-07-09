@@ -27,7 +27,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlMedico
 
         protected void btnVolverModificar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ABML_Medico.aspx");
+            Response.Redirect("~/Vistas/Admin/AbmlMedico/ABML_Medico.aspx");
         }
 
         protected void gvMedicosModificar_PageIndexChanging(object sender, GridViewPageEventArgs e)

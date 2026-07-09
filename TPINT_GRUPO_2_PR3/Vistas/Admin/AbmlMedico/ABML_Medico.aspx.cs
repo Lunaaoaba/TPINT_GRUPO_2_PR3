@@ -11,22 +11,23 @@ namespace TPINT_GRUPO_2_PR3.Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+            }
         }
-
         protected void AgregarMedico_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AgregarMedico.aspx");
+            Response.Redirect("~/Vistas/Admin/AbmlMedico/AgregarMedico.aspx");
         }
 
         protected void ListarMedicos_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MostrarMedico.aspx");
+            Response.Redirect("~/Vistas/Admin/AbmlMedico/MostrarMedico.aspx");
         }
 
         protected void ReportesMedicos_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ModificarMedico.aspx");
+            Response.Redirect("~/Vistas/Admin/AbmlMedico/ModificarMedico.aspx");
         }
     }
 }

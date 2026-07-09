@@ -44,7 +44,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas
 
         protected void btnVolver_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ABML_Medico.aspx");
+            Response.Redirect("~/Vistas/Admin/AbmlMedico/ABML_Medico.aspx");
         }
 
         protected void gvMedicos_PageIndexChanging(object sender, GridViewPageEventArgs e)

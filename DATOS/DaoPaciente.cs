@@ -43,7 +43,7 @@ namespace DATOS
             if (!string.IsNullOrWhiteSpace(ingreso))
             {
                 if (tipoFiltro == "id_pac") query += " AND P.id_pac = " + ingreso;
-                else if (tipoFiltro == "dni_pac") query += " AND P.dni_pac = " + ingreso;
+                else if (tipoFiltro == "dni_pac") query += " AND P.dni_pac LIKE '%" + ingreso + "%'";
                 else if (tipoFiltro == "nombre_pac") query += " AND P.nombre_pac LIKE '%" + ingreso + "%'";
                 else if (tipoFiltro == "apellido_pac") query += " AND P.apellido_pac LIKE '%" + ingreso + "%'";
 

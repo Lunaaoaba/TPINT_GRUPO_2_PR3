@@ -10,17 +10,20 @@ using NEGOCIO;
 
 namespace TPINT_GRUPO_2_PR3.Vistas
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class Login : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblErrorEstaMal.Visible = false;
+            if (!IsPostBack)
+            {
+                lblErrorEstaMal.Visible = false;
+            }
         }
 
         protected void BtnSession_Click(object sender, EventArgs e)
         {
-            NegocioUsuario NEGOCIO = new NegocioUsuario();
-            DataTable dt = NEGOCIO.Login(txtUsuario.Text, txtContraseña.Text);
+            NegocioUsuario negocio = new NegocioUsuario();
+            DataTable dt = negocio.Login(txtUsuario.Text, txtContraseña.Text);
 
             if (dt.Rows.Count > 0)
             {
@@ -29,11 +32,11 @@ namespace TPINT_GRUPO_2_PR3.Vistas
 
                 if (dt.Rows[0]["tipo_usu"].ToString() == "Admin")
                 {
-                    Response.Redirect("InicioAdmin.aspx");
+                    Response.Redirect("~/Vistas/Admin/InicioAdmin.aspx");
                 }
                 else
                 {
-                    Response.Redirect("InicioMedico.aspx");
+                    Response.Redirect("~/Vistas/Medico/InicioMedico.aspx");
                 }
             }
             else

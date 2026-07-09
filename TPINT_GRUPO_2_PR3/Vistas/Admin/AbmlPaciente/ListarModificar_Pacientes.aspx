@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ABML_Pacientes.aspx.cs" Inherits="TPINT_GRUPO_2_PR3.Vistas.ABML_Pacientes" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListarModificar_Pacientes.aspx.cs" Inherits="TPINT_GRUPO_2_PR3.Vistas.ListarModificar_Pacientes" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -79,9 +79,10 @@ body{
                     </asp:DropDownList>
                 <asp:TextBox ID="tbBusqueda" runat="server" ValidationGroup="grupoBuscar"></asp:TextBox>
                 <asp:Button ID="btBuscar" runat="server" Text="Buscar" OnClick="btBuscar_Click"/>
-
-                <asp:CompareValidator ID="cvBusquedaID" runat="server" ControlToValidate="tbBusqueda" Operator="DataTypeCheck" Type="Integer" ErrorMessage="El ID de paciente debe ser un número entero válido." Text="*" ForeColor="Red" Display="Dynamic" ValidationGroup="grupoBuscar" />
-                <asp:CompareValidator ID="cvBusquedaDNI" runat="server" ControlToValidate="tbBusqueda" Operator="DataTypeCheck" Type="Integer" ErrorMessage="El DNI debe contener solo números sin puntos ni espacios." Text="*" ForeColor="Red" Display="Dynamic" ValidationGroup="grupoBuscar" />
+                <br />
+                <asp:Label ID="lblErrorBusqueda" runat="server" ForeColor="Red" Visible="false"></asp:Label>
+                <asp:CompareValidator ID="cvBusquedaID" runat="server" ControlToValidate="tbBusqueda" Operator="DataTypeCheck" Type="Integer" ErrorMessage="El ID de paciente debe ser un número entero válido." Text="*" ForeColor="Red" Display="Dynamic" ValidationGroup="grupoBuscar" Visible="False" />
+                <asp:CompareValidator ID="cvBusquedaDNI" runat="server" ControlToValidate="tbBusqueda" Operator="DataTypeCheck" Type="Integer" ErrorMessage="El DNI debe contener solo números sin puntos ni espacios." Text="*" ForeColor="Red" Display="Dynamic" ValidationGroup="grupoBuscar" Visible="False" />
                 <asp:ValidationSummary ID="vsErroresBuscar" runat="server" ShowMessageBox="True" ShowSummary="False" ValidationGroup="grupoBuscar" />
             </div>
             <div style="overflow-x:auto;">
@@ -108,6 +109,7 @@ body{
                             <ItemTemplate><asp:Label runat="server" Text='<%# Eval("apellido_pac") %>'></asp:Label></ItemTemplate>
                             <EditItemTemplate><asp:TextBox ID="txt_apellido" runat="server" Text='<%# Bind("apellido_pac") %>'></asp:TextBox></EditItemTemplate>
                         </asp:TemplateField>
+
                         <asp:TemplateField HeaderText="Sexo">
                             <ItemTemplate><asp:Label runat="server" Text='<%# Eval("sexo_pac") %>'></asp:Label></ItemTemplate>
                             <EditItemTemplate>
@@ -118,12 +120,24 @@ body{
                                 </asp:DropDownList>
                             </EditItemTemplate>
                         </asp:TemplateField>
+
                         <asp:TemplateField HeaderText="Nacionalidad">
                             <ItemTemplate><asp:Label runat="server" Text='<%# Eval("nacionalidad_pac") %>'></asp:Label></ItemTemplate>
-                            <EditItemTemplate><asp:TextBox ID="txt_nacionalidad" runat="server" Text='<%# Bind("nacionalidad_pac") %>'></asp:TextBox></EditItemTemplate>
+                            <EditItemTemplate>
+                                <asp:DropDownList ID="ddl_nacionalidad" runat="server">
+                                    <asp:ListItem Value="Argentina">Argentina</asp:ListItem>
+                                    <asp:ListItem Value="Brasil">Brasil</asp:ListItem>
+                                    <asp:ListItem Value="Chile">Chile</asp:ListItem>
+                                    <asp:ListItem Value="Uruguay">Uruguay</asp:ListItem>
+                                    <asp:ListItem Value="Paraguay">Paraguay</asp:ListItem>
+                                    <asp:ListItem Value="Bolivia">Bolivia</asp:ListItem>
+                                    <asp:ListItem Value="Otro">Otro</asp:ListItem>
+                                </asp:DropDownList>
+                            </EditItemTemplate>
                         </asp:TemplateField>
+
                         <asp:TemplateField HeaderText="F. Nacimiento">
-                            <ItemTemplate><asp:Label runat="server" Text='<%# Eval("fecha_nacimiento_pac", "{0:dd/MM/yyyy}") %>'></asp:Label></ItemTemplate>
+                            <ItemTemplate><asp:Label runat="server" Text='<%# Eval("fecha_nacimiento_pac", "{0:dd/MM/yyyy}") %>' TextMode="Date"></asp:Label></ItemTemplate>
                             <EditItemTemplate><asp:TextBox ID="txt_fechaNac" runat="server" Text='<%# Bind("fecha_nacimiento_pac", "{0:yyyy-MM-dd}") %>'></asp:TextBox></EditItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Direccion">
