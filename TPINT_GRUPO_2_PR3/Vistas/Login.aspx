@@ -21,8 +21,7 @@
         }
         #contenedor {
         background-color: white;
-        width: 100%;
-        max-width: 800px;
+        width: max-content;
         padding: 20px 30px;
         border-radius: 8px;
         box-sizing: border-box;

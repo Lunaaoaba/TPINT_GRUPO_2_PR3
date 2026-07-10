@@ -13,8 +13,7 @@ body{
     padding:30px;
 }
 #contenedor{
-    width:95%;
-    max-width:1300px;
+    width: max-content;
     margin:40px auto;
     background:white;
     padding:25px;

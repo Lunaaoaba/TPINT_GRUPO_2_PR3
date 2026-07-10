@@ -22,10 +22,11 @@
 
     #contenedor {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         background-color: white !important;
-        width: 560px;
+        width: max-content;
         padding: 20px 30px;
         border-radius: 8px;
         box-sizing: border-box;
@@ -44,7 +45,7 @@
     }
 
     #contenedor {
-        width: 560px;
+        width: max-content;
         max-width: 90vw;
         overflow-x: auto;
     }
@@ -59,20 +60,6 @@
 <body>
     <form id="form1" runat="server">
         <div id="contenedor">
-            <div>
-                <table class="tablaHL">
-                    <tr>
-                        <%--jaja ola k asia--%>
-                        <td class="tdHL">
-                            <asp:Label ID="lblNombreUsuario" runat="server"></asp:Label>
-                        </td>
-                        <td class="tdHL">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <br />
-            <br />
             <div>
                 <table>
                     <tr>
@@ -90,7 +77,7 @@
                         <td>
                             <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" Width="78px" OnClick="btnAceptar_Click" Height="23px" />
                         </td>
-                    </tr>margin-left
+                    </tr>
                     <tr><td>
                         <asp:LinkButton ID="gv_vistaPrevia" runat="server" OnClick="gv_vistaPrevia_Click">Previsualizar</asp:LinkButton>
                         </td></tr>
@@ -99,18 +86,21 @@
                             <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                         </td>
                     </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td class="auto-style">
-                            <asp:GridView ID="gvEliminarPaciente" runat="server"></asp:GridView>
-                        </td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                    </tr>
                 </table>
             </div>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <asp:GridView ID="gvEliminarPaciente" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" CellPadding="5">
+                            <HeaderStyle BackColor="#277343" Font-Bold="True" ForeColor="White" />
+                            <RowStyle BackColor="White" ForeColor="#333333" />
+                            <AlternatingRowStyle BackColor="#E8F5E9" />
+                        </asp:GridView>
+                    </td>
+                </tr>
+            </table>
         </div>
         <p>&nbsp;</p>
         <p>

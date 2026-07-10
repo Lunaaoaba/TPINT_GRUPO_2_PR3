@@ -28,7 +28,7 @@
             justify-content: center;
             align-items: center;
             background-color: white !important;
-            width: 300px;
+            width: max-content;
             padding: 20px 30px;
             border-radius: 8px;
             box-sizing: border-box;

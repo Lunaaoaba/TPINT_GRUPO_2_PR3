@@ -16,8 +16,7 @@ padding:30px;
 }
 
 #contenedor{
-width:95%;
-max-width:1200px;
+width: max-content;
 margin:40px auto;
 background:white;
 padding:25px;

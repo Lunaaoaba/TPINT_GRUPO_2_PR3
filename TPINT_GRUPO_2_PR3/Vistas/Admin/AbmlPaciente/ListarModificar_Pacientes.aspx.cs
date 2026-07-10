@@ -62,7 +62,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas
             ddlSexo.SelectedValue = fila["sexo_pac"].ToString();
 
             DropDownList ddlNac = (DropDownList)e.Row.FindControl("ddl_nacionalidad");
-            ddlSexo.SelectedValue = fila["nacionalidad_pac"].ToString();
+            ddlNac.SelectedValue = fila["nacionalidad_pac"].ToString();
 
             // agregar nacionalidad tipo datetime
 

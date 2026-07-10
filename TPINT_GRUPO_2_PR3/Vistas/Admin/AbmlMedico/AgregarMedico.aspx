@@ -22,7 +22,7 @@ box-sizing: border-box;
 
 #contenedor {
 background-color: white !important;
-width: 650px;
+width: max-content;
 padding: 30px;
 border-radius: 8px;
 box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
