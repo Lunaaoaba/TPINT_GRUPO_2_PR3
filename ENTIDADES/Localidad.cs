@@ -26,5 +26,6 @@ namespace ENTIDADES
         {
             get { return id_pro; }
             set { id_pro = value; }
+        }
     }
 }

@@ -11,14 +11,15 @@ namespace ENTIDADES
         private int id_pro;
         private string nombre_pro;
 
-        public int id_pro
+        public int Id_pro
         {
             get { return id_pro; }
             set { id_pro = value; }
         }
-        public string nombre_pro
+        public string Nombre_pro
         {
             get { return nombre_pro; }
             set { nombre_pro = value; }
         }
     }
+}
