@@ -29,5 +29,11 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         {
             Response.Redirect("~/Vistas/Admin/AbmlMedico/ModificarMedico.aspx");
         }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Vistas/Admin/InicioAdmin.aspx");
+
+        }
     }
 }

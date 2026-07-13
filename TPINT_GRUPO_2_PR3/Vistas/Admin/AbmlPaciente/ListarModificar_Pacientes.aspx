@@ -159,6 +159,14 @@ body{
                 </asp:GridView>
             </div>
         </div>
+          <tr>   
+       <td>&nbsp;</td>
+      <td>
+          <%-- <asp:Button ID="btnVolver" runat="server" Text="Volver" CssClass="btn-volver" OnClick="btnVolver_Click"  /> --%>
+          <asp:Button ID="btnVolver" runat="server" Text="Volver" CssClass="btn-volver" OnClick="btnVolver_Click" />
+      <td>&nbsp;</td>
+      
+</tr>
     </form>
 </body>
 </html>

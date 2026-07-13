@@ -14,6 +14,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente
         NegocioPaciente negocioPaciente = new NegocioPaciente();
         NegocioLocalidades negocioLocalidad = new NegocioLocalidades();
         Paciente paciente = new Paciente();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -54,24 +55,21 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente
             else mensaje("ID inválido");
         }
 
-
-
-        // para restaurar el paciente eliminado por id(si hay algo en el textbox) o general (si está vacío)
         protected void bt_restaurar_Click(object sender, EventArgs e)
         {
             if (txtID.Text != "")
             {
                 if (int.TryParse(txtID.Text, out int id))
                 {
-                    if (negocioPaciente.RestaurarPacientePorId(id)) mensaje("Paciente restaurado");
-                    else mensaje("No se pudo restaurar");
+                    if (negocioPaciente.RestaurarPacientePorId(id)) mensaje("Paciente restaurado con éxito");
+                    else mensaje("No se pudo restaurar el paciente");
                 }
                 else mensaje("ID inválido");
             }
             else
             {
-                if (negocioPaciente.RestaurarPacientes()) mensaje("Pacientes restaurados");
-                else mensaje("No se pudo restaurar");
+                if (negocioPaciente.RestaurarPacientes()) mensaje("Pacientes restaurados con éxito");
+                else mensaje("No se pudieron restaurar los pacientes");
             }
 
         }
@@ -79,6 +77,11 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente
         protected void gv_vistaPrevia_Click(object sender, EventArgs e)
         {
             CargarGridView();
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Vistas/Admin/AbmlPaciente/ListarModificar_Pacientes.aspx");
         }
     }
 }

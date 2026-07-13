@@ -33,8 +33,28 @@ BEGIN
         RETURN
     END
 
-    INSERT INTO PACIENTE (dni_pac, nombre_pac, apellido_pac, sexo_pac, nacionalidad_pac, fecha_nacimiento_pac, direccion_pac, id_loc, email_pac, telefono_pac)
-    VALUES (@dni_pac, @nombre_pac, @apellido_pac, @sexo_pac, @nacionalidad_pac, @fecha_nacimiento_pac, @direccion_pac, @id_loc, @email_pac, @telefono_pac)
+    INSERT INTO PACIENTE (
+        dni_pac,
+        nombre_pac,
+        apellido_pac,
+        sexo_pac,
+        nacionalidad_pac,
+        fecha_nacimiento_pac,
+        direccion_pac,
+        id_loc,
+        email_pac,
+        telefono_pac)
+    VALUES (
+        @dni_pac,
+        @nombre_pac,
+        @apellido_pac,
+        @sexo_pac,
+        @nacionalidad_pac,
+        @fecha_nacimiento_pac,
+        @direccion_pac,
+        @id_loc,
+        @email_pac,
+        @telefono_pac)
 END
 GO
 
@@ -87,6 +107,7 @@ BEGIN
 END
 GO
 
+
 -- CONSULTAS MEDICO --
 
 CREATE PROCEDURE [spAgregarMedico]
@@ -117,8 +138,35 @@ BEGIN
         RETURN
     END
 
-    INSERT INTO MEDICO (id_usu, legajo_med, dni_med, nombre_med, apellido_med, sexo_med, nacionalidad_med, fecha_nacimiento_med, direccion_med, id_loc, email_med, telefono_med, id_esp, activo_med)
-    VALUES (@IdUsuario, @LegajoMedico, @DniMedico, @NombreMedico, @ApellidoMedico, @SexoMedico, @NacionalidadMedico, @FechaNacimientoMedico, @DireccionMedico, @IdLocalidad, @EmailMedico, @TelefonoMedico, @IdEspecialidad, @ActivoMedico)
+    INSERT INTO MEDICO (
+    id_usu, 
+    legajo_med, 
+    dni_med, 
+    nombre_med, 
+    apellido_med, 
+    sexo_med, 
+    nacionalidad_med, 
+    fecha_nacimiento_med, 
+    direccion_med, id_loc, 
+    email_med, 
+    telefono_med, 
+    id_esp, 
+    activo_med)
+    VALUES (
+    @IdUsuario, 
+    @LegajoMedico, 
+    @DniMedico, 
+    @NombreMedico, 
+    @ApellidoMedico, 
+    @SexoMedico, 
+    @NacionalidadMedico, 
+    @FechaNacimientoMedico, 
+    @DireccionMedico, @IdLocalidad, 
+    @EmailMedico, 
+    @TelefonoMedico, 
+    @IdEspecialidad, 
+    @ActivoMedico)
+    
 END
 GO
 
@@ -133,31 +181,26 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE spAgregarUsuario
-    @Username VARCHAR(30),
-    @Password VARCHAR(100),
-    @Tipo VARCHAR(10),
-    @Activo BIT
+
+CREATE PROCEDURE [spRestaurarMedico]
 AS
 BEGIN
-    INSERT INTO USUARIO
-    (
-        username_usu,
-        password_usu,
-        tipo_usu,
-        activo_usu
-    )
-    VALUES
-    (
-        @Username,
-        @Password,
-        @Tipo,
-        @Activo
-    );
-
-    SELECT SCOPE_IDENTITY() AS id_usu;
+    UPDATE MEDICO
+    SET activo_med = 1
+    WHERE activo_med = 0
 END
 GO
+
+CREATE PROCEDURE [spRestaurarMedicoPorId]
+    @id_med INT
+AS
+BEGIN
+    UPDATE MEDICO
+    SET activo_med = 1
+    WHERE id_med = @id_med
+END
+GO
+
 
 CREATE PROCEDURE [spModificarMedico]
     @id_med INT,
@@ -190,4 +233,60 @@ BEGIN
         id_esp = @id_esp
     WHERE id_med = @id_med
 END
+GO
+
+-- CONSULTA USUARIO --
+
+CREATE PROCEDURE spAgregarUsuario
+    @Username VARCHAR(30),
+    @Password VARCHAR(100),
+    @Tipo VARCHAR(10),
+    @Activo BIT
+AS
+BEGIN
+    INSERT INTO USUARIO
+    (
+        username_usu,
+        password_usu,
+        tipo_usu,
+        activo_usu
+    )
+    VALUES
+    (
+        @Username,
+        @Password,
+        @Tipo,
+        @Activo
+    );
+
+    SELECT SCOPE_IDENTITY() AS id_usu;
+END
+GO
+
+
+--HORARIOS
+
+CREATE PROCEDURE spAgregarHorarioMedico
+@id_med INT,
+@dia_semana_hor INT,
+@hora_inicio_hor TIME,
+@hora_fin_hor TIME
+
+AS 
+BEGIN
+    INSERT INTO HORARIO_MEDICO (
+    id_med,
+    dia_semana_hor,
+    hora_inicio_hor,
+    hora_fin_hor,
+    activo_hor
+    )
+    VALUES (
+    @id_med,
+    @dia_semana_hor,
+    @hora_inicio_hor,
+    @hora_fin_hor,
+    1
+    );
+END 
 GO

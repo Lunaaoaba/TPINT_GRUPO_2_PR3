@@ -8,23 +8,23 @@ namespace ENTIDADES
 {
     public class Medico : Persona
     {
-        private int Id_med;
-        private string Legajo_med;
-        private Especialidad Id_esp;
-        private List<HorarioMedico> Horarios;
-        private Usuario Credenciales;
-        private bool Activo;
+        private int id_med;
+        private string legajo_med;
+        private Especialidad id_esp;
+        private List<HorarioMedico> horarios;
+        private Usuario credenciales;
+        private bool activo;
 
         public Medico()
         {
-            Horarios = new List<HorarioMedico>();
+            horarios = new List<HorarioMedico>();
         }
-        public Medico(int idMed) { Id_med = idMed; }
+        public Medico(int idMed) { id_med = idMed; }
 
         public Medico(int idMed, string dni, string nombre, string apellido, char sexo, string nacionalidad, DateTime fechaNacimiento, string direccion,
                       Localidad idLoc, string email, string telefono, string legajoMed, Especialidad idEsp, Usuario credenciales, bool activo)
         {
-            Id_med = idMed;
+            id_med = idMed;
             this.dni = dni;
             this.nombre = nombre;
             this.apellido = apellido;
@@ -42,29 +42,29 @@ namespace ENTIDADES
             Horarios = new List<HorarioMedico>();
         }
 
-        public int id_med
-        {   get { return Id_med; }
-            set { Id_med = value; }
+        public int Id_med
+        {   get { return id_med; }
+            set { id_med = value; }
         }
-        public string legajo_med
-        {   get { return Legajo_med; }
-            set { Legajo_med = value; }
+        public string Legajo_med
+        {   get { return legajo_med; }
+            set { legajo_med = value; }
         }
-        public Especialidad id_esp
-        {   get { return Id_esp; }
-            set { Id_esp = value; }
+        public Especialidad Id_esp
+        {   get { return id_esp; }
+            set { id_esp = value; }
         }
-        public List<HorarioMedico> horarios
-        {   get { return Horarios; }
-            set { Horarios = value; }
+        public List<HorarioMedico> Horarios
+        {   get { return horarios; }
+            set { horarios = value; }
         }
-        public Usuario credenciales
-        {   get { return Credenciales; }
-            set { Credenciales = value; }
+        public Usuario Credenciales
+        {   get { return credenciales; }
+            set { credenciales = value; }
         }
-        public bool activo
-        {   get { return Activo; }
-            set { Activo = value; }
+        public bool Activo
+        {   get { return activo; }
+            set { activo = value; }
         }
     }
 }

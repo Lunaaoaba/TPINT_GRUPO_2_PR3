@@ -32,7 +32,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas
 
         protected void btnMedicos_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Vistas/Admin/AbmlMedico/ABML_Medico.aspx");
+            Response.Redirect("~/Vistas/Admin/AbmlMedico/MostrarMedico.aspx");
         }
 
         protected void btnPacientes_Click(object sender, EventArgs e)
@@ -43,6 +43,11 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         protected void btnTurnos_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Vistas/Admin/AbmlTurno/ABML_Turnos.aspx");
+        }
+
+        protected void btnReportes_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

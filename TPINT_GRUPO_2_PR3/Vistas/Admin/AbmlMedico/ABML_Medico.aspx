@@ -34,6 +34,24 @@
             box-sizing: border-box;
             margin: 0 auto;
         }
+        .btn-volver {
+    background-color: #f4f4f4;
+    color: #555555;
+    border: 1px solid #cccccc;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-volver:hover {
+    background-color: #e2e2e2;
+    color: #333333;
+}
     </style>
 </head>
 <body >
@@ -90,6 +108,22 @@
                 </td>
                 <td>&nbsp;</td>
             </tr>
+                        <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                            
+                            </tr>
+
+
+            <tr>   
+                 <td>&nbsp;</td>
+                <td>
+                    <%-- <asp:Button ID="btnVolver" runat="server" Text="Volver" CssClass="btn-volver" OnClick="btnVolver_Click"  /> --%>
+                    <asp:Button ID="btnVolver" runat="server" Text="Volver" CssClass="btn-volver" OnClick="btnVolver_Click" />
+                <td>&nbsp;</td>
+                
+          </tr>
            
         </table>
     </div>

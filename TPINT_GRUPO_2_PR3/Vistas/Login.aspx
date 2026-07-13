@@ -62,7 +62,7 @@
                 <tr>
                     <td><h3>Contraseña: </h3></td>
                     <td>
-                        <asp:TextBox ID="txtContraseña" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtContraseña" runat="server" TextMode="Password"></asp:TextBox>
                     </td>
                     <td>
                         <asp:CompareValidator ID="cvContrasena" runat="server" ErrorMessage="*" ControlToValidate="txtContraseña" Visible="False"></asp:CompareValidator>

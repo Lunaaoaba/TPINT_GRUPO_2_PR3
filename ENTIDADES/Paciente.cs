@@ -8,8 +8,8 @@ namespace ENTIDADES
 {
     public class Paciente : Persona
     {
-        private int Id_pac;
-        private bool Activo_pac;
+        private int id_pac;
+        private bool activo_pac;
 
         public Paciente() {}
         public Paciente(int idPac) { id_pac = idPac; }
@@ -31,13 +31,13 @@ namespace ENTIDADES
             Activo_pac = activoPac;
         }
 
-        public int id_pac
-        {   get { return Id_pac; }
-            set { Id_pac = value; }
+        public int Id_pac
+        {   get { return id_pac; }
+            set { id_pac = value; }
         }
-        public bool activo_pac
-        {   get { return Activo_pac; }
-            set { Activo_pac = value; }
+        public bool Activo_pac
+        {   get { return activo_pac; }
+            set { activo_pac = value; }
         }
     }
 }

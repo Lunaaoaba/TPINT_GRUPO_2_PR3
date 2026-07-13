@@ -8,49 +8,49 @@ namespace ENTIDADES
 {
     public class Usuario
     {
-        private int Id_usuario;
-        private string Username;
-        private string Password;
-        private string Tipo;        // "Admin" o "Medico" (por eso string)
-        private bool Activo;
+        private int id_usuario;
+        private string username;
+        private string password;
+        private string tipo;        // "Admin" o "Medico" (por eso string)
+        private bool activo;
 
         public Usuario() {}
         public Usuario(int idUsuario, string username, string password, string tipo, bool activo)
         {
-            Id_usuario = idUsuario;
-            Username = username;
-            Password = password;
-            Tipo = tipo;
-            Activo = activo;
+            id_usuario = idUsuario;
+            this.username = username;
+            this.password = password;
+            this.tipo = tipo;
+            this.activo = activo;
         }
 
-        public int id_usuario
+        public int Id_usuario
         {
-            get { return Id_usuario; }
-            set { Id_usuario = value; }
+            get { return id_usuario; }
+            set { id_usuario = value; }
         }
-        public string username
+        public string Username
         {
-            get { return Username; }
-            set { Username = value; }
+            get { return username; }
+            set { username = value; }
         }
-        public string password
+        public string Password
         {
-            get { return Password; }
-            set { Password = value; }
+            get { return password; }
+            set { password = value; }
         }
-        public string tipo
+        public string Tipo
         {
-            get { return Tipo; }
-            set { Tipo = value; }
+            get { return tipo; }
+            set { tipo = value; }
         }
-        public bool activo
+        public bool Activo
         {
-            get { return Activo; }
-            set { Activo = value; }
+            get { return activo; }
+            set { activo = value; }
         }
 
-        public bool EsAdmin{get { return Tipo == "Admin"; } }
-        public bool EsMedico{get { return Tipo == "Medico"; } }
+        public bool EsAdmin{get { return tipo == "Admin"; } }
+        public bool EsMedico{get { return tipo == "Medico"; } }
     }
 }

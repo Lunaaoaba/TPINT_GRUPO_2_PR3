@@ -20,14 +20,28 @@ namespace DATOS
 
         public DataTable ObtenerTablaMedico()
         {
-            DataTable dataTable = accesoDatos.ObtenerTabla("MEDICO", "SELECT M.id_med, M.dni_med, M.nombre_med, M.apellido_med, " + "M.sexo_med, M.nacionalidad_med, M.fecha_nacimiento_med, " + "M.direccion_med, M.id_loc, L.nombre_loc, " + "M.email_med, M.telefono_med, M.legajo_med, M.id_esp, E.nombre_esp " + "FROM MEDICO M " + "INNER JOIN LOCALIDAD L ON M.id_loc = L.id_loc " + "INNER JOIN ESPECIALIDAD E ON M.id_esp = E.id_esp WHERE M.activo_med = 1");
+            DataTable dataTable = accesoDatos.ObtenerTabla("MEDICO", "SELECT id_med, legajo_med, dni_med, nombre_med, apellido_med, sexo_med, nacionalidad_med, fecha_nacimiento_med, direccion_med, nombre_loc, email_med, telefono_med, nombre_esp FROM MEDICO M INNER JOIN LOCALIDAD L ON M.id_loc = L.id_loc INNER JOIN ESPECIALIDAD E ON M.id_esp = E.id_esp WHERE M.activo_med = 1");
             return dataTable;
         }
 
         public DataTable ObtenerTablaMedicoPorId(Medico medico)
         {
-            DataTable dataTable = accesoDatos.ObtenerTabla("MEDICO", "SELECT id_med, dni_med, nombre_med, apellido_med, sexo_med, nacionalidad_med, fecha_nacimiento_med, direccion_med, id_loc, email_med, telefono_med, legajo_med, id_esp, id_usu, activo_med = 1 FROM MEDICO WHERE id_med = " + medico.id_med);
+            DataTable dataTable = accesoDatos.ObtenerTabla("MEDICO", "SELECT id_med, legajo_med, dni_med, nombre_med, apellido_med, sexo_med, nacionalidad_med, fecha_nacimiento_med, direccion_med, nombre_loc, email_med, telefono_med, nombre_esp FROM MEDICO M INNER JOIN LOCALIDAD L ON M.id_loc = L.id_loc INNER JOIN ESPECIALIDAD E ON M.id_esp = E.id_esp WHERE M.id_med = " + medico.id_med );
             return dataTable;
+        }
+
+        public DataTable FiltrarMedicos(string ingreso, string tipoFiltro)
+        {
+            string query = "SELECT id_med, dni_med, nombre_med, apellido_med " + "sexo_med, nacionalidad_med, fecha_nacimiento_med, " + "direccion_med, nombre_loc, " + "email_med, telefono_med, activo_med " + "FROM MEDICO P INNER JOIN LOCALIDAD L ON P.id_loc = L.id_loc " + "WHERE P.activo_med = 1 ";
+            if (!string.IsNullOrWhiteSpace(ingreso))
+            {
+                if (tipoFiltro == "id_med") query += " AND id_med = " + ingreso;
+                else if (tipoFiltro == "dni_med") query += " AND dni_med LIKE '%" + ingreso + "%'";
+                else if (tipoFiltro == "nombre_med") query += " AND nombre_med LIKE '%" + ingreso + "%'";
+                else if (tipoFiltro == "apellido_med") query += " AND apellido_med LIKE '%" + ingreso + "%'";
+
+            }
+            return accesoDatos.ObtenerTabla("MEDICO", query);
         }
 
         public void ParametrosAgregarMedico(ref SqlCommand comando, Medico medico)
@@ -102,11 +116,31 @@ namespace DATOS
             comando.Parameters.Add("@id_esp", SqlDbType.Int).Value = medico.id_esp.id_esp;
         }
 
+        public int ModificarMedico(Medico medico)
+        {
+            SqlCommand comando = new SqlCommand();
+            ParametrosModificarMedico(ref comando, medico);
+            return accesoDatos.EjecutarProcedimientoAlmacenado(comando, "spModificarMedico");
+        }
+
         public int ActualizarMedico(Medico medico)
         {
             SqlCommand comando = new SqlCommand();
             ParametrosModificarMedico(ref comando, medico);
             return accesoDatos.EjecutarProcedimientoAlmacenado(comando, "spModificarMedico");
+        }
+
+        public int RestaurarMedico()
+        {
+            SqlCommand comando = new SqlCommand();
+            return accesoDatos.EjecutarProcedimientoAlmacenado(comando, "spRestaurarMedico");
+        }
+
+        public int RestaurarMedicoPorId(Medico medico)
+        {
+            SqlCommand sqlCommand = new SqlCommand();
+            ParametrosEliminarMedico(ref sqlCommand, medico);
+            return accesoDatos.EjecutarProcedimientoAlmacenado(sqlCommand, "spRestaurarMedicoPorId");
         }
     }
 

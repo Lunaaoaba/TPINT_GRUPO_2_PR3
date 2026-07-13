@@ -8,68 +8,68 @@ namespace ENTIDADES
 {
     public abstract class Persona
     {
-        private string Dni;
-        private string Nombre;
-        private string Apellido;
-        private char Sexo;
-        private string Nacionalidad;
-        private DateTime Fecha_nacimiento;
-        private string Direccion;
-        private Localidad Id_loc;
-        private string Email;
-        private string Telefono;
+        private string dni;
+        private string nombre;
+        private string apellido;
+        private char sexo;
+        private string nacionalidad;
+        private DateTime fecha_nacimiento;
+        private string direccion;
+        private Localidad id_loc;
+        private string email;
+        private string telefono;
 
-        public string dni
+        public string Dni
         {
-            get { return Dni; }
-            set { Dni = value; }
+            get { return dni; }
+            set { dni = value; }
         }
-        public string nombre
+        public string Nombre
         {
-            get { return Nombre; }
-            set { Nombre = value; }
+            get { return nombre; }
+            set { nombre = value; }
         }
-        public string apellido
+        public string Apellido
         {
-            get { return Apellido; }
-            set { Apellido = value; }
+            get { return apellido; }
+            set { apellido = value; }
         }
-        public char sexo
+        public char Sexo
         {
-            get { return Sexo; }
-            set { Sexo = value; }
+            get { return sexo; }
+            set { sexo = value; }
         }
-        public string nacionalidad
+        public string Nacionalidad
         {
-            get { return Nacionalidad; }
-            set { Nacionalidad = value; }
+            get { return nacionalidad; }
+            set { nacionalidad = value; }
         }
-        public DateTime fecha_nacimiento
+        public DateTime Fecha_nacimiento
         {
-            get { return Fecha_nacimiento; }
-            set { Fecha_nacimiento = value; }
+            get { return fecha_nacimiento; }
+            set { fecha_nacimiento = value; }
         }
-        public string direccion
+        public string Direccion
         {
-            get { return Direccion; }
-            set { Direccion = value; }
+            get { return direccion; }
+            set { direccion = value; }
         }
-        public Localidad id_loc
+        public Localidad Id_loc
         {
-            get { return Id_loc; }
-            set { Id_loc = value; }
+            get { return id_loc; }
+            set { id_loc = value; }
         }
-        public string email
+        public string Email
         {
-            get { return Email; }
-            set { Email = value; }
+            get { return email; }
+            set { email = value; }
         }
-        public string telefono
+        public string Telefono
         {
-            get { return Telefono; }
-            set { Telefono = value; }
+            get { return telefono; }
+            set { telefono = value; }
         }
 
-        public string nombre_completo { get {return $"{Apellido}, {Nombre}"; } }
+        public string NombreCompleto { get {return $"{Apellido}, {Nombre}"; } }
     }
 }

@@ -81,7 +81,7 @@
                 <td>&nbsp;</td>
             </tr>
 
-            <tr wei>
+            <tr >
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>

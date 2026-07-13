@@ -58,7 +58,7 @@
             <tr>
                 <td>&nbsp;</td>
                 <td align="center">
-                    <asp:Button ID="AgregarModificarTurno" runat="server" Text="Agregar/Modificar Turno" CssClass="tamanioBoton" />
+                    <asp:Button ID="AgregarModificarTurno" runat="server" Text="Asignar turno" CssClass="tamanioBoton" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
@@ -70,7 +70,7 @@
             <tr>
                 <td>&nbsp;</td>
                 <td align="center">
-                    <asp:Button ID="ListarEliminarTurno" runat="server" Text="Listar/Eliminar Turno" CssClass="tamanioBoton" />
+                    <asp:Button ID="ListarEliminarTurno" runat="server" Text="Listar turnos (o listar aca)" CssClass="tamanioBoton" />
                 </td>
                 <td>&nbsp;</td>
             </tr>

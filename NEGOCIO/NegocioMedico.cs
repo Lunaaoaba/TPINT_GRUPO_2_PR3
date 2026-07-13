@@ -24,6 +24,11 @@ namespace NEGOCIO
             return dao.ObtenerTablaMedicoPorId(medico);
         }
 
+        public DataTable FiltrarMedicos(string idOrNombre, string tipoFiltro)
+        {
+            return dao.FiltrarMedicos(idOrNombre, tipoFiltro);
+        }
+
         public bool AgregarMedico(
             string dni,
             string nombre,
@@ -84,6 +89,44 @@ namespace NEGOCIO
             DaoMedico dao = new DaoMedico();
             int filasAfectadas = dao.ActualizarMedico(medico);
             return filasAfectadas > 0;
+        }
+
+        public bool ModificarMedico(int id, string dni, string nombre, string apellido, char sexo, string nacionalidad, DateTime fecha_nacimiento, string direccion, int id_loc, string email,string id_esp, string telefono)
+        {
+            Medico medico = new Medico();
+            Localidad localidad = new Localidad();
+            localidad.id_loc = id_loc;
+
+            medico.id_med = id;
+            medico.dni = dni;
+            medico.nombre = nombre;
+            medico.apellido = apellido;
+            medico.sexo = sexo;
+            medico.nacionalidad = nacionalidad;
+            medico.fecha_nacimiento = fecha_nacimiento;
+            medico.direccion = direccion;
+            medico.id_loc = localidad;
+            medico.email = email;
+            medico.email = email;
+            medico.telefono = telefono;
+
+            int filasAfectadas = dao.ModificarMedico(medico);
+            if (filasAfectadas == 1) return true;
+            else return false;
+        }
+
+        public bool RestaurarMedicoPorId(int id)
+        {
+            medico.id_med = id;
+            int filasAfectadas = dao.RestaurarMedicoPorId(medico);
+            if (filasAfectadas == 1) return true;
+            else return false;
+        }
+
+        public bool RestaurarMedico()
+        {
+            int filasAfectadas = dao.RestaurarMedico();
+            return filasAfectadas >= 0;
         }
     }
 

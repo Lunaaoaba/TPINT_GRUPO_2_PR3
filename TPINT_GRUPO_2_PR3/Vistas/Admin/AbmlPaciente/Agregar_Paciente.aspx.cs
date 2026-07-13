@@ -102,5 +102,10 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente
                 lblExito.Visible = true;
             }
         }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Vistas/Admin/AbmlPaciente/ListarModificar_Pacientes.aspx");
+        }
     }
 }

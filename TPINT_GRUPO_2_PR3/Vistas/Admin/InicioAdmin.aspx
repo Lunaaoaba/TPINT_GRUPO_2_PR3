@@ -111,6 +111,13 @@
             </td>
             <td class="auto-style8">&nbsp;</td>
         </tr>
+        <tr>
+            <td class="auto-style8">&nbsp;</td>
+            <td align="center" class="auto-style7">
+                <asp:Button ID="btnReportes" runat="server" Text="Reportes" CssClass="tamanioBoton" OnClick="btnReportes_Click"/>
+            </td>
+            <td class="auto-style8">&nbsp;</td>
+        </tr>
     </table>
 
 </div>

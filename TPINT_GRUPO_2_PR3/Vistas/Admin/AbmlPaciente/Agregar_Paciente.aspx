@@ -191,7 +191,8 @@
                 </tr>
                 <tr>
                     <td class="auto-style6" colspan="3">
-                        &nbsp;</td>
+                        <asp:Button ID="btnVolver" runat="server" OnClick="btnVolver_Click" Text="Volver" />
+                    </td>
                 </tr>
                 </table>
         </div>

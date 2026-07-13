@@ -67,30 +67,25 @@ namespace TPINT_GRUPO_2_PR3.Vistas
 
         private void LimpiarCampos()
         {
-            txtNombreMedico.Text = "";
-            txtApellidoMedico.Text = "";
-            txtDNI.Text = "";
-            txtFechaNacimiento.Text = "";
+            txtNombreMedico.Text = string.Empty;
+            txtApellidoMedico.Text = string.Empty;
+            txtDNI.Text = string.Empty;
+            txtFechaNacimiento.Text = string.Empty;
             ddlLocalidad.SelectedIndex = 0;
             ddlEspecialidad.SelectedIndex = 0;
             ddlNacionalidad.SelectedIndex = 0;
             ddlSexo.SelectedIndex = 0;
-            txtDireccion.Text = "";
-            txtEmail.Text = "";
-            txtTelefono.Text = "";
-            txtNombreUsuarioMed.Text = "";
-            txtContraseñaMed.Text = "";
-            txtRepetirContraseñaMed.Text = "";
+            txtDireccion.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtTelefono.Text = string.Empty;
+            txtNombreUsuarioMed.Text = string.Empty;
+            txtContraseñaMed.Text = string.Empty;
+            txtRepetirContraseñaMed.Text = string.Empty;
         }
 
         protected void btnAceptar_Click1(object sender, EventArgs e)
         {
-            if (txtContraseñaMed.Text != txtRepetirContraseñaMed.Text)
-            {
-                mensajeContraseñas.Text = "Las contraseñas no coinciden.";
-                mensajeContraseñas.Visible = true;
-                return;
-            }
+           
 
             DateTime fecha = DateTime.Parse(txtFechaNacimiento.Text);
 
@@ -129,7 +124,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas
 
         protected void btnVolver_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Vistas/Admin/AbmlMedico/ABML_Medico.aspx");
+            Response.Redirect("~/Vistas/Admin/AbmlMedico/MostrarMedico.aspx");
         }
     }
 }

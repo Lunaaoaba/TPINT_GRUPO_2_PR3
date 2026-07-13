@@ -6,16 +6,63 @@ using System.Threading.Tasks;
 
 namespace ENTIDADES
 {
-    internal class Turno
+    public class Turno
     {
-        public int id_tur { get; set; }
-        public Medico id_med { get; set; }
-        public int id_pac { get; set; } // dsp lo cambio a public Paciente ya q ahora no existe
-        public Especialidad id_esp { get; set; }
-        public string fecha_tur { get; set; } // pendiente realizar algo para fecha
-        public HorarioMedico hora_tur { get; set; }  //hora de inicio
-        public string estado_tur { get; set; }
-        public string observacion_tur { get; set; }
-        public bool activo_tur { get; set; }
+        private int id_tur;
+        private Medico id_med;
+        private int id_pac;
+        private Especialidad id_esp;
+        private string fecha_tur;
+        private HorarioMedico hora_tur;
+        private string estado_tur;
+        private string observacion_tur;
+        private bool activo_tur;
+
+        public int Id_tur
+        {
+            get { return id_tur; }
+            set { id_tur = value; }
+        } 
+        public Medico Id_med
+        {
+            get { return id_med; }
+            set { id_med = value; }
+        }
+        public int Id_pac
+        {
+            get { return id_pac; }
+            set {id_pac  = value; }
+        }
+        public Especialidad Id_esp
+        {
+            get { return id_esp; }
+            set { id_esp = value; }
+        }
+        public string Fecha_tur
+        {
+            get { return fecha_tur; }
+            set { fecha_tur = value; }
+        }
+        public HorarioMedico Hora_tur
+        {
+            get { return hora_tur; }
+            set { hora_tur = value; }
+        }
+        public string Estado_tur
+        {
+            get { return estado_tur; }
+            set { estado_tur = value; }
+        }
+        public string Observacion_tur
+        {
+            get { return observacion_tur; }
+            set { observacion_tur = value; }
+        }
+        public bool Activo_tur
+        {
+            get { return activo_tur; }
+            set { activo_tur = value; }
+        }
+
     }
 }

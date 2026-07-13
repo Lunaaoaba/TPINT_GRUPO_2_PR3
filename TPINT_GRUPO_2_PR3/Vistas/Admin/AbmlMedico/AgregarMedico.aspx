@@ -309,6 +309,7 @@ background-color: #1e5732;
                         <asp:TextBox ID="txtContraseñaMed" runat="server" TextMode="Password" ValidationGroup="grupo1"></asp:TextBox>
                     </td>
                     <td class="col-validador">
+                        <asp:RequiredFieldValidator ID="rfvContraseña" runat="server" ControlToValidate="txtContraseñaMed" ErrorMessage="*Completar campo"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -319,7 +320,8 @@ background-color: #1e5732;
                         <asp:TextBox ID="txtRepetirContraseñaMed" runat="server" TextMode="Password" ValidationGroup="grupo1"></asp:TextBox>
                     </td>
                     <td class="col-validador">
-                        <asp:Label ID="mensajeContraseñas" runat="server" ForeColor="Red"></asp:Label>
+                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtContraseñaMed" ControlToValidate="txtRepetirContraseñaMed" ErrorMessage="La Contraseña debe Coincidir"></asp:CompareValidator>
+                        <asp:RequiredFieldValidator ID="rfvRepetirContraseña" runat="server" ControlToValidate="txtRepetirContraseñaMed" ErrorMessage="*Completar campo"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>

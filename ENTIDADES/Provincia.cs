@@ -8,7 +8,17 @@ namespace ENTIDADES
 {
     public class Provincia
     {
-        public int id_pro { get; set; }
-        public string nombre_pro { get; set; }
+        private int id_pro;
+        private string nombre_pro;
+
+        public int id_pro
+        {
+            get { return id_pro; }
+            set { id_pro = value; }
+        }
+        public string nombre_pro
+        {
+            get { return nombre_pro; }
+            set { nombre_pro = value; }
+        }
     }
-}

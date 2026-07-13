@@ -140,5 +140,10 @@ namespace TPINT_GRUPO_2_PR3.Vistas
             gvPaciente.DataBind();
             tbBusqueda.Text = "";
         }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Vistas/Admin/InicioAdmin.aspx");
+        }
     }
 }
