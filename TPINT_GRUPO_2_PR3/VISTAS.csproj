@@ -74,6 +74,7 @@
     <Content Include="Imagenes\ICON_Paciente.png" />
     <Content Include="Imagenes\ICON_Turnos.png" />
     <Content Include="Vistas\Admin\AbmlMedico\ABML_Medico.aspx" />
+    <Content Include="Vistas\Admin\AbmlMedico\AgregarHorarioMedico.aspx" />
     <Content Include="Vistas\Admin\AbmlMedico\EliminarMedico.aspx" />
     <Content Include="Vistas\Admin\AbmlPaciente\ListarModificar_Pacientes.aspx" />
     <Content Include="Vistas\Admin\AbmlPaciente\Agregar_Paciente.aspx" />
@@ -95,6 +96,13 @@
     </Compile>
     <Compile Include="Vistas\Admin\AbmlMedico\ABML_Medico.aspx.designer.cs">
       <DependentUpon>ABML_Medico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Admin\AbmlMedico\AgregarHorarioMedico.aspx.cs">
+      <DependentUpon>AgregarHorarioMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Admin\AbmlMedico\AgregarHorarioMedico.aspx.designer.cs">
+      <DependentUpon>AgregarHorarioMedico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Admin\AbmlMedico\EliminarMedico.aspx.cs">
       <DependentUpon>EliminarMedico.aspx</DependentUpon>

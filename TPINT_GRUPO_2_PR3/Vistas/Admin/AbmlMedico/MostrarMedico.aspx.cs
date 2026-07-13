@@ -90,11 +90,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-
         }
-
-        
-
         protected void EliminarMedico_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Vistas/Admin/AbmlMedico/EliminarMedico.aspx");
@@ -109,6 +105,11 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         {
             gvMedicos.EditIndex = e.NewEditIndex;
             CargarGridview();
+        }
+
+        protected void btn_Agregar_Horarios_Med_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Vistas/Admin/AbmlMedico/AgregarHorarioMedico.aspx");
         }
     }
 }

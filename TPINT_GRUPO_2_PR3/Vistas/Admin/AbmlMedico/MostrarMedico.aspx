@@ -70,6 +70,8 @@ body{
                 <asp:Button ID="AgregarMedico" runat="server" Text="Agregar un nuevo medico" OnClick="AgregarMedico_Click" CssClass="tamanioBoton" />
                 &nbsp;&nbsp;&nbsp;
                 <asp:Button ID="EliminarMedico" runat="server" Text="Eliminar un Medico" OnClick="EliminarMedico_Click" CssClass="tamanioBoton" />
+                &nbsp;&nbsp;&nbsp;
+                <asp:Button ID="btn_Agregar_Horarios_Med" runat="server" Text="Agregar Horario " OnClick="btn_Agregar_Horarios_Med_Click" CssClass="tamanioBoton" />
             </div>
             <div style="text-align:center; margin-bottom:15px;">
                 <asp:Label ID="lblBuscar" runat="server" Text="Buscar por:"></asp:Label>
