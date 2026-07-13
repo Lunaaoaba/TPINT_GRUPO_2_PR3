@@ -20,10 +20,7 @@ namespace ENTIDADES
         public string Nombre_esp
         {
             get { return nombre_esp; }
-            set
-            {
-                nombre_esp = value;
-            }
+            set { nombre_esp = value; }
         }
     }
 }
