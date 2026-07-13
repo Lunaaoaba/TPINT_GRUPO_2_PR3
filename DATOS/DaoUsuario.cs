@@ -28,10 +28,10 @@ namespace DATOS
         {
             SqlCommand comando = new SqlCommand();
 
-            comando.Parameters.Add("@Username", SqlDbType.VarChar).Value = usuario.username;
-            comando.Parameters.Add("@Password", SqlDbType.VarChar).Value = usuario.password;
-            comando.Parameters.Add("@Tipo", SqlDbType.VarChar).Value = usuario.tipo;
-            comando.Parameters.Add("@Activo", SqlDbType.Bit).Value = usuario.activo;
+            comando.Parameters.Add("@Username", SqlDbType.VarChar).Value = usuario.Username;
+            comando.Parameters.Add("@Password", SqlDbType.VarChar).Value = usuario.Password;
+            comando.Parameters.Add("@Tipo", SqlDbType.VarChar).Value = usuario.Tipo;
+            comando.Parameters.Add("@Activo", SqlDbType.Bit).Value = usuario.Activo;
 
             return accesoDatos.EjecutarProcedimientoEscalar(comando, "spAgregarUsuario");
         }

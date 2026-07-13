@@ -26,7 +26,7 @@ namespace DATOS
 
         public DataTable ObtenerTablaMedicoPorId(Medico medico)
         {
-            DataTable dataTable = accesoDatos.ObtenerTabla("MEDICO", "SELECT id_med, legajo_med, dni_med, nombre_med, apellido_med, sexo_med, nacionalidad_med, fecha_nacimiento_med, direccion_med, nombre_loc, email_med, telefono_med, nombre_esp FROM MEDICO M INNER JOIN LOCALIDAD L ON M.id_loc = L.id_loc INNER JOIN ESPECIALIDAD E ON M.id_esp = E.id_esp WHERE M.id_med = " + medico.id_med );
+            DataTable dataTable = accesoDatos.ObtenerTabla("MEDICO", "SELECT id_med, legajo_med, dni_med, nombre_med, apellido_med, sexo_med, nacionalidad_med, fecha_nacimiento_med, direccion_med, nombre_loc, email_med, telefono_med, nombre_esp FROM MEDICO M INNER JOIN LOCALIDAD L ON M.id_loc = L.id_loc INNER JOIN ESPECIALIDAD E ON M.id_esp = E.id_esp WHERE M.id_med = " + medico.Id_med );
             return dataTable;
         }
 
@@ -48,33 +48,33 @@ namespace DATOS
         {
             SqlParameter parametro = new SqlParameter();
             parametro = comando.Parameters.Add("@DniMedico", SqlDbType.VarChar);
-            parametro.Value = medico.dni;
+            parametro.Value = medico.Dni;
             parametro = comando.Parameters.Add("@NombreMedico", SqlDbType.VarChar);
-            parametro.Value = medico.nombre;
+            parametro.Value = medico.Nombre;
             parametro = comando.Parameters.Add("@ApellidoMedico", SqlDbType.VarChar);
-            parametro.Value = medico.apellido;
+            parametro.Value = medico.Apellido;
             parametro = comando.Parameters.Add("@SexoMedico", SqlDbType.VarChar);
-            parametro.Value = medico.sexo;
+            parametro.Value = medico.Sexo;
             parametro = comando.Parameters.Add("@NacionalidadMedico", SqlDbType.VarChar);
-            parametro.Value = medico.nacionalidad;
+            parametro.Value = medico.Nacionalidad;
             parametro = comando.Parameters.Add("@FechaNacimientoMedico", SqlDbType.Date);
-            parametro.Value = medico.fecha_nacimiento;
+            parametro.Value = medico.Fecha_nacimiento;
             parametro = comando.Parameters.Add("@DireccionMedico", SqlDbType.VarChar);
-            parametro.Value = medico.direccion;
+            parametro.Value = medico.Direccion;
             parametro = comando.Parameters.Add("@IdLocalidad", SqlDbType.Int);
-            parametro.Value = medico.id_loc != null ? medico.id_loc.id_loc : (object)DBNull.Value;
+            parametro.Value = medico.Id_loc != null ? medico.Id_loc.Id_loc : (object)DBNull.Value;
             parametro = comando.Parameters.Add("@EmailMedico", SqlDbType.VarChar);
-            parametro.Value = medico.email;
+            parametro.Value = medico.Email;
             parametro = comando.Parameters.Add("@TelefonoMedico", SqlDbType.VarChar);
-            parametro.Value = medico.telefono;
+            parametro.Value = medico.Telefono;
             parametro = comando.Parameters.Add("@LegajoMedico", SqlDbType.VarChar);
-            parametro.Value = medico.legajo_med;
+            parametro.Value = medico.Legajo_med;
             parametro = comando.Parameters.Add("@IdEspecialidad", SqlDbType.Int);
-            parametro.Value = medico.id_esp != null ? medico.id_esp.id_esp : (object)DBNull.Value;
+            parametro.Value = medico.Id_esp != null ? medico.Id_esp.Id_esp : (object)DBNull.Value;
             parametro = comando.Parameters.Add("@IdUsuario", SqlDbType.Int);
-            parametro.Value = medico.credenciales != null ? medico.credenciales.id_usuario : (object)DBNull.Value;
+            parametro.Value = medico.Credenciales != null ? medico.Credenciales.Id_usuario : (object)DBNull.Value;
             parametro = comando.Parameters.Add("@ActivoMedico", SqlDbType.Bit);
-            parametro.Value = medico.activo;
+            parametro.Value = medico.Activo;
         }
 
         public int AgregarMedico(Medico medico)
@@ -88,7 +88,7 @@ namespace DATOS
         {
             SqlParameter parametro = new SqlParameter();
             parametro = comando.Parameters.Add("@id_med", SqlDbType.Int);
-            parametro.Value = medico.id_med;
+            parametro.Value = medico.Id_med;
         }
 
         public int EliminarMedico(Medico medico)
@@ -101,19 +101,19 @@ namespace DATOS
         // para modificar medico
         private void ParametrosModificarMedico(ref SqlCommand comando, Medico medico)
         {
-            comando.Parameters.Add("@id_med", SqlDbType.Int).Value = medico.id_med;
-            comando.Parameters.Add("@dni_med", SqlDbType.VarChar).Value = medico.dni;
-            comando.Parameters.Add("@nombre_med", SqlDbType.VarChar).Value = medico.nombre;
-            comando.Parameters.Add("@apellido_med", SqlDbType.VarChar).Value = medico.apellido;
-            comando.Parameters.Add("@sexo_med", SqlDbType.VarChar).Value = medico.sexo.ToString();
-            comando.Parameters.Add("@nacionalidad_med", SqlDbType.VarChar).Value = medico.nacionalidad;
-            comando.Parameters.Add("@fecha_nacimiento_med", SqlDbType.Date).Value = medico.fecha_nacimiento;
-            comando.Parameters.Add("@direccion_med", SqlDbType.VarChar).Value = medico.direccion;
-            comando.Parameters.Add("@id_loc", SqlDbType.Int).Value = medico.id_loc.id_loc;
-            comando.Parameters.Add("@email_med", SqlDbType.VarChar).Value = medico.email;
-            comando.Parameters.Add("@telefono_med", SqlDbType.VarChar).Value = medico.telefono;
-            comando.Parameters.Add("@legajo_med", SqlDbType.VarChar).Value = medico.legajo_med;
-            comando.Parameters.Add("@id_esp", SqlDbType.Int).Value = medico.id_esp.id_esp;
+            comando.Parameters.Add("@id_med", SqlDbType.Int).Value = medico.Id_med;
+            comando.Parameters.Add("@dni_med", SqlDbType.VarChar).Value = medico.Dni;
+            comando.Parameters.Add("@nombre_med", SqlDbType.VarChar).Value = medico.Nombre;
+            comando.Parameters.Add("@apellido_med", SqlDbType.VarChar).Value = medico.Apellido;
+            comando.Parameters.Add("@sexo_med", SqlDbType.VarChar).Value = medico.Sexo.ToString();
+            comando.Parameters.Add("@nacionalidad_med", SqlDbType.VarChar).Value = medico.Nacionalidad;
+            comando.Parameters.Add("@fecha_nacimiento_med", SqlDbType.Date).Value = medico.Fecha_nacimiento;
+            comando.Parameters.Add("@direccion_med", SqlDbType.VarChar).Value = medico.Direccion;
+            comando.Parameters.Add("@id_loc", SqlDbType.Int).Value = medico.Id_loc.Id_loc;
+            comando.Parameters.Add("@email_med", SqlDbType.VarChar).Value = medico.Email;
+            comando.Parameters.Add("@telefono_med", SqlDbType.VarChar).Value = medico.Telefono;
+            comando.Parameters.Add("@legajo_med", SqlDbType.VarChar).Value = medico.Legajo_med;
+            comando.Parameters.Add("@id_esp", SqlDbType.Int).Value = medico.Id_esp.Id_esp;
         }
 
         public int ModificarMedico(Medico medico)

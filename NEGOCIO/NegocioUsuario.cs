@@ -21,10 +21,10 @@ namespace NEGOCIO
         {
             Usuario usuario = new Usuario();
 
-            usuario.username = username;
-            usuario.password = password;
-            usuario.tipo = "Medico";
-            usuario.activo = true;
+            usuario.Username = username;
+            usuario.Password = password;
+            usuario.Tipo = "Medico";
+            usuario.Activo = true;
 
             return dao.AgregarUsuario(usuario);
         }

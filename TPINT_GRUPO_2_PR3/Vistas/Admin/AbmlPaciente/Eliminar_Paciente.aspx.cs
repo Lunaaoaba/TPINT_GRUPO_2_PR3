@@ -33,7 +33,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlPaciente
         {
             if (int.TryParse(txtID.Text, out int id_pac))
             {
-                paciente.id_pac = id_pac;
+                paciente.Id_pac = id_pac;
                 gvEliminarPaciente.DataSource = negocioPaciente.obtenerTablaPacientePorId(paciente);
                 gvEliminarPaciente.DataBind();
             }

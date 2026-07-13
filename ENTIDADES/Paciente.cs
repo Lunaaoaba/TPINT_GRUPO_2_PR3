@@ -18,17 +18,17 @@ namespace ENTIDADES
                          Localidad idLoc, string email, string telefono, bool activoPac)
         {
             id_pac = idPac;
-            this.dni = dni;
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.sexo = sexo;
-            this.nacionalidad = nacionalidad;
-            this.fecha_nacimiento = fechaNacimiento;
-            this.direccion = direccion;
-            this.id_loc = idLoc;
-            this.email = email;
-            this.telefono = telefono;
-            Activo_pac = activoPac;
+            this.Dni = dni;
+            this.Nombre = nombre;
+            this.Apellido = apellido;
+            this.Sexo = sexo;
+            this.Nacionalidad = nacionalidad;
+            this.Fecha_nacimiento = fechaNacimiento;
+            this.Direccion = direccion;
+            this.Id_loc = idLoc;
+            this.Email = email;
+            this.Telefono = telefono;
+            this.Activo_pac = activoPac;
         }
 
         public int Id_pac

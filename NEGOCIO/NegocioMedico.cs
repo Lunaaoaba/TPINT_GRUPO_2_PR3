@@ -49,28 +49,27 @@ namespace NEGOCIO
             Especialidad especialidad = new Especialidad();
             Usuario usuario = new Usuario();
 
-            medico.dni = dni;
-            medico.nombre = nombre;
-            medico.apellido = apellido;
-            medico.sexo = sexo;
-            medico.nacionalidad = nacionalidad;
-            medico.fecha_nacimiento = fecha_nacimiento;
-            medico.direccion = direccion;
+            medico.Dni = dni;
+            medico.Nombre = nombre;
+            medico.Apellido = apellido;
+            medico.Sexo = sexo;
+            medico.Nacionalidad = nacionalidad;
+            medico.Fecha_nacimiento = fecha_nacimiento;
+            medico.Direccion = direccion;
 
-            localidad.id_loc = id_loc;
-            medico.id_loc = localidad;
+            localidad.Id_loc = id_loc;
+            medico.Id_loc = localidad;
+            medico.Email = email;
+            medico.Telefono = telefono;
+            medico.Legajo_med = legajo;
 
-            medico.email = email;
-            medico.telefono = telefono;
-            medico.legajo_med = legajo;
+            especialidad.Id_esp = id_esp;
+            medico.Id_esp = especialidad;
 
-            especialidad.id_esp = id_esp;
-            medico.id_esp = especialidad;
+            usuario.Id_usuario = id_usuario;
+            medico.Credenciales = usuario;
 
-            usuario.id_usuario = id_usuario;
-            medico.credenciales = usuario;
-
-            medico.activo = activo;
+            medico.Activo = activo;
 
             int filasAfectadas = dao.AgregarMedico(medico);
 
@@ -79,7 +78,7 @@ namespace NEGOCIO
 
         public bool EliminarMedico(int id)
         {
-            medico.id_med = id;
+            medico.Id_med = id;
             int filasAfectadas = dao.EliminarMedico(medico);
             return filasAfectadas > 0;
         }
@@ -95,20 +94,20 @@ namespace NEGOCIO
         {
             Medico medico = new Medico();
             Localidad localidad = new Localidad();
-            localidad.id_loc = id_loc;
+            localidad.Id_loc = id_loc;
 
-            medico.id_med = id;
-            medico.dni = dni;
-            medico.nombre = nombre;
-            medico.apellido = apellido;
-            medico.sexo = sexo;
-            medico.nacionalidad = nacionalidad;
-            medico.fecha_nacimiento = fecha_nacimiento;
-            medico.direccion = direccion;
-            medico.id_loc = localidad;
-            medico.email = email;
-            medico.email = email;
-            medico.telefono = telefono;
+            medico.Id_med = id;
+            medico.Dni = dni;
+            medico.Nombre = nombre;
+            medico.Apellido = apellido;
+            medico.Sexo = sexo;
+            medico.Nacionalidad = nacionalidad;
+            medico.Fecha_nacimiento = fecha_nacimiento;
+            medico.Direccion = direccion;
+            medico.Id_loc = localidad;
+            medico.Email = email;
+            medico.Email = email;
+            medico.Telefono = telefono;
 
             int filasAfectadas = dao.ModificarMedico(medico);
             if (filasAfectadas == 1) return true;
@@ -117,7 +116,7 @@ namespace NEGOCIO
 
         public bool RestaurarMedicoPorId(int id)
         {
-            medico.id_med = id;
+            medico.Id_med = id;
             int filasAfectadas = dao.RestaurarMedicoPorId(medico);
             if (filasAfectadas == 1) return true;
             else return false;

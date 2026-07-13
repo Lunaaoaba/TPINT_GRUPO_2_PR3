@@ -30,25 +30,25 @@ namespace NEGOCIO
 
         public int AgregarPaciente(string dni, string nombre, string apellido, char sexo, string nacionalidad, DateTime fecha_nacimiento, string direccion, int id_loc, string email, string telefono)
         {
-            Localidad localidad = new Localidad { id_loc = id_loc };
+            Localidad localidad = new Localidad { Id_loc = id_loc };
 
-            paciente.dni = dni;
-            paciente.nombre = nombre;
-            paciente.apellido = apellido;
-            paciente.sexo = sexo;
-            paciente.nacionalidad = nacionalidad;
-            paciente.fecha_nacimiento = fecha_nacimiento;
-            paciente.direccion = direccion;
-            paciente.id_loc = localidad;
-            paciente.email = email;
-            paciente.telefono = telefono;
+            paciente.Dni = dni;
+            paciente.Nombre = nombre;
+            paciente.Apellido = apellido;
+            paciente.Sexo = sexo;
+            paciente.Nacionalidad = nacionalidad;
+            paciente.Fecha_nacimiento = fecha_nacimiento;
+            paciente.Direccion = direccion;
+            paciente.Id_loc = localidad;
+            paciente.Email = email;
+            paciente.Telefono = telefono;
 
             return dao.AgregarPaciente(paciente);
         }
 
         public bool EliminarPaciente(int id)
         {
-            paciente.id_pac = id;
+            paciente.Id_pac = id;
             int filasAfectadas = dao.EliminarPaciente(paciente);
             if (filasAfectadas == 1) return true;
             else return false;
@@ -58,19 +58,19 @@ namespace NEGOCIO
         {
             Paciente paciente = new Paciente();
             Localidad localidad = new Localidad();
-            localidad.id_loc = id_loc;
+            localidad.Id_loc = id_loc;
 
-            paciente.id_pac = id;
-            paciente.dni = dni;
-            paciente.nombre = nombre;
-            paciente.apellido = apellido;
-            paciente.sexo = sexo;
-            paciente.nacionalidad = nacionalidad;
-            paciente.fecha_nacimiento = fecha_nacimiento;
-            paciente.direccion = direccion;
-            paciente.id_loc = localidad;
-            paciente.email = email;
-            paciente.telefono = telefono;
+            paciente.Id_pac = id;
+            paciente.Dni = dni;
+            paciente.Nombre = nombre;
+            paciente.Apellido = apellido;
+            paciente.Sexo = sexo;
+            paciente.Nacionalidad = nacionalidad;
+            paciente.Fecha_nacimiento = fecha_nacimiento;
+            paciente.Direccion = direccion;
+            paciente.Id_loc = localidad;
+            paciente.Email = email;
+            paciente.Telefono = telefono;
 
             int filasAfectadas = dao.ModificarPaciente(paciente);
             if (filasAfectadas == 1) return true;
@@ -79,7 +79,7 @@ namespace NEGOCIO
 
         public bool RestaurarPacientePorId(int id)
         {
-            paciente.id_pac = id;
+            paciente.Id_pac = id;
             int filasAfectadas = dao.RestaurarPacientePorId(paciente);
             if (filasAfectadas == 1) return true;
             else return false;

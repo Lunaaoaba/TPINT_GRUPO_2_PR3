@@ -25,20 +25,20 @@ namespace ENTIDADES
                       Localidad idLoc, string email, string telefono, string legajoMed, Especialidad idEsp, Usuario credenciales, bool activo)
         {
             id_med = idMed;
-            this.dni = dni;
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.sexo = sexo;
-            this.nacionalidad = nacionalidad;
-            this.fecha_nacimiento = fechaNacimiento;
-            this.direccion = direccion;
-            this.id_loc = idLoc;
-            this.email = email;
-            this.telefono = telefono;
-            Legajo_med = legajoMed;
-            Id_esp = idEsp;
-            Credenciales = credenciales;
-            Activo = activo;
+            this.Dni = dni;
+            this.Nombre = nombre;
+            this.Apellido = apellido;
+            this.Sexo = sexo;
+            this.Nacionalidad = nacionalidad;
+            this.Fecha_nacimiento = fechaNacimiento;
+            this.Direccion = direccion;
+            this.Id_loc = idLoc;
+            this.Email = email;
+            this.Telefono = telefono;
+            this.Legajo_med = legajoMed;
+            this.Id_esp = idEsp;
+            this.Credenciales = credenciales;
+            this.Activo = activo;
             Horarios = new List<HorarioMedico>();
         }
 

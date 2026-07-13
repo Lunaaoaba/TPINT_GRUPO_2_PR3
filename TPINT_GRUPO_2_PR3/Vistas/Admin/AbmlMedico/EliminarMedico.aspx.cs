@@ -34,7 +34,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlMedico
         {
             if (int.TryParse(txtID.Text, out int id_med))
             {
-                medico.id_med = id_med;
+                medico.Id_med = id_med;
                 gvEliminarMedico.DataSource = negocioMedico.obtenerTablaMedicoPorId(medico);
                 gvEliminarMedico.DataBind();
             }
