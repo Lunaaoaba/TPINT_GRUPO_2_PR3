@@ -23,7 +23,7 @@ namespace DATOS
             parametro = comando.Parameters.Add("@hora_inicio_hor", SqlDbType.Time);
             parametro.Value = horarioMedico.Hora_inicio_hor;
             parametro = comando.Parameters.Add("@hora_fin_hor", SqlDbType.Time);
-            parametro.Value = horarioMedico.hora_fin_hor;
+            parametro.Value = horarioMedico.Hora_fin_hor;
         }
         public int AgregarHorarioMedico(HorarioMedico horarioMedico)
         {
@@ -45,6 +45,8 @@ namespace DATOS
                 {
                     return -2;
                 }
+
+                else return -3;
 
                 throw;
             }

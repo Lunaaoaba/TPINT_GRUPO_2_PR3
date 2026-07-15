@@ -14,6 +14,11 @@ namespace NEGOCIO
         DaoMedico dao = new DaoMedico();
         Medico medico = new Medico();
 
+        public bool ExisteMedicoPorId(int idMedico)
+        {
+            return dao.ExisteMedicoPorId(idMedico);
+        }
+
         public DataTable obtenerTablaMedico()
         {
             return dao.ObtenerTablaMedico();

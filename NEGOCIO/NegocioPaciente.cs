@@ -15,6 +15,10 @@ namespace NEGOCIO
         DaoPaciente dao = new DaoPaciente();
         Paciente paciente = new Paciente();
 
+        public bool ExistePacientePorId(int idPaciente)
+        {
+            return dao.ExistePacientePorId(idPaciente);
+        }
         public DataTable obtenerTablaPaciente()
         {
             return dao.ObtenerTablaPaciente();

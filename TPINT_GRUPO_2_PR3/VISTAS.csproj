@@ -73,7 +73,7 @@
     <Content Include="Imagenes\ICON_medico.png" />
     <Content Include="Imagenes\ICON_Paciente.png" />
     <Content Include="Imagenes\ICON_Turnos.png" />
-    <Content Include="Vistas\Admin\AbmlMedico\AgregarHorariosMedicos.aspx" />
+    <Content Include="Vistas\Admin\AbmlMedico\AgregarHorarioMedico.aspx" />
     <Content Include="Vistas\Admin\AbmlMedico\EliminarMedico.aspx" />
     <Content Include="Vistas\Admin\AbmlPaciente\ListarModificar_Pacientes.aspx" />
     <Content Include="Vistas\Admin\AbmlPaciente\Agregar_Paciente.aspx" />
@@ -89,12 +89,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vistas\Admin\AbmlMedico\AgregarHorariosMedicos.aspx.cs">
-      <DependentUpon>AgregarHorariosMedicos.aspx</DependentUpon>
+    <Compile Include="Vistas\Admin\AbmlMedico\AgregarHorarioMedico.aspx.cs">
+      <DependentUpon>AgregarHorarioMedico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vistas\Admin\AbmlMedico\AgregarHorariosMedicos.aspx.designer.cs">
-      <DependentUpon>AgregarHorariosMedicos.aspx</DependentUpon>
+    <Compile Include="Vistas\Admin\AbmlMedico\AgregarHorarioMedico.aspx.designer.cs">
+      <DependentUpon>AgregarHorarioMedico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Admin\AbmlMedico\EliminarMedico.aspx.cs">
       <DependentUpon>EliminarMedico.aspx</DependentUpon>

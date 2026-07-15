@@ -31,6 +31,13 @@ namespace DATOS
                 "activo_med FROM MEDICO";
             return accesoDatos.existe(consulta);
         }
+
+        public bool ExisteMedicoPorId(int idMedico)
+        {
+            string consulta = "SELECT id_med FROM MEDICO WHERE id_med = " + idMedico + " AND activo_med = 1";
+            return accesoDatos.existe(consulta);
+        }
+
         public DataTable ObtenerTablaMedico()
         {
             DataTable dataTable = accesoDatos.ObtenerTabla(
@@ -67,31 +74,31 @@ namespace DATOS
                 ' | '
             ) AS horario_atencion
 
-        FROM MEDICO M
-        INNER JOIN LOCALIDAD L
-            ON M.id_loc = L.id_loc
-        INNER JOIN ESPECIALIDAD E
-            ON M.id_esp = E.id_esp
-        LEFT JOIN HORARIO_MEDICO H
-            ON M.id_med = H.id_med
+            FROM MEDICO M
+            INNER JOIN LOCALIDAD L
+                ON M.id_loc = L.id_loc
+            INNER JOIN ESPECIALIDAD E
+                ON M.id_esp = E.id_esp
+            LEFT JOIN HORARIO_MEDICO H
+                ON M.id_med = H.id_med
 
-        WHERE M.activo_med = 1
+            WHERE M.activo_med = 1
 
-        GROUP BY
-            M.id_med,
-            M.legajo_med,
-            M.dni_med,
-            M.nombre_med,
-            M.apellido_med,
-            M.sexo_med,
-            M.nacionalidad_med,
-            M.fecha_nacimiento_med,
-            M.direccion_med,
-            L.nombre_loc,
-            M.email_med,
-            M.telefono_med,
-            E.nombre_esp");
-            return dataTable;
+            GROUP BY
+                M.id_med,
+                M.legajo_med,
+                M.dni_med,
+                M.nombre_med,
+                M.apellido_med,
+                M.sexo_med,
+                M.nacionalidad_med,
+                M.fecha_nacimiento_med,
+                M.direccion_med,
+                L.nombre_loc,
+                M.email_med,
+                M.telefono_med,
+                E.nombre_esp");
+                return dataTable;
         }
         //        public DataTable ObtenerTablaMedico()
         //        {
@@ -152,7 +159,7 @@ namespace DATOS
                 "telefono_med, " +
                 "nombre_esp " +
                 "FROM MEDICO M INNER JOIN LOCALIDAD L ON M.id_loc = L.id_loc " +
-                "INNER JOIN ESPECIALIDAD E ON M.id_esp = E.id_esp WHERE M.id_med = " + medico.id_med );
+                "INNER JOIN ESPECIALIDAD E ON M.id_esp = E.id_esp WHERE M.id_med = " + medico.Id_med );
             return dataTable;
         }
 

@@ -11,7 +11,7 @@ namespace TPINT_GRUPO_2_PR3.Vistas.Admin.AbmlMedico
 {
 
 
-    public partial class AgregarHorarioMedico
+    public partial class AgregarHorariosMedicos
     {
 
         /// <summary>
@@ -33,13 +33,13 @@ namespace TPINT_GRUPO_2_PR3.Vistas.Admin.AbmlMedico
         protected global::System.Web.UI.WebControls.Label lblNombreUsuario;
 
         /// <summary>
-        /// Control txtNombreMedico.
+        /// Control txtID.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreMedico;
+        protected global::System.Web.UI.WebControls.TextBox txtID;
 
         /// <summary>
         /// Control btn_Buscar_Medico.
@@ -51,49 +51,85 @@ namespace TPINT_GRUPO_2_PR3.Vistas.Admin.AbmlMedico
         protected global::System.Web.UI.WebControls.Button btn_Buscar_Medico;
 
         /// <summary>
-        /// Control GridView1.
+        /// Control lblMensaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
 
         /// <summary>
-        /// Control lblDireccion.
+        /// Control gvMedicoSeleccionado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDireccion;
+        protected global::System.Web.UI.WebControls.GridView gvMedicoSeleccionado;
 
         /// <summary>
-        /// Control DropDownList1.
+        /// Control lblAgregarHoraDia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.Label lblAgregarHoraDia;
 
         /// <summary>
-        /// Control lblEmail.
+        /// Control lbldia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmail;
+        protected global::System.Web.UI.WebControls.Label lbldia;
 
         /// <summary>
-        /// Control DropDownList2.
+        /// Control cxbDiasConsulta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.CheckBoxList cxbDiasConsulta;
+
+        /// <summary>
+        /// Control lblInicioHora.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblInicioHora;
+
+        /// <summary>
+        /// Control ddlHoraConsulta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlHoraConsulta;
+
+        /// <summary>
+        /// Control lblFinHora.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFinHora;
+
+        /// <summary>
+        /// Control ddlFinHorario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlFinHorario;
 
         /// <summary>
         /// Control lblExito.

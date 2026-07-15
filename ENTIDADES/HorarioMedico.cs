@@ -12,6 +12,7 @@ namespace ENTIDADES
         public Medico medico;
         private int dia_semana_hor;
         private TimeSpan hora_inicio_hor;
+        private TimeSpan hora_fin_hor;
         private bool activo_hor;
 
         public int Id_hor
@@ -36,6 +37,12 @@ namespace ENTIDADES
         {
             get { return hora_inicio_hor; }
             set { hora_inicio_hor = value; }
+        }
+
+        public TimeSpan Hora_fin_hor
+        {
+            get { return hora_fin_hor; }
+            set { hora_fin_hor = value; }
         }
 
         public bool Activo_hor

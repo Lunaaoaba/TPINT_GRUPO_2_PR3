@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AgregarHorarioMedico.aspx.cs" Inherits="TPINT_GRUPO_2_PR3.Vistas.Admin.AbmlMedico.AgregarHorarioMedico" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AgregarHorarioMedico.aspx.cs" Inherits="TPINT_GRUPO_2_PR3.Vistas.Admin.AbmlMedico.AgregarHorariosMedicos" %>
 
 <!DOCTYPE html>
 
@@ -29,7 +29,7 @@ box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
 margin: 0 auto;
 }
 
-/el h2 hace label barrita inferior que vemos en pantalla/ 
+/*el h2 hace label barrita inferior que vemos en pantalla*/ 
 h2 {
 color: #277343;
 text-align: center;
@@ -170,44 +170,54 @@ background-color: #1e5732;
                     <td class="col-label">
                         Buscar Medico</td>
                     <td class="col-control">
-                        <asp:TextBox ID="txtNombreMedico" runat="server" ValidationGroup="grupo1"></asp:TextBox>
+                        <asp:TextBox ID="txtID" runat="server" ValidationGroup="grupo1"></asp:TextBox>
                     </td>
                     <td class="col-validador">
-                        <asp:Button ID="btn_Buscar_Medico" runat="server" Text="Buscar" />
+                        <asp:Button ID="btn_Buscar_Medico" runat="server" Text="Buscar" OnClick="btn_Buscar_Medico_Click" />
                     </td>
                 </tr>
                 <tr>
+                    <td></td>
+                    <td><asp:Label ID="lblMensaje" runat="server" align="center" ForeColor="Red"></asp:Label></td>
+                    <td></td>
+                </tr>
+                <tr>
                     <td class="col-label" colspan="3">
-                        <asp:GridView ID="GridView1" runat="server">
+                        <asp:GridView ID="gvMedicoSeleccionado" runat="server" Visible="False">
                         </asp:GridView>
                     </td>
                 </tr>
                 <tr>
-                    <td class="col-label">
-                        &nbsp;</td>
-                    <td class="col-control">
-                        <h4>Agregar Hora y Día </h4></td>
+                    <td class="col-label">&nbsp;</td>
+                    <td>
+                        <asp:Label ID="lblAgregarHoraDia" runat="server" Text="Agregar Hora y Día" align="center" Visible="False" Font-Bold="True" Font-Size="1.1em"></asp:Label>
+                    </td>
                     <td class="col-validador">
                         <br />
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style1">
-                        <asp:Label ID="lblDireccion" runat="server" Text="Día:"></asp:Label>
+                        <asp:Label ID="lbldia" runat="server" Text="Seleccionar día(s):" Visible="False"></asp:Label>
                     </td>
                     <td class="auto-style2">
-                        <asp:DropDownList ID="DropDownList1" runat="server">
-                        </asp:DropDownList>
+                        <asp:CheckBoxList ID="cxbDiasConsulta" runat="server" Visible="False" > 
+                        <asp:ListItem Text="Lunes" Value="1" />
+                        <asp:ListItem Text="Martes" Value="2" />
+                        <asp:ListItem Text="Miércoles" Value="3" />
+                        <asp:ListItem Text="Jueves" Value="4" />
+                        <asp:ListItem Text="Viernes" Value="5" />
+                        <asp:ListItem Text="Sábado" Value="6" />
+                        </asp:CheckBoxList>
                     </td>
-                    <td class="auto-style3">
-                        </td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td class="col-label">
-                        <asp:Label ID="lblEmail" runat="server" Text="Hora de Inicio de la consulta:"></asp:Label>
+                        <asp:Label ID="lblInicioHora" runat="server" Text="Hora de Inicio de atencion:" Visible="False"></asp:Label>
                     </td>
                     <td class="col-control">
-                        <asp:DropDownList ID="DropDownList2" runat="server">
+                        <asp:DropDownList ID="ddlHoraConsulta" runat="server" Visible="False">
                         </asp:DropDownList>
                     </td>
                     <td class="col-validador">
@@ -215,9 +225,12 @@ background-color: #1e5732;
                 </tr>
                 <tr>
                     <td class="col-label">
-                        &nbsp;</td>
+                        <asp:Label ID="lblFinHora" runat="server" Text="Hora de fin de Atencion:" Visible="False"></asp:Label>
+                    </td>
                     <td class="col-control">
-                        &nbsp;</td>
+                        <asp:DropDownList ID="ddlFinHorario" runat="server" Visible="False">
+                        </asp:DropDownList>
+                    </td>
                     <td class="col-validador">
                         <br />
                     </td>

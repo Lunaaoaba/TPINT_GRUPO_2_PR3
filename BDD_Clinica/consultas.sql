@@ -307,3 +307,18 @@ BEGIN
     );
 END 
 GO
+
+-- TURNO
+
+CREATE PROCEDURE spAgregarTurno
+    @id_med INT,
+    @id_pac INT,
+    @id_esp INT,
+    @fecha_tur DATE,
+    @hora_tur TIME
+AS
+BEGIN
+    INSERT INTO TURNO (id_med, id_pac, id_esp, fecha_tur, hora_tur)
+    VALUES (@id_med, @id_pac, @id_esp, @fecha_tur, @hora_tur);
+END
+GO
