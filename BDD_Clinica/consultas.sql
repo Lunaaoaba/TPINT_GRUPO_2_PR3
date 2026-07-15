@@ -274,6 +274,23 @@ CREATE PROCEDURE spAgregarHorarioMedico
 
 AS 
 BEGIN
+
+      IF EXISTS (
+      SELECT 1 FROM HORARIO_MEDICO WHERE id_med = @id_med AND dia_semana_hor = @dia_semana_hor AND hora_inicio_hor = @hora_inicio_hor AND hora_fin_hor = @hora_fin_hor AND activo_hor = 1
+      )
+      BEGIN
+      RAISERROR('HORARIO_DUPLICADO',16,1)
+      RETURN
+      END
+
+      IF EXISTS (
+      SELECT 1 FROM HORARIO_MEDICO WHERE id_med = @id_med AND dia_semana_hor = @dia_semana_hor AND activo_hor = 1 AND @hora_inicio_hor < hora_fin_hor AND @hora_fin_hor > hora_inicio_hor
+      )
+      BEGIN
+      RAISERROR('HORARIO_SUPERPUESTO',16,1)
+      RETURN
+      END
+
     INSERT INTO HORARIO_MEDICO (
     id_med,
     dia_semana_hor,

@@ -115,12 +115,14 @@ CREATE TABLE HORARIO_MEDICO (
     id_med            INT NOT NULL,
     dia_semana_hor    INT NOT NULL,   -- 1=Lunes ... 7=Domingo
     hora_inicio_hor   TIME NOT NULL,
+    hora_fin_hor      TIME NOT NULL,
     activo_hor        BIT NOT NULL DEFAULT 1,
 
     CONSTRAINT PK_HORARIO_MEDICO PRIMARY KEY (id_hor),
     CONSTRAINT FK_HORARIO_MEDICO_MEDICO FOREIGN KEY (id_med)
         REFERENCES MEDICO(id_med),
     CONSTRAINT CK_HORARIO_DIA_SEMANA CHECK (dia_semana_hor BETWEEN 1 AND 7),
+    CONSTRAINT CK_HORARIO_RANGO CHECK (hora_fin_hor > hora_inicio_hor)
 );
 GO
 
@@ -232,6 +234,27 @@ INSERT INTO dbo.MEDICO (id_usu, legajo_med, dni_med, nombre_med, apellido_med, s
 (14, 'LEG-014', '34445566', 'Cecilia', 'Herrera', 'F', 'Argentina', '1998-01-08', 'Calle Las Heras 1400', 7, 'cecilia.herrera@clinica.com', '1146674444', 14),
 (15, 'LEG-015', '27556677', 'Pablo', 'Reyes', 'M', 'Argentina', '1969-06-26', 'Av. Mitre 1500', 8, 'pablo.reyes@clinica.com', '1146675555', 15);
 GO
+
+
+
+INSERT INTO HORARIO_MEDICO (id_med, dia_semana_hor, hora_inicio_hor, hora_fin_hor, activo_hor) VALUES
+(1, 1, '08:00', '12:00', 1),
+(2, 1, '09:00', '13:00', 1),
+(3, 2, '08:00', '12:00', 1),
+(4, 2, '14:00', '18:00', 1),
+(5, 3, '08:00', '12:00', 1),
+(6, 3, '14:00', '18:00', 1),
+(7, 4, '08:00', '12:00', 1),
+(8, 4, '14:00', '18:00', 1),
+(9, 5, '08:00', '12:00', 1),
+(10, 5, '14:00', '18:00', 1),
+(11, 1, '14:00', '18:00', 1),
+(12, 2, '08:00', '12:00', 1),
+(13, 3, '08:00', '12:00', 1),
+(14, 4, '08:00', '12:00', 1),
+(15, 5, '08:00', '12:00', 1);
+GO
+
 
 INSERT INTO TURNO (id_med, id_pac, id_esp, fecha_tur, hora_tur, estado_tur, observacion_tur, activo_tur) VALUES
 (1, 1, 1, '2026-01-12', '08:00', 'PRESENTE', 'Control de rutina, sin novedades.', 1),

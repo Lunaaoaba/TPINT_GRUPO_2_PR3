@@ -103,7 +103,7 @@
         </div>
         <p>&nbsp;</p>
         <p>
-            <asp:Button ID="bt_restaurar" runat="server" Text="Restaurar pacientes" ToolTip="Esto restaura los pacientes elminados (todos o por ID)" Width="134px" Height="24px" BackColor="#256C3F" BorderColor="#1A4D2D" EnableTheming="True" OnClick="bt_restaurar_Click"  />
+            <asp:Button ID="bt_restaurar" runat="server" Text="Restaurar Medicos" ToolTip="Esto restaura los pacientes elminados (todos o por ID)" Width="134px" Height="24px" BackColor="#256C3F" BorderColor="#1A4D2D" EnableTheming="True" OnClick="bt_restaurar_Click"  />
             <asp:Button ID="btnVolver" runat="server" OnClick="btnVolver_Click" Text="Volver" />
         </p>
     </form>

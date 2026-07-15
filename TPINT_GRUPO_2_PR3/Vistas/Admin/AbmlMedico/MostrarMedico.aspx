@@ -203,11 +203,8 @@ body{
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Horaio de Atención">
-                        <EditItemTemplate>
-                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                        </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lbl_Horario_Med" runat="server"></asp:Label>
+                            <asp:Label ID="lbl_Horario_Med" runat="server" Text='<%# Eval("horario_atencion") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

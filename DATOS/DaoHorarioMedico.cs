@@ -22,12 +22,32 @@ namespace DATOS
             parametro.Value = horarioMedico.Dia_semana_hor;
             parametro = comando.Parameters.Add("@hora_inicio_hor", SqlDbType.Time);
             parametro.Value = horarioMedico.Hora_inicio_hor;
+            parametro = comando.Parameters.Add("@hora_fin_hor", SqlDbType.Time);
+            parametro.Value = horarioMedico.hora_fin_hor;
         }
         public int AgregarHorarioMedico(HorarioMedico horarioMedico)
         {
-            SqlCommand comando = new SqlCommand();
-            ParametrosAgregarHorarioMedico(ref comando, horarioMedico);
-            return accesoDatos.EjecutarProcedimientoEscalar(comando, "spAgregarHorarioMedico");
+            try
+            {
+                SqlCommand comando = new SqlCommand();
+                ParametrosAgregarHorarioMedico(ref comando, horarioMedico);
+
+                return accesoDatos.EjecutarProcedimientoAlmacenado(comando, "spAgregarHorarioMedico");
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Message.Contains("HORARIO_SUPERPUESTO"))
+                {
+                    return -1;
+                }
+
+                if (ex.Message.Contains("HORARIO_DUPLICADO"))
+                {
+                    return -2;
+                }
+
+                throw;
+            }
         }
     }
 }

@@ -14,19 +14,145 @@ namespace DATOS
 
         public Boolean existeMedico(Medico medico)
         {
-            String consulta = "SELECT id_med, dni_med, nombre_med, apellido_med, sexo_med, nacionalidad_med, fecha_nacimiento_med, direccion_med, id_loc, email_med, telefono_med, legajo_med, id_esp, id_usu, activo_med FROM MEDICO";
+            String consulta = "SELECT id_med, " +
+                "dni_med, " +
+                "nombre_med, " +
+                "apellido_med, " +
+                "sexo_med, " +
+                "nacionalidad_med, " +
+                "fecha_nacimiento_med, " +
+                "direccion_med, " +
+                "id_loc, " +
+                "email_med, " +
+                "telefono_med, " +
+                "legajo_med, " +
+                "id_esp, " +
+                "id_usu, " +
+                "activo_med FROM MEDICO";
             return accesoDatos.existe(consulta);
         }
-
         public DataTable ObtenerTablaMedico()
         {
-            DataTable dataTable = accesoDatos.ObtenerTabla("MEDICO", "SELECT id_med, legajo_med, dni_med, nombre_med, apellido_med, sexo_med, nacionalidad_med, fecha_nacimiento_med, direccion_med, nombre_loc, email_med, telefono_med, nombre_esp FROM MEDICO M INNER JOIN LOCALIDAD L ON M.id_loc = L.id_loc INNER JOIN ESPECIALIDAD E ON M.id_esp = E.id_esp WHERE M.activo_med = 1");
+            DataTable dataTable = accesoDatos.ObtenerTabla(
+                "MEDICO",
+                @"SELECT
+            M.id_med,
+            M.legajo_med,
+            M.dni_med,
+            M.nombre_med,
+            M.apellido_med,
+            M.sexo_med,
+            M.nacionalidad_med,
+            M.fecha_nacimiento_med,
+            M.direccion_med,
+            L.nombre_loc,
+            M.email_med,
+            M.telefono_med,
+            E.nombre_esp,
+
+            STRING_AGG(
+                CASE H.dia_semana_hor
+                    WHEN 1 THEN 'Lunes'
+                    WHEN 2 THEN 'Martes'
+                    WHEN 3 THEN 'Miércoles'
+                    WHEN 4 THEN 'Jueves'
+                    WHEN 5 THEN 'Viernes'
+                    WHEN 6 THEN 'Sábado'
+                    WHEN 7 THEN 'Domingo'
+                END
+                + ' '
+                + CONVERT(VARCHAR(5), H.hora_inicio_hor, 108)
+                + ' - '
+                + CONVERT(VARCHAR(5), H.hora_fin_hor, 108),
+                ' | '
+            ) AS horario_atencion
+
+        FROM MEDICO M
+        INNER JOIN LOCALIDAD L
+            ON M.id_loc = L.id_loc
+        INNER JOIN ESPECIALIDAD E
+            ON M.id_esp = E.id_esp
+        LEFT JOIN HORARIO_MEDICO H
+            ON M.id_med = H.id_med
+
+        WHERE M.activo_med = 1
+
+        GROUP BY
+            M.id_med,
+            M.legajo_med,
+            M.dni_med,
+            M.nombre_med,
+            M.apellido_med,
+            M.sexo_med,
+            M.nacionalidad_med,
+            M.fecha_nacimiento_med,
+            M.direccion_med,
+            L.nombre_loc,
+            M.email_med,
+            M.telefono_med,
+            E.nombre_esp");
             return dataTable;
         }
+        //        public DataTable ObtenerTablaMedico()
+        //        {
+        //            DataTable dataTable = accesoDatos.ObtenerTabla(
+        //    "MEDICO",
+        //    @"SELECT
+        //        M.id_med,
+        //        M.legajo_med,
+        //        M.dni_med,
+        //        M.nombre_med,
+        //        M.apellido_med,
+        //        M.sexo_med,
+        //        M.nacionalidad_med,
+        //        M.fecha_nacimiento_med,
+        //        M.direccion_med,
+        //        L.nombre_loc,
+        //        M.email_med,
+        //        M.telefono_med,
+        //        E.nombre_esp,
+
+        //        CASE H.dia_semana_hor
+        //    WHEN 1 THEN 'Lunes'
+        //    WHEN 2 THEN 'Martes'
+        //    WHEN 3 THEN 'Miércoles'
+        //    WHEN 4 THEN 'Jueves'
+        //    WHEN 5 THEN 'Viernes'
+        //    WHEN 6 THEN 'Sábado'
+        //    WHEN 7 THEN 'Domingo'
+        //END
+        //+ ' '
+        //+ CONVERT(VARCHAR(5), H.hora_inicio_hor, 108)
+        //+ ' - '
+        //+ CONVERT(VARCHAR(5), H.hora_fin_hor, 108)
+        //AS horario_atencion
+
+        //    FROM MEDICO M
+        //    INNER JOIN LOCALIDAD L ON M.id_loc = L.id_loc
+        //    INNER JOIN ESPECIALIDAD E ON M.id_esp = E.id_esp
+        //    LEFT JOIN HORARIO_MEDICO H ON M.id_med = H.id_med
+
+        //    WHERE M.activo_med = 1");
+        //            return dataTable;
+        //        }
 
         public DataTable ObtenerTablaMedicoPorId(Medico medico)
         {
-            DataTable dataTable = accesoDatos.ObtenerTabla("MEDICO", "SELECT id_med, legajo_med, dni_med, nombre_med, apellido_med, sexo_med, nacionalidad_med, fecha_nacimiento_med, direccion_med, nombre_loc, email_med, telefono_med, nombre_esp FROM MEDICO M INNER JOIN LOCALIDAD L ON M.id_loc = L.id_loc INNER JOIN ESPECIALIDAD E ON M.id_esp = E.id_esp WHERE M.id_med = " + medico.Id_med );
+            DataTable dataTable = accesoDatos.ObtenerTabla("MEDICO", 
+                "SELECT id_med, " +
+                "legajo_med, " +
+                "dni_med, nombre_med, " +
+                "apellido_med, " +
+                "sexo_med, " +
+                "nacionalidad_med, " +
+                "fecha_nacimiento_med, " +
+                "direccion_med," +
+                " nombre_loc, " +
+                "email_med, " +
+                "telefono_med, " +
+                "nombre_esp " +
+                "FROM MEDICO M INNER JOIN LOCALIDAD L ON M.id_loc = L.id_loc " +
+                "INNER JOIN ESPECIALIDAD E ON M.id_esp = E.id_esp WHERE M.id_med = " + medico.id_med );
             return dataTable;
         }
 
