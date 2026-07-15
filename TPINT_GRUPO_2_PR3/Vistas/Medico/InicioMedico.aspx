@@ -67,8 +67,8 @@
                     <td class="auto-style2">| Icono Clínica |</td>
                     <td class="auto-style5">| Inicio |</td>
                     <td class="auto-style4">| Nombre de Clínica |</td>
-                    <td class="auto-style6">| Nombre Usuario |</td>
-                    <td>| Cerrar Sesión |</td>
+                    <td class="auto-style6"><asp:Label ID="lblNombreUsuario" runat="server"></asp:Label></td>
+                    <td><asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión" CssClass="tamanioBoton" OnClick="btnCerrarSesion_Click" /></td>
                 </tr>
             </table>
         </div>
@@ -81,7 +81,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style8">&nbsp;</td>
-                    <td align="center" class="auto-style7">Dr./Dra. Fulano</td>
+                    <td align="center" class="auto-style7"><asp:Label ID="lblBienvenido" runat="server">Dr./Dra.</asp:Label></td>
                     <td class="auto-style8">&nbsp;</td>
                 </tr>
                 <tr>

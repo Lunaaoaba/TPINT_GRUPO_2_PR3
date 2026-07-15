@@ -21,6 +21,7 @@ namespace DATOS
                               WHERE id_med = " + idMedico + @" AND dia_semana_hor = " + diaSemana + @" AND activo_hor = 1 AND hora_inicio_hor
                               NOT IN
                               (SELECT hora_tur FROM TURNO WHERE id_med = " + idMedico + @" AND fecha_tur = '" + fecha.ToString("yyyy-MM-dd") + @"' AND activo_tur = 1)";
+            return accesoDatos.ObtenerTabla("HorariosDisponibles", consulta);
         }
 
         public int AgregarTurno(int idMedico, int idPaciente, int idEspecialidad, DateTime fecha, string hora)

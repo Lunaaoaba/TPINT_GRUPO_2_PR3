@@ -13,21 +13,22 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         {
             if (!IsPostBack)
             {
-                //if (Convert.ToString(Session["TipoUsuario"]) == "Admin")
-                //{
-                //    lblNombreUsuario.Text = Convert.ToString(Session["Usuario"]);
-                //}
-                //else
-                //{
-                //    Response.Redirect("Login.aspx");
-                //}
+                if (Convert.ToString(Session["TipoUsuario"]) == "Admin")
+                {
+                    lblNombreUsuario.Text = Convert.ToString(Session["Usuario"]);
+                    lblBienvenido.Text = "Administrador/a " + Convert.ToString(Session["Usuario"]);
+                }
+                else
+                {
+                    Response.Redirect("~/Vistas/Login.aspx");
+                }
             }
         }
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             Session.Abandon();
-            Response.Redirect("Login.aspx");
+            Response.Redirect("~/Vistas/Login.aspx");
         }
 
         protected void btnMedicos_Click(object sender, EventArgs e)

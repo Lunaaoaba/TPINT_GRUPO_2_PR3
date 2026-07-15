@@ -12,7 +12,23 @@ namespace TPINT_GRUPO_2_PR3.Vistas
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
-            { }
+            {
+                if (Convert.ToString(Session["TipoUsuario"]) == "Medico")
+                {
+                    lblNombreUsuario.Text = Convert.ToString(Session["Usuario"]);
+                    lblBienvenido.Text = "Dr./Dra. " + Convert.ToString(Session["Usuario"]);
+                }
+                else
+                {
+                    Response.Redirect("~/Vistas/Login.aspx");
+                }
+            }
         }
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("~/Vistas/Login.aspx");
+        }
+
     }
 }

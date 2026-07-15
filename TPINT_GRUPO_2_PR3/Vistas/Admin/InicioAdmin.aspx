@@ -81,7 +81,7 @@
         </tr>
         <tr>
             <td class="auto-style8">&nbsp;</td>
-            <td align="center" class="auto-style7">Administrador/a. Fulano</td>
+            <td align="center" class="auto-style7"><asp:Label ID="lblBienvenido" runat="server">Administrador/a.</asp:Label></td>
             <td class="auto-style8">&nbsp;</td>
         </tr>
         <tr>
