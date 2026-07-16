@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListarModificar_Pacientes.aspx.cs" Inherits="TPINT_GRUPO_2_PR3.Vistas.ListarModificar_Pacientes" %>
-
+<%@ Register TagPrefix="uc" TagName="BarraSuperior" Src="~/Vistas/BarraSuperior.ascx" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -58,6 +58,7 @@ body{
 </head>
 <body>
     <form id="form1" runat="server">
+        <uc:BarraSuperior ID="BarraSuperior1" runat="server" />
         <div id="contenedor">
             <div style="text-align:center;">
                 <asp:Image ID="ICON_Paciente" ImageUrl="~/Imagenes/ICON_paciente.png" runat="server" Height="54px" Width="54px" />

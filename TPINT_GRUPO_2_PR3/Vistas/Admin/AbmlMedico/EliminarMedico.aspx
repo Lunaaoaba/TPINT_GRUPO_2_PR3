@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EliminarMedico.aspx.cs" Inherits="TPINT_GRUPO_2_PR3.Vistas.AbmlMedico.ModificarMedico" %>
-
+<%@ Register TagPrefix="uc" TagName="BarraSuperior" Src="~/Vistas/BarraSuperior.ascx" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -58,6 +58,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <uc:BarraSuperior ID="BarraSuperior1" runat="server" />
         <div id="contenedor">
             <div>
                 <table>

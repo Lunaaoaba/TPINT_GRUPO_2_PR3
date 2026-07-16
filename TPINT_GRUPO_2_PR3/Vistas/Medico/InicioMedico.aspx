@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InicioMedico.aspx.cs" Inherits="TPINT_GRUPO_2_PR3.Vistas.InicioMedico" %>
-
+<%@ Register TagPrefix="uc" TagName="BarraSuperior" Src="~/Vistas/BarraSuperior.ascx" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -61,17 +61,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div id="contenedor">
-            <table align="center" class="auto-style1">
-                <tr>
-                    <td class="auto-style2">| Icono Clínica |</td>
-                    <td class="auto-style5">| Inicio |</td>
-                    <td class="auto-style4">| Nombre de Clínica |</td>
-                    <td class="auto-style6"><asp:Label ID="lblNombreUsuario" runat="server"></asp:Label></td>
-                    <td><asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar Sesión" CssClass="tamanioBoton" OnClick="btnCerrarSesion_Click" /></td>
-                </tr>
-            </table>
-        </div>
+        <uc:BarraSuperior ID="BarraSuperior1" runat="server" />
+     
         <div id="contenedor2">
             <table class="auto-style1">
                 <tr>

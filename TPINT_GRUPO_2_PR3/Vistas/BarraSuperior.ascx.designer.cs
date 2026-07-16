@@ -11,52 +11,34 @@ namespace TPINT_GRUPO_2_PR3.Vistas
 {
 
 
-    public partial class ABML_Turnos
+    public partial class BarraSuperior
     {
 
         /// <summary>
-        /// Control form1.
+        /// Control imgLogo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Image imgLogo;
 
         /// <summary>
-        /// Control BarraSuperior1.
+        /// Control lblNombreUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::TPINT_GRUPO_2_PR3.Vistas.BarraSuperior BarraSuperior1;
+        protected global::System.Web.UI.WebControls.Label lblNombreUsuario;
 
         /// <summary>
-        /// Control ICON_medico.
+        /// Control btnCerrarSesion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ICON_medico;
-
-        /// <summary>
-        /// Control AgregarModificarTurno.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AgregarModificarTurno;
-
-        /// <summary>
-        /// Control ListarEliminarTurno.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ListarEliminarTurno;
+        protected global::System.Web.UI.WebControls.Button btnCerrarSesion;
     }
 }

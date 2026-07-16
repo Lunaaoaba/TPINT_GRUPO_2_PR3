@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Menu_Listados.aspx.cs" Inherits="TPINT_GRUPO_2_PR3.Vistas.Menu_Listados" %>
-
+<%@ Register TagPrefix="uc" TagName="BarraSuperior" Src="~/Vistas/BarraSuperior.ascx" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -38,6 +38,7 @@
 </head>
 <body >
     <form id="form1" runat="server">
+    <uc:BarraSuperior ID="BarraSuperior1" runat="server" />
     <div id="contenedor">
         <table class="auto-style1">
 
