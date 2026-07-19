@@ -275,6 +275,21 @@ namespace DATOS
             ParametrosEliminarMedico(ref sqlCommand, medico);
             return accesoDatos.EjecutarProcedimientoAlmacenado(sqlCommand, "spRestaurarMedicoPorId");
         }
+
+        public int ObtenerMedicoIdPorUsername(string username)
+        {
+            if (string.IsNullOrWhiteSpace(username)) return -1;
+            string consulta = "SELECT M.id_med FROM MEDICO M INNER JOIN USUARIO U ON M.id_usu = U.id_usu " +
+                              "WHERE U.username_usu = '" + username + "' AND M.activo_med = 1";
+            DataTable dt = accesoDatos.ObtenerTabla("MEDICO", consulta);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                try { return Convert.ToInt32(dt.Rows[0]["id_med"]); }
+                catch { return -1; }
+            }
+            return -1;
+        }
+
     }
 
 }

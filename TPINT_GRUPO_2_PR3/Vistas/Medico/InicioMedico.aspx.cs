@@ -22,5 +22,14 @@ namespace TPINT_GRUPO_2_PR3.Vistas
             Response.Redirect("~/Vistas/Login.aspx");
         }
 
+        protected void ListarTurnos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Vistas/Medico/ListarTurnos.aspx");
+        }
+
+        protected void Opcion1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Vistas/Medico/Menu_Listados.aspx");
+        }
     }
 }

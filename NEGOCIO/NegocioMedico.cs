@@ -34,6 +34,11 @@ namespace NEGOCIO
             return dao.FiltrarMedicos(idOrNombre, tipoFiltro);
         }
 
+        public int ObtenerMedicoIdPorUsername(string username)
+        {
+            return dao.ObtenerMedicoIdPorUsername(username);
+        }
+
         public bool AgregarMedico(
             string dni,
             string nombre,
@@ -132,6 +137,8 @@ namespace NEGOCIO
             int filasAfectadas = dao.RestaurarMedico();
             return filasAfectadas >= 0;
         }
+
+
     }
 
 }

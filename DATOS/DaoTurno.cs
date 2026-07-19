@@ -36,5 +36,91 @@ namespace DATOS
 
             return accesoDatos.EjecutarProcedimientoAlmacenado(comando, "spAgregarTurno");
         }
+
+        public DataTable ObtenerTurnosPorMedico(int idMedico)
+        {
+            string consulta = @"SELECT 
+            T.id_tur,
+            T.fecha_tur,
+            CONVERT(VARCHAR(5), T.hora_tur, 108) AS hora_tur,
+            P.id_pac,
+            P.dni_pac,
+            P.nombre_pac,
+            P.apellido_pac,
+            T.estado_tur,
+            T.observacion_tur
+            FROM TURNO T
+            INNER JOIN PACIENTE P ON T.id_pac = P.id_pac
+            WHERE T.activo_tur = 1 AND T.id_med = " + idMedico +
+            " ORDER BY T.fecha_tur, T.hora_tur";
+
+            return accesoDatos.ObtenerTabla("TURNOS_MEDICO", consulta);
+        }
+
+        public DataTable FiltrarTurnos(int idMedico, string ingreso, string tipoFiltro, string estado)
+        {
+            string consulta = @"SELECT 
+            T.id_tur,
+            T.fecha_tur,
+            CONVERT(VARCHAR(5), T.hora_tur, 108) AS hora_tur,
+            P.id_pac,
+            P.dni_pac,
+            P.nombre_pac,
+            P.apellido_pac,
+            T.estado_tur,
+            T.observacion_tur
+            FROM TURNO T
+            INNER JOIN PACIENTE P ON T.id_pac = P.id_pac
+            WHERE T.activo_tur = 1 AND T.id_med = " + idMedico;
+
+            if (!string.IsNullOrWhiteSpace(tipoFiltro) && !string.IsNullOrWhiteSpace(ingreso))
+            {
+                string like = ingreso.Replace("'", "''");
+                if (tipoFiltro == "dni_pac")
+                {
+                    consulta += " AND P.dni_pac LIKE '%" + like + "%'";
+                }
+                else if (tipoFiltro == "nombre_pac")
+                {
+                    consulta += " AND P.nombre_pac LIKE '%" + like + "%'";
+                }
+                else if (tipoFiltro == "apellido_pac")
+                {
+                    consulta += " AND P.apellido_pac LIKE '%" + like + "%'";
+                }
+            }
+
+            if (!string.IsNullOrWhiteSpace(estado) && estado != "Todos")
+            {
+                consulta += " AND T.estado_tur = '" + estado.Replace("'", "''") + "'";
+            }
+
+            consulta += " ORDER BY T.fecha_tur, T.hora_tur";
+
+            return accesoDatos.ObtenerTabla("TURNOS_MEDICO", consulta);
+        }
+
+        public int ActualizarTurno(int idTurno, string estado, string observacion)
+        {
+            SqlCommand comando = new SqlCommand();
+            comando.Parameters.Add("@id_tur", SqlDbType.Int).Value = idTurno;
+            comando.Parameters.Add("@estado_tur", SqlDbType.VarChar).Value = estado;
+            comando.Parameters.Add("@observacion_tur", SqlDbType.VarChar).Value =
+                string.IsNullOrWhiteSpace(observacion) ? (object)DBNull.Value : observacion;
+            return accesoDatos.EjecutarProcedimientoAlmacenado(comando, "spModificarTurno");
+        }
+
+        public int ObtenerMedicoIdPorTurno(int idTurno)
+        {
+            string consulta = "SELECT id_med FROM TURNO WHERE id_tur = " + idTurno;
+            DataTable dt = accesoDatos.ObtenerTabla("TURNO", consulta);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                try { return Convert.ToInt32(dt.Rows[0]["id_med"]); }
+                catch { return -1; }
+            }
+            return -1;
+        }
+
     }
 }

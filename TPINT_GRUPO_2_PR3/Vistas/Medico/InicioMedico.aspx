@@ -84,14 +84,14 @@
                 <tr>
                     <td class="auto-style8">&nbsp;</td>
                     <td align="center" class="auto-style7">
-                        <asp:Button ID="ListarTurnos" runat="server" Text="Listas Mis Turnos" CssClass="tamanioBoton" />
+                        <asp:Button ID="ListarTurnos" runat="server" Text="Listas Mis Turnos" CssClass="tamanioBoton" OnClick="ListarTurnos_Click" />
                     </td>
                     <td class="auto-style8">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style8">&nbsp;</td>
                     <td align="center" class="auto-style7">
-                        <asp:Button ID="Opcion1" runat="server" Text="Otra opción" CssClass="tamanioBoton" />
+                        <asp:Button ID="Opcion1" runat="server" Text="Menu De Listados" CssClass="tamanioBoton" OnClick="Opcion1_Click" />
                     </td>
                     <td class="auto-style8">&nbsp;</td>
                 </tr>

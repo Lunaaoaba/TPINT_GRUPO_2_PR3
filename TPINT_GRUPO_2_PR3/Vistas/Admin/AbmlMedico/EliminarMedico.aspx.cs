@@ -14,8 +14,8 @@ namespace TPINT_GRUPO_2_PR3.Vistas.AbmlMedico
     {
         NegocioMedico negocioMedico = new NegocioMedico();
         NegocioLocalidades NegocioLocalidades = new NegocioLocalidades();
-        Medico medico = new Medico();
-       
+        ENTIDADES.Medico medico = new ENTIDADES.Medico();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
